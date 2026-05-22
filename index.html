@@ -186,6 +186,8 @@ em.hl{color:var(--teal);font-style:normal;}
     </div>
   </div>
   <div class="ut"><span style="background:var(--teal)">1</span>Measurement</div>
+  <a href="#subfields">Subfields of chemistry</a>
+  <a href="#states">States of matter</a>
   <a href="#sigfigs">Sig figs</a>
   <a href="#scinot">Scientific notation</a>
   <a href="#accprec">Accuracy vs precision</a>
@@ -211,6 +213,7 @@ em.hl{color:var(--teal);font-style:normal;}
   <a href="#polarity">Molecular polarity</a>
   <a href="#imf">Intermolecular forces</a>
   <div class="ut"><span style="background:var(--green);color:#0c1018">5</span>Reactions</div>
+  <a href="#endoexo">Endo vs exo</a>
   <a href="#rxntype">Reaction sorter</a>
   <a href="#balance">Equation balancer</a>
   <a href="#redox">Redox solver</a>
@@ -250,6 +253,61 @@ em.hl{color:var(--teal);font-style:normal;}
   <p class="lead">Chemistry is the study of <b>stuff</b> (matter) and how it changes. Before any of
   that, you need a way to <em>measure</em> stuff honestly. This unit is about being honest with numbers
   — saying what you actually know and not pretending you know more.</p>
+
+  <!-- ----- SUBFIELDS OF CHEMISTRY ----- -->
+  <h3 class="topic" id="subfields"><span class="num">1.0</span> The subfields of chemistry</h3>
+  <p>Chemistry is one giant subject, but chemists split it into "departments" so each can specialize:</p>
+  <table class="t">
+  <tr><th>Subfield</th><th>What it studies</th></tr>
+  <tr><td><b>Organic chemistry</b></td><td>Carbon-based compounds — fuels, plastics, food, DNA.</td></tr>
+  <tr><td><b>Inorganic chemistry</b></td><td>Everything <em>not</em> based on carbon — metals, rocks, salts.</td></tr>
+  <tr><td><b>Physical chemistry</b></td><td>The "why" of chemistry — energy, speed, the physics behind reactions.</td></tr>
+  <tr><td><b>Thermochemistry</b> <span class="tag" style="color:var(--amber)">(sub-branch of physical)</span></td><td>Energy changes (heat in/out) tied to chemical and physical changes. Endothermic vs exothermic lives here.</td></tr>
+  <tr><td><b>Analytical chemistry</b></td><td>The detective — <em>what's in this sample, and how much?</em></td></tr>
+  <tr><td><b>Biochemistry</b></td><td>Chemistry happening inside living things.</td></tr>
+  <tr><td><b>Nuclear chemistry</b></td><td>Changes <em>inside</em> the nucleus — radioactivity, fission, fusion.</td></tr>
+  <tr><td><b>Electrochemistry</b></td><td>Chemistry that involves electricity (batteries, electrolysis).</td></tr>
+  </table>
+  <div class="box aptip"><span class="lab">heads-up question</span>
+  "What's the subfield of physical chemistry focused on energy changes in chemical and physical
+  processes?" → <b>Thermochemistry</b>. (It's a subset of physical chemistry, not its own top-level field.)</div>
+
+  <!-- ----- STATES OF MATTER ----- -->
+  <h3 class="topic" id="states"><span class="num">1.0b</span> States of matter — solid, liquid, gas, plasma</h3>
+  <div class="box plain"><span class="lab">in plain words</span>
+  The same stuff (say H₂O) can look totally different depending on how its particles are moving and
+  how tightly they're packed.</div>
+  <table class="t">
+  <tr><th>State</th><th>Shape</th><th>Volume</th><th>Particle behavior</th></tr>
+  <tr><td><b>Solid</b></td><td>definite</td><td>definite</td><td>tightly packed, vibrate in place</td></tr>
+  <tr><td><b>Liquid</b></td><td>takes container's shape</td><td>definite</td><td>slide past each other, still touching</td></tr>
+  <tr><td><b>Gas</b></td><td>fills the container</td><td>fills the container</td><td>fly freely, mostly empty space</td></tr>
+  <tr><td><b>Plasma</b></td><td>like gas</td><td>like gas</td><td>so hot the electrons are stripped — ionized gas (stars, lightning)</td></tr>
+  </table>
+  <figure>
+  <svg viewBox="0 0 560 140" xmlns="http://www.w3.org/2000/svg">
+    <g font-family="Hanken Grotesk,sans-serif" font-size="12" fill="#e6ecf7" text-anchor="middle">
+      <rect x="20" y="20" width="120" height="80" rx="8" fill="#1c2438" stroke="#5be08a" stroke-width="1.5"/>
+      <g fill="#5be08a"><circle cx="45" cy="45" r="6"/><circle cx="65" cy="45" r="6"/><circle cx="85" cy="45" r="6"/><circle cx="105" cy="45" r="6"/><circle cx="125" cy="45" r="6"/><circle cx="45" cy="65" r="6"/><circle cx="65" cy="65" r="6"/><circle cx="85" cy="65" r="6"/><circle cx="105" cy="65" r="6"/><circle cx="125" cy="65" r="6"/><circle cx="45" cy="85" r="6"/><circle cx="65" cy="85" r="6"/><circle cx="85" cy="85" r="6"/><circle cx="105" cy="85" r="6"/><circle cx="125" cy="85" r="6"/></g>
+      <text x="80" y="118" font-weight="700">SOLID</text>
+      <rect x="160" y="20" width="120" height="80" rx="8" fill="#1c2438" stroke="#5aa9ff" stroke-width="1.5"/>
+      <g fill="#5aa9ff"><circle cx="180" cy="80" r="6"/><circle cx="200" cy="78" r="6"/><circle cx="220" cy="82" r="6"/><circle cx="240" cy="76" r="6"/><circle cx="260" cy="80" r="6"/><circle cx="190" cy="65" r="6"/><circle cx="215" cy="62" r="6"/><circle cx="245" cy="65" r="6"/><circle cx="270" cy="62" r="6"/><circle cx="175" cy="55" r="6"/><circle cx="195" cy="50" r="6"/><circle cx="230" cy="48" r="6"/></g>
+      <text x="220" y="118" font-weight="700">LIQUID</text>
+      <rect x="300" y="20" width="120" height="80" rx="8" fill="#1c2438" stroke="#ffc24b" stroke-width="1.5"/>
+      <g fill="#ffc24b"><circle cx="320" cy="35" r="5"/><circle cx="365" cy="50" r="5"/><circle cx="395" cy="33" r="5"/><circle cx="340" cy="65" r="5"/><circle cx="380" cy="80" r="5"/><circle cx="410" cy="70" r="5"/><circle cx="315" cy="85" r="5"/><circle cx="355" cy="92" r="5"/></g>
+      <text x="360" y="118" font-weight="700">GAS</text>
+      <rect x="440" y="20" width="100" height="80" rx="8" fill="#1c2438" stroke="#ff5c93" stroke-width="1.5"/>
+      <g fill="#ff5c93"><circle cx="455" cy="40" r="4"/><circle cx="485" cy="55" r="4"/><circle cx="515" cy="38" r="4"/><circle cx="465" cy="72" r="4"/><circle cx="505" cy="85" r="4"/><circle cx="530" cy="60" r="4"/><circle cx="495" cy="35" r="4"/><circle cx="475" cy="90" r="4"/></g>
+      <g fill="#ffc24b" font-size="11"><text x="463" y="44">+</text><text x="495" y="58">−</text><text x="525" y="42">+</text><text x="475" y="76">−</text></g>
+      <text x="490" y="118" font-weight="700">PLASMA</text>
+    </g>
+  </svg>
+  <figcaption>States of matter. Definite shape AND volume? → solid. Definite volume but not shape? → liquid. Neither? → gas.</figcaption>
+  </figure>
+  <div class="box aptip"><span class="lab">phase changes — name them</span>
+  solid → liquid = <b>melting</b> · liquid → gas = <b>vaporization (boiling)</b> · gas → liquid =
+  <b>condensation</b> · liquid → solid = <b>freezing</b> · solid → gas (skipping liquid) =
+  <b>sublimation</b> (dry ice does this) · gas → solid = <b>deposition</b>.</div>
 
   <!-- ----- SIG FIGS ----- -->
   <h3 class="topic" id="sigfigs"><span class="num">1.1</span> Significant figures — how honest your number is</h3>
@@ -932,6 +990,61 @@ em.hl{color:var(--teal);font-style:normal;}
   <h2>Atoms rearrange into new combinations</h2>
   <p class="lead">Bonds break, bonds form, atoms swap partners. Recognize the pattern, balance the
   equation, track which electrons moved.</p>
+
+  <!-- ----- ENDO vs EXO ----- -->
+  <h3 class="topic" id="endoexo"><span class="num">5.0</span> Endothermic vs exothermic — where does the heat live?</h3>
+  <div class="box plain"><span class="lab">in plain words</span>
+  Every reaction either <b>takes in</b> heat from its surroundings (gets cold to the touch) or
+  <b>releases</b> heat into its surroundings (gets warm to the touch).</div>
+  <ul>
+  <li><b>Endothermic</b> — absorbs heat. Heat acts like a <em>reactant</em> (it's needed as input).
+  Container feels <b>cold</b>. Example: an instant cold pack, photosynthesis, melting ice.</li>
+  <li><b>Exothermic</b> — releases heat. Heat acts like a <em>product</em> (it's given off).
+  Container feels <b>hot</b>. Example: combustion, hand warmers, freezing water.</li>
+  </ul>
+  <div class="formula">endothermic: reactants + <span class="h">heat</span> → products &nbsp;·&nbsp;
+  exothermic: reactants → products + <span class="h">heat</span></div>
+
+  <figure>
+  <svg viewBox="0 0 560 200" xmlns="http://www.w3.org/2000/svg">
+    <g font-family="Hanken Grotesk,sans-serif" font-size="11" fill="#e6ecf7">
+      <text x="140" y="20" text-anchor="middle" font-weight="700" fill="#5aa9ff" font-size="13">ENDOTHERMIC ⮕ absorbs heat</text>
+      <line x1="40" y1="170" x2="240" y2="170" stroke="#94a3c4" stroke-width="1"/>
+      <line x1="40" y1="40" x2="40" y2="170" stroke="#94a3c4" stroke-width="1"/>
+      <path d="M 60 150 Q 140 30, 220 70" stroke="#5aa9ff" stroke-width="3" fill="none"/>
+      <circle cx="60" cy="150" r="4" fill="#5be08a"/><text x="68" y="155">reactants (low E)</text>
+      <circle cx="220" cy="70" r="4" fill="#ff9457"/><text x="170" y="62" font-size="10">products (high E)</text>
+      <text x="50" y="38" font-size="10" fill="#94a3c4">Energy →</text>
+      <text x="140" y="190" text-anchor="middle" font-size="10" fill="#94a3c4">progress of reaction →</text>
+
+      <text x="420" y="20" text-anchor="middle" font-weight="700" fill="#ff9457" font-size="13">EXOTHERMIC ⮕ releases heat</text>
+      <line x1="320" y1="170" x2="520" y2="170" stroke="#94a3c4" stroke-width="1"/>
+      <line x1="320" y1="40" x2="320" y2="170" stroke="#94a3c4" stroke-width="1"/>
+      <path d="M 340 70 Q 420 180, 500 150" stroke="#ff9457" stroke-width="3" fill="none"/>
+      <circle cx="340" cy="70" r="4" fill="#ff9457"/><text x="348" y="62">reactants (high E)</text>
+      <circle cx="500" cy="150" r="4" fill="#5be08a"/><text x="430" y="160" font-size="10">products (low E)</text>
+    </g>
+  </svg>
+  <figcaption>Energy diagrams. Endo: products end up <em>higher</em> in energy (energy went IN). Exo: products end up <em>lower</em> (energy came OUT).</figcaption>
+  </figure>
+
+  <div class="card">
+    <h4><span class="ico" style="background:var(--orange)">🔥</span> Endo/Exo identifier</h4>
+    <p class="hint">Quick-fire — is each reaction endothermic or exothermic?</p>
+    <div id="eeQ" style="font-family:'Sora';font-size:1.1rem;color:var(--amber);text-align:center;margin:10px 0;font-weight:600;"></div>
+    <div class="opts">
+      <button class="opt" style="text-align:center" onclick="eeGuess('endo',this)">Endothermic (heat absorbed)</button>
+      <button class="opt" style="text-align:center" onclick="eeGuess('exo',this)">Exothermic (heat released)</button>
+    </div>
+    <div class="feedback" id="eeFb"></div>
+    <div style="display:flex;justify-content:space-between;margin-top:10px">
+      <span class="streak" id="eeStreak">streak: 0 🔥</span>
+      <button class="btn sm" onclick="eeNew()">Next →</button>
+    </div>
+  </div>
+  <div class="box aptip"><span class="lab">heat as reactant or product</span>
+  When you see an equation with "+ heat" written into it, look which side it's on. Heat on the
+  <em>left</em> (with reactants) = endothermic. Heat on the <em>right</em> (with products) = exothermic.</div>
 
   <!-- ----- REACTION TYPE SORTER ----- -->
   <h3 class="topic" id="rxntype"><span class="num">5.1</span> Reaction types — five patterns</h3>
@@ -1842,6 +1955,28 @@ function imfGuess(t,el){let p=imfPool[imfCur],fb=document.getElementById('imfFb'
 </script>
 
 <script>
+/* ============ U5 · ENDO/EXO IDENTIFIER ============ */
+const eePool=[
+ {q:'Combustion of methane: CH₄ + 2 O₂ → CO₂ + 2 H₂O + heat',a:'exo',w:'Heat is a product → exothermic. (Burning anything is exothermic.)'},
+ {q:'Photosynthesis: 6 CO₂ + 6 H₂O + light energy → C₆H₁₂O₆ + 6 O₂',a:'endo',w:'Plants need to absorb light energy → endothermic.'},
+ {q:'Ice melting (H₂O solid → H₂O liquid)',a:'endo',w:'Heat goes IN to break the rigid crystal bonds → endothermic.'},
+ {q:'Water freezing (H₂O liquid → H₂O solid)',a:'exo',w:'Heat is released as molecules lock into a crystal → exothermic.'},
+ {q:'An instant cold pack activated — feels cold to the touch',a:'endo',w:'Cold pack absorbs heat from your hand → endothermic.'},
+ {q:'A hand warmer activated — feels hot to the touch',a:'exo',w:'Hand warmer releases heat to your hand → exothermic.'},
+ {q:'2 H₂ + O₂ → 2 H₂O + lots of heat (rocket fuel)',a:'exo',w:'Heat is on the product side → exothermic.'},
+ {q:'N₂ + O₂ + heat → 2 NO  (forming nitric oxide in lightning)',a:'endo',w:'Heat is on the reactant side → endothermic.'},
+ {q:'NaOH dissolves in water and the beaker gets warm',a:'exo',w:'Beaker warms → heat is released → exothermic dissolution.'},
+ {q:'Baking soda + vinegar fizzing; beaker gets noticeably colder',a:'endo',w:'Beaker cools → heat is being absorbed → endothermic.'}];
+let eeCur=0,eeStreak=0;
+function eeNew(){eeCur=Math.floor(Math.random()*eePool.length);
+  document.getElementById('eeQ').textContent=eePool[eeCur].q;
+  document.getElementById('eeFb').className='feedback';
+  document.querySelectorAll('#eeQ ~ .opts .opt').forEach(o=>o.classList.remove('correct','wrong'));}
+function eeGuess(t,el){let p=eePool[eeCur],fb=document.getElementById('eeFb');
+  if(t===p.a){el.classList.add('correct');eeStreak++;fb.className='feedback ok show';fb.textContent='✓ '+p.w;bump(true);}
+  else{el.classList.add('wrong');eeStreak=0;fb.className='feedback no show';fb.innerHTML='✗ '+p.w;bump(false);}
+  document.getElementById('eeStreak').textContent='streak: '+eeStreak+' 🔥';}
+
 /* ============ U5 · REACTION SORTER ============ */
 const rxPool=[
  {q:'2 H₂ + O₂ → 2 H₂O',a:'syn',w:'Two reactants combine into one product → synthesis.'},
@@ -2066,7 +2201,23 @@ const QB=[
  {u:8,q:'Boyle\'s law: at constant T, if volume halves, pressure:',o:['Halves','Doubles','Stays same','Quarters'],a:1,w:'P and V are inversely related → P doubles.'},
  {u:8,q:'Gas-law temperatures must always be in:',o:['Celsius','Fahrenheit','Kelvin','Either C or K'],a:2,w:'Only Kelvin keeps the ratios valid.'},
  {u:8,q:'In PV = nRT, raising T at fixed n and V causes P to:',o:['Decrease','Increase','Stay constant','Become negative'],a:1,w:'P ∝ T at fixed n, V (Gay-Lussac).'},
- {u:8,q:'Charles\'s law relates:',o:['P and V','V and T','P and T','n and P'],a:1,w:'V/T = constant at fixed P, n.'}];
+ {u:8,q:'Charles\'s law relates:',o:['P and V','V and T','P and T','n and P'],a:1,w:'V/T = constant at fixed P, n.'},
+ // ----- additions from Wayground / Quizizz set -----
+ {u:1,q:'What is the subfield of physical chemistry that focuses on energy changes associated with chemical and physical changes?',o:['Nuclear chemistry','Thermochemistry','Biochemistry','Electrochemistry'],a:1,w:'Thermochemistry — a sub-branch of physical chemistry — studies heat exchanged in reactions and phase changes.'},
+ {u:1,q:'The state of matter that has BOTH a definite volume AND a definite shape is:',o:['Gas','Liquid','Solid','Plasma'],a:2,w:'Only a solid keeps both shape and volume. Liquid keeps volume but takes the container\'s shape; a gas keeps neither.'},
+ {u:1,q:'Which subatomic particle carries a negative charge?',o:['Proton','Neutron','Electron','Nucleus'],a:2,w:'Electrons are the negatively charged particles orbiting outside the nucleus.'},
+ {u:2,q:'How many energy shells (principal energy levels) does krypton (Kr, Z=36) have?',o:['2','3','4','5'],a:2,w:'Kr is in period 4 → its electrons fill shells n=1, 2, 3, and 4. Four occupied shells.'},
+ {u:3,q:'Which best explains why noble gases have the highest first ionization energy?',o:['Noble gases are nonreactive','Noble gases have unstable atoms','Noble gases are reactive','Noble gases have stable (full-shell) atoms'],a:3,w:'A full valence shell is extra stable, so it takes a lot of energy to pull an electron away. "Stable atoms" is the reason; "nonreactive" is a consequence of that stability.'},
+ {u:4,q:'Which of the following compounds is formed by IONIC bonding?',o:['PCl₅','CH₄','MgCl₂','HF'],a:2,w:'Mg is a metal, Cl is a nonmetal → ionic. The other three are all nonmetal-nonmetal → covalent.'},
+ {u:5,q:'Oxidation is the _____ of electrons.',o:['Gain','Loss','Sharing','Doubling'],a:1,w:'OIL RIG: Oxidation Is Loss. Reduction Is Gain.'},
+ {u:5,q:'Identify the reaction type: 2 AgNO₃ + Cu → Cu(NO₃)₂ + 2 Ag',o:['Combustion','Single replacement','Double replacement','Decomposition'],a:1,w:'One element (Cu) kicks another (Ag) out of its compound → single replacement.'},
+ {u:5,q:'For an endothermic reaction, heat is written on the _____ side of the equation.',o:['Product','Reactant','Either','Neither'],a:1,w:'Endothermic absorbs heat → heat is an input → reactant side. "Reactants + heat → products."'},
+ {u:5,q:'For an exothermic reaction, heat is written on the _____ side.',o:['Reactant','Product','Either','Neither'],a:1,w:'Exothermic releases heat → heat is an output → product side.'},
+ {u:5,q:'You touch a beaker during a reaction and it feels noticeably colder. The reaction is:',o:['Exothermic','Endothermic','Neither','Combustion'],a:1,w:'Cold = beaker is losing heat TO the reaction → endothermic.'},
+ {u:1,q:'Which subfield of chemistry studies carbon-based compounds (fuels, plastics, DNA)?',o:['Inorganic','Organic','Analytical','Nuclear'],a:1,w:'Organic chemistry = chemistry of carbon compounds.'},
+ {u:1,q:'Which subfield is a detective field — figuring out what\'s in a sample and how much?',o:['Organic','Biochemistry','Analytical','Physical'],a:2,w:'Analytical chemistry — identification and quantification of substances.'},
+ {u:1,q:'Phase change from solid directly to gas (skipping liquid) is called:',o:['Melting','Sublimation','Condensation','Deposition'],a:1,w:'Solid → gas = sublimation. Dry ice (solid CO₂) does this at room temperature.'},
+ {u:1,q:'Which has a definite volume but takes the shape of its container?',o:['Solid','Liquid','Gas','Plasma'],a:1,w:'Liquid — particles slide past each other but stay in contact (constant volume).'}];
 let qList=[],qi=0,qScore=0,qAns=0,qFilt='all',qLock=false;
 function quizFilter(u,el){qFilt=u;document.querySelectorAll('#quizFilter .chip').forEach(c=>c.classList.remove('active'));el.classList.add('active');
   qList=QB.filter(x=>u==='all'||x.u===u);qList.sort(()=>Math.random()-0.5);qi=0;qScore=0;qAns=0;renderQ();}
@@ -2099,7 +2250,7 @@ function boot(){
   bondInit();nameNew();
   setMol('CH4',document.querySelector('#molChips .chip'));molLoop();
   setPol('CO2',document.querySelector('#polChips .chip'));
-  imfNew();rxNew();
+  imfNew();rxNew();eeNew();
   eqChipsBuild();eqLoad(0);
   oxNew();
   stChipsBuild();
