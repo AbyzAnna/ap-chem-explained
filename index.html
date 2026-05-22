@@ -615,6 +615,31 @@ em.hl{color:var(--teal);font-style:normal;}
       </div>
     </div>
   </div>
+
+  <h4 style="margin:22px 0 4px;font-family:'Sora';">How isotopes are named — the boron example</h4>
+  <p>The number after the dash in an isotope name (boron-8, boron-9, boron-10, boron-11…) is the
+  <b>mass number A</b> = protons + neutrons. Protons NEVER change — that's what makes it that element.
+  Only the neutron count changes between isotopes.</p>
+  <p class="analogy">Think of it like a family last name (the element) plus a first name (the mass
+  number). The last name "boron" always means "5 protons." The first name tells you which sibling — how
+  many neutrons came along.</p>
+  <table class="t">
+  <tr><th>Isotope</th><th>Protons (Z)</th><th>Neutrons</th><th>How "natural" is it?</th></tr>
+  <tr><td><b>Boron-8</b></td><td>5</td><td>3</td><td>Very unstable — radioactive, decays in milliseconds</td></tr>
+  <tr><td><b>Boron-9</b></td><td>5</td><td>4</td><td>Unstable — radioactive, very short half-life</td></tr>
+  <tr><td><b>Boron-10</b></td><td>5</td><td>5</td><td>STABLE — about 19.9% of natural boron</td></tr>
+  <tr><td><b>Boron-11</b></td><td>5</td><td>6</td><td>STABLE — about 80.1% of natural boron (most common)</td></tr>
+  <tr><td><b>Boron-12</b></td><td>5</td><td>7</td><td>Unstable — radioactive</td></tr>
+  </table>
+  <div class="box why"><span class="lab">why some isotopes are stable and others aren't</span>
+  The neutron-to-proton ratio has to be "just right" for the strong nuclear force to hold everything
+  together. For light elements (like boron), N ≈ Z is most stable. Boron-10 (5p/5n) and boron-11
+  (5p/6n) sit in this sweet spot — they last forever. Boron-8 (5p/3n) has too few neutrons; boron-12
+  (5p/7n) has too many — both decay quickly to reach a more stable ratio.</div>
+  <div class="box aptip"><span class="lab">reading the diagram</span>
+  To name the isotope of any element from a Bohr-style picture: <b>(1) count the protons</b> (the
+  letter 'p' in the nucleus) to identify the element, then <b>(2) count the neutrons</b> (the 'n'). Mass
+  number = protons + neutrons. So a boron diagram with 5p + 5n = boron-10; with 5p + 6n = boron-11.</div>
 </section>
 
 <section class="unit" style="margin-top:30px">
@@ -2360,7 +2385,13 @@ const QB=[
  {u:7,q:'Acids increase the concentration of WHAT in water?',o:['Hydrate ions','H⁺ ions','Hydroxide ions','OH⁻ ions'],a:1,w:'Arrhenius definition: acids release H⁺ in water. (Bases release OH⁻ — opposite.) "Hydroxide" and "OH⁻" are both base species.'},
  {u:1,q:'Which statement is TRUE about particles in a LIQUID?',o:['Relatively close together, so they cannot be easily compressed','Very close together, so the liquid cannot easily change shape','Fast-moving, so they fill their container\'s volume','Very far apart, so they have plenty of room to move'],a:0,w:'Liquid particles are touching → almost incompressible (definite volume). But they can slide → liquids DO easily change shape. "Far apart" / "fills container" both describe a gas, not a liquid.'},
  {u:4,q:'Which of the following is NOT an alloy?',o:['Bronze','Stainless steel','Copper','Brass'],a:2,w:'Copper is a PURE ELEMENT (Cu). Bronze = Cu + Sn. Brass = Cu + Zn. Stainless steel = Fe + Cr + a little C/Ni. An alloy is a mixture of metals.'},
- {u:2,q:'A Bohr diagram shows 16p, 16n, with electrons arranged 2 (inner), 8 (middle), 6 (outer). How many VALENCE electrons are shown?',o:['7','2','6','16'],a:2,w:'Valence electrons = electrons in the OUTERMOST shell. The outer shell has 6 → that\'s the answer. (Total = 16 → this is sulfur, S.)'}];
+ {u:2,q:'A Bohr diagram shows 16p, 16n, with electrons arranged 2 (inner), 8 (middle), 6 (outer). How many VALENCE electrons are shown?',o:['7','2','6','16'],a:2,w:'Valence electrons = electrons in the OUTERMOST shell. The outer shell has 6 → that\'s the answer. (Total = 16 → this is sulfur, S.)'},
+ // ----- batch 16 (heat flow A↔B, neutral particle, reduction = gain, decreases across period, boron isotope) -----
+ {u:1,q:'Solid A is 50 °C; Solid B is 80 °C. They\'re placed in contact. What happens?',o:['Heat flows A→B; A increases','Heat flows B→A; B increases','Heat flows B→A; B decreases','Heat flows A→B; A decreases'],a:2,w:'Heat ALWAYS flows from hot to cold — so B (80 °C) → A (50 °C). The hotter object (B) loses heat → its temperature DROPS. The colder object (A) gains heat → its temperature rises.'},
+ {u:2,q:'Which subatomic particle has NO charge?',o:['Neutron','Neutrino','Proton','Electron'],a:0,w:'Neutron — neutral, hence the name. (Proton = +, electron = −. Neutrinos exist but aren\'t part of normal atoms.)'},
+ {u:5,q:'Reduction is the _____ of electrons.',o:['Lose','Gain'],a:1,w:'OIL RIG → Reduction Is Gain (of electrons). Oxidation Is Loss.'},
+ {u:3,q:'Which property generally DECREASES across a period (left to right)?',o:['Ionization energy','Atomic number','Electronegativity','Atomic radius'],a:3,w:'Atomic radius DROPS across a period — more protons pull the same shell tighter. The other three all INCREASE going right.'},
+ {u:2,q:'A Bohr diagram shows boron (5 protons) with 5 neutrons in its nucleus. This isotope is called:',o:['Boron-10','Boron-9','Boron-11','Boron-8'],a:0,w:'Mass number = protons + neutrons = 5 + 5 = 10 → boron-10. (Boron-11 has 6 neutrons; boron-9 has 4; boron-8 has 3.)'}];
 let qList=[],qi=0,qScore=0,qAns=0,qFilt='all',qLock=false;
 function quizFilter(u,el){qFilt=u;document.querySelectorAll('#quizFilter .chip').forEach(c=>c.classList.remove('active'));el.classList.add('active');
   qList=QB.filter(x=>u==='all'||x.u===u);qList.sort(()=>Math.random()-0.5);qi=0;qScore=0;qAns=0;renderQ();}
