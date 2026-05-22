@@ -223,6 +223,9 @@ em.hl{color:var(--teal);font-style:normal;}
   <a href="#trends">Periodic trends</a>
   <a href="#photon">Light &amp; photons</a>
   <div class="ut"><span style="background:var(--mag);color:#0c1018">4</span>Bonding</div>
+  <a href="#emforce">Electromagnetic force</a>
+  <a href="#bondtypes">All bond types compared</a>
+  <a href="#acefban">ACEFBAN ion charges</a>
   <a href="#bondtype">Bond classifier</a>
   <a href="#naming">Naming compounds</a>
   <a href="#iupac">IUPAC hydrocarbon naming</a>
@@ -248,7 +251,9 @@ em.hl{color:var(--teal);font-style:normal;}
   <a href="#ph">pH playground</a>
   <div class="ut"><span style="background:var(--orange);color:#0c1018">8</span>Gases</div>
   <a href="#kmt">KMT simulator</a>
-  <a href="#gaslaw">Gas-law calculator</a>
+  <a href="#gaslaws">4 gas laws (mnemonic)</a>
+  <a href="#ideal">Ideal gas law PV=nRT</a>
+  <a href="#gaslaw">Combined gas-law calc</a>
   <div class="ut"><span style="background:var(--orange);color:#0c1018">★</span>Practice</div>
   <a href="#hardest">Hardest problems</a>
   <a href="#quiz">Mixed quiz</a>
@@ -1093,6 +1098,143 @@ em.hl{color:var(--teal);font-style:normal;}
   <p class="lead">Atoms bond chasing <b>stability</b> — a full outer shell of electrons (usually 8).
   They'll share, give, or take to get there.</p>
 
+  <!-- ----- ELECTROMAGNETIC FORCE ----- -->
+  <h3 class="topic" id="emforce"><span class="num">4.0</span> The electromagnetic force — what holds every bond together</h3>
+  <div class="box plain"><span class="lab">in plain words</span>
+  Every chemical bond is the same physical force in disguise: the <b>electromagnetic force</b>. Opposite
+  charges (+ and −) attract; same charges (+ and +, or − and −) repel. That's it. All of chemistry rides
+  on this one rule.</div>
+  <p>Physics says there are 4 fundamental forces in nature — gravity, electromagnetic, strong nuclear,
+  weak nuclear. Chemistry runs almost entirely on the <b>electromagnetic</b> one. The strong nuclear
+  force only matters inside the nucleus (Unit 2). Gravity is so weak between atoms it's irrelevant.</p>
+  <div class="formula">F = k · (q₁ · q₂) / r² &nbsp;&nbsp; (Coulomb's law)</div>
+  <p>What this means in plain English: <b>force = bigger charges → stronger pull</b> and
+  <b>force drops fast as distance grows</b> (1/r²).</p>
+  <table class="t">
+  <tr><th>Situation</th><th>What the EM force does</th><th>Result</th></tr>
+  <tr><td>Na⁺ next to Cl⁻</td><td>Strong + and − attraction</td><td>Ionic bond forms (NaCl)</td></tr>
+  <tr><td>Two H atoms overlap</td><td>Each nucleus pulls on the other's electron</td><td>Covalent bond (H₂)</td></tr>
+  <tr><td>Polar H₂O next to polar H₂O</td><td>Weak partial + pulls on partial −</td><td>Hydrogen bond (an IMF)</td></tr>
+  <tr><td>Electron near a nucleus</td><td>+ nucleus attracts − electron</td><td>Electron stays in orbit/orbital</td></tr>
+  </table>
+  <div class="box why"><span class="lab">why the inverse-square law matters</span>
+  Half the distance → 4× the force. Atoms only "feel" bonds when they're <em>close</em>. That's why
+  bond lengths are tiny (about 10⁻¹⁰ m) and why you can pull a stretched-out polymer chain apart with
+  pretty modest force.</div>
+  <div class="box aptip"><span class="lab">the unifying view</span>
+  Ionic, covalent, metallic, hydrogen bonds, dipole-dipole, London dispersion — ALL of them are
+  variations on "charged thing attracts other charged thing." The differences come from HOW the charge
+  is arranged (fully transferred vs shared vs partial vs temporary).</div>
+
+  <!-- ----- COMPREHENSIVE BOND TYPES ----- -->
+  <h3 class="topic" id="bondtypes"><span class="num">4.0b</span> All chemical bonds — full comparison &amp; how to spot each one</h3>
+  <p>Below are <b>every</b> type of attractive interaction you'll meet in AP chem, ordered from
+  strongest to weakest. The first three are "true" chemical bonds (within a single molecule or
+  formula unit); the last three are intermolecular forces (between separate molecules).</p>
+  <table class="t">
+  <tr><th>Type</th><th>What's happening</th><th>Strength</th><th>Between which atoms?</th><th>Example</th></tr>
+  <tr><td><b>Ionic bond</b></td><td>Electrons TRANSFERRED. One atom loses, other gains. Resulting + and − ions attract.</td><td>Very strong</td><td>Metal + nonmetal (big ΔEN, &gt; 1.7)</td><td>NaCl, MgO, CaF₂</td></tr>
+  <tr><td><b>Covalent bond (nonpolar)</b></td><td>Electrons SHARED equally.</td><td>Strong</td><td>Same nonmetal, or very similar EN (ΔEN &lt; 0.4)</td><td>H₂, O₂, N₂, CH₄</td></tr>
+  <tr><td><b>Covalent bond (polar)</b></td><td>Electrons SHARED unequally. One atom hogs more.</td><td>Strong</td><td>Two different nonmetals (ΔEN 0.4–1.7)</td><td>H₂O, HCl, NH₃</td></tr>
+  <tr><td><b>Metallic bond</b></td><td>Sea of free electrons surrounds positive metal ion cores.</td><td>Strong (variable)</td><td>Metal + metal</td><td>Cu, Fe, brass, steel</td></tr>
+  <tr><td><b>Hydrogen bond</b> (IMF)</td><td>Strong dipole between H–F/O/N and a lone pair on F/O/N of another molecule.</td><td>Strongest IMF</td><td>Between molecules with H bonded to F, O, or N</td><td>Water, DNA pairing, ammonia</td></tr>
+  <tr><td><b>Dipole–dipole</b> (IMF)</td><td>Permanent + end of one polar molecule attracts − end of another.</td><td>Medium IMF</td><td>Between polar molecules (no H–FON)</td><td>HCl, acetone</td></tr>
+  <tr><td><b>London dispersion</b> (IMF)</td><td>Temporary random electron-cloud distortions create flickering dipoles.</td><td>Weakest, but in everything</td><td>Between ALL molecules &amp; atoms (only force for nonpolar)</td><td>He, CH₄, Br₂, oils</td></tr>
+  </table>
+
+  <div class="box why"><span class="lab">how to figure out the bond type — 3-step decision</span>
+  <ol style="margin:6px 0">
+  <li><b>Are both atoms metals?</b> → Metallic bond.</li>
+  <li><b>Is one a metal and the other a nonmetal?</b> → Ionic bond. (Check: ΔEN &gt; 1.7 in most cases.)</li>
+  <li><b>Are both nonmetals?</b> → Covalent. Then check ΔEN: <b>&lt; 0.4 = nonpolar</b>, <b>0.4–1.7 = polar</b>.</li>
+  </ol></div>
+
+  <figure>
+  <svg viewBox="0 0 580 180" xmlns="http://www.w3.org/2000/svg">
+    <defs><marker id="bm" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#94a3c4"/></marker></defs>
+    <g font-family="Hanken Grotesk,sans-serif" font-size="12" fill="#e6ecf7" text-anchor="middle">
+      <rect x="220" y="6" width="140" height="32" rx="8" fill="#1c2438" stroke="#2fe6c4" stroke-width="1.5"/>
+      <text x="290" y="26" font-weight="700">Two atoms bonding</text>
+      <line x1="290" y1="38" x2="120" y2="62" stroke="#94a3c4" marker-end="url(#bm)"/>
+      <line x1="290" y1="38" x2="460" y2="62" stroke="#94a3c4" marker-end="url(#bm)"/>
+      <rect x="40" y="62" width="160" height="32" rx="8" fill="#ff5c93" fill-opacity="0.18" stroke="#ff5c93" stroke-width="1.5"/>
+      <text x="120" y="82" font-weight="700">Both metals</text>
+      <rect x="380" y="62" width="160" height="32" rx="8" fill="#5aa9ff" fill-opacity="0.18" stroke="#5aa9ff" stroke-width="1.5"/>
+      <text x="460" y="82" font-weight="700">Metal + nonmetal OR</text>
+      <text x="460" y="96" font-size="10">two nonmetals</text>
+      <text x="120" y="120" font-size="13" fill="#ff5c93" font-weight="700">METALLIC</text>
+      <line x1="460" y1="100" x2="370" y2="130" stroke="#94a3c4" marker-end="url(#bm)"/>
+      <line x1="460" y1="100" x2="550" y2="130" stroke="#94a3c4" marker-end="url(#bm)"/>
+      <text x="350" y="148" font-size="11">Metal + nonmetal</text>
+      <text x="350" y="162" font-size="13" fill="#ffc24b" font-weight="700">IONIC</text>
+      <text x="540" y="148" font-size="11">Two nonmetals</text>
+      <text x="540" y="162" font-size="13" fill="#5be08a" font-weight="700">COVALENT</text>
+    </g>
+  </svg>
+  <figcaption>3-step bond-type decision tree. Then for covalent, check ΔEN to subdivide into polar (0.4–1.7) vs nonpolar (&lt; 0.4).</figcaption>
+  </figure>
+
+  <!-- ----- ACEFBAN ION CHARGES ----- -->
+  <h3 class="topic" id="acefban"><span class="num">4.0c</span> Ion charges by family — the ACEFBAN reference</h3>
+  <div class="box plain"><span class="lab">in plain words</span>
+  Before you can name an ionic compound, you need to know what charges each ion takes. For the
+  main-group elements, the charge follows a simple group pattern. The mnemonic "<b>ACEFBAN</b>"
+  walks you across the periodic table:</div>
+  <table class="t">
+  <tr><th>Letter</th><th>Family</th><th>Group #</th><th>Typical ion charge</th><th>Examples</th></tr>
+  <tr><td><b style="color:var(--mag)">A</b></td><td>Alkali metals</td><td>1</td><td><b>+1</b></td><td>Li⁺, Na⁺, K⁺, Rb⁺, Cs⁺</td></tr>
+  <tr><td><b style="color:var(--purple)">C</b></td><td>Calcium / alkaline-earth</td><td>2</td><td><b>+2</b></td><td>Be²⁺, Mg²⁺, Ca²⁺, Sr²⁺, Ba²⁺</td></tr>
+  <tr><td><b style="color:var(--orange)">E</b></td><td>Earth-13 / boron group</td><td>13</td><td><b>+3</b></td><td>Al³⁺, Ga³⁺, In³⁺</td></tr>
+  <tr><td><b style="color:var(--amber)">F</b></td><td>Family 15 / nitrogen group (as anions)</td><td>15</td><td><b>−3</b></td><td>N³⁻, P³⁻</td></tr>
+  <tr><td><b style="color:var(--green)">B</b></td><td>Big-six family / oxygen group (as anions)</td><td>16</td><td><b>−2</b></td><td>O²⁻, S²⁻, Se²⁻</td></tr>
+  <tr><td><b style="color:var(--blue)">A</b></td><td>Anion-7 family / halogens</td><td>17</td><td><b>−1</b></td><td>F⁻, Cl⁻, Br⁻, I⁻</td></tr>
+  <tr><td><b style="color:var(--teal)">N</b></td><td>Noble gases</td><td>18</td><td><b>0</b> (don't form ions)</td><td>He, Ne, Ar, Kr (stable as-is)</td></tr>
+  </table>
+
+  <div class="card">
+    <h4><span class="ico" style="background:var(--amber)">⚡</span> Interactive ion-charge predictor</h4>
+    <p class="hint">Click any family letter to reveal its typical charge, why, and examples.</p>
+    <div class="chips" id="ionChips">
+      <span class="chip active" onclick="ionShow(0)"><b>A</b>lkali (+1)</span>
+      <span class="chip" onclick="ionShow(1)"><b>C</b>alcium-type (+2)</span>
+      <span class="chip" onclick="ionShow(2)"><b>E</b>arth-13 (+3)</span>
+      <span class="chip" onclick="ionShow(3)"><b>F</b>amily-15 (−3)</span>
+      <span class="chip" onclick="ionShow(4)"><b>B</b>ig-six (−2)</span>
+      <span class="chip" onclick="ionShow(5)"><b>A</b>nion-7 (−1)</span>
+      <span class="chip" onclick="ionShow(6)"><b>N</b>oble (0)</span>
+    </div>
+    <div class="split" style="margin-top:10px">
+      <div>
+        <div class="kv"><span>Family name</span><span id="ionName" style="color:var(--amber);font-weight:700">—</span></div>
+        <div class="kv"><span>Typical charge</span><span id="ionCharge" style="color:var(--teal);font-weight:700">—</span></div>
+        <div class="kv"><span>Examples</span><span id="ionExamples">—</span></div>
+      </div>
+      <div>
+        <span class="tag">why this charge?</span>
+        <p id="ionWhy" class="note" style="margin-top:6px;color:var(--text);font-size:.9rem"></p>
+      </div>
+    </div>
+  </div>
+
+  <h4 style="margin:18px 0 4px;font-family:'Sora';">Common polyatomic ions (memorize these)</h4>
+  <table class="t">
+  <tr><th>Name</th><th>Formula</th><th>Charge</th></tr>
+  <tr><td>Ammonium</td><td>NH₄⁺</td><td>+1</td></tr>
+  <tr><td>Hydroxide</td><td>OH⁻</td><td>−1</td></tr>
+  <tr><td>Nitrate</td><td>NO₃⁻</td><td>−1</td></tr>
+  <tr><td>Nitrite</td><td>NO₂⁻</td><td>−1</td></tr>
+  <tr><td>Acetate</td><td>C₂H₃O₂⁻ (CH₃COO⁻)</td><td>−1</td></tr>
+  <tr><td>Bicarbonate (hydrogen carbonate)</td><td>HCO₃⁻</td><td>−1</td></tr>
+  <tr><td>Cyanide</td><td>CN⁻</td><td>−1</td></tr>
+  <tr><td>Carbonate</td><td>CO₃²⁻</td><td>−2</td></tr>
+  <tr><td>Sulfate</td><td>SO₄²⁻</td><td>−2</td></tr>
+  <tr><td>Sulfite</td><td>SO₃²⁻</td><td>−2</td></tr>
+  <tr><td>Chromate</td><td>CrO₄²⁻</td><td>−2</td></tr>
+  <tr><td>Dichromate</td><td>Cr₂O₇²⁻</td><td>−2</td></tr>
+  <tr><td>Phosphate</td><td>PO₄³⁻</td><td>−3</td></tr>
+  <tr><td>Permanganate</td><td>MnO₄⁻</td><td>−1</td></tr>
+  </table>
+
   <!-- ----- BOND TYPE CLASSIFIER ----- -->
   <h3 class="topic" id="bondtype"><span class="num">4.1</span> Bond type — ionic, covalent, polar covalent</h3>
   <p class="analogy">Electrons are like cash; the full octet is a complete collection. Some atoms have
@@ -1143,6 +1285,39 @@ em.hl{color:var(--teal);font-style:normal;}
       <button class="btn sm" onclick="nameNew()">Next →</button>
     </div>
   </div>
+
+  <h4 style="margin:22px 0 4px;font-family:'Sora';">Step-by-step recipe for naming ionic compounds</h4>
+  <ol>
+  <li><b>Identify the cation</b> (positive ion, listed first in the formula). Use the ACEFBAN family or the polyatomic table to get its charge.</li>
+  <li><b>Identify the anion</b> (negative ion, listed second). If it's a single nonmetal, change the ending to <b>-ide</b> (Cl → chloride, O → oxide). If it's a polyatomic ion, use its name as-is (NO₃ = nitrate, SO₄ = sulfate).</li>
+  <li><b>If the cation is a transition metal</b> (or any metal with multiple possible charges), include a <b>Roman numeral</b> showing its charge. Fe²⁺ = iron(II), Fe³⁺ = iron(III).</li>
+  <li><b>Combine</b>: "cation name" + "anion name". No prefixes like di-, tri-, etc. (those are for covalent molecular compounds).</li>
+  </ol>
+  <div class="ex">
+  <div class="exhead">Worked example — Cu₂O</div>
+  <div class="exbody">
+  <div class="step" data-n="1">Cation = Cu (copper). Two coppers paired with one O²⁻ → total + charge must equal +2 → each Cu is +1 → copper(I).</div>
+  <div class="step" data-n="2">Anion = O → oxide.</div>
+  <div class="step" data-n="3">Combine.</div>
+  <div class="ans">copper(I) oxide</div>
+  </div></div>
+
+  <div class="card">
+    <h4><span class="ico" style="background:var(--mag)">🖊</span> Interactive ionic compound namer</h4>
+    <p class="hint">Type your answer. Tool checks against the correct IUPAC name (case-insensitive, ignores spacing).</p>
+    <div id="namerQ" style="font-family:var(--mono);font-size:1.25rem;text-align:center;margin:12px 0;color:var(--amber)"></div>
+    <div class="flex" style="justify-content:center;gap:8px">
+      <input class="num" id="namerIn" placeholder="e.g. sodium chloride" style="width:260px;text-align:center;font-family:'Hanken Grotesk'">
+      <button class="btn primary sm" onclick="namerCheck()">Check</button>
+      <button class="btn sm" onclick="namerNew()">New →</button>
+    </div>
+    <div class="feedback" id="namerFb" style="margin-top:8px"></div>
+  </div>
+
+  <div class="box mistake"><span class="lab">Roman numeral trap</span>
+  Don't add Roman numerals for fixed-charge metals (Group 1, 2, 13 metals, Zn, Ag, Al). They have only
+  one common charge. Only use Roman numerals for transition metals (Fe, Cu, Mn, etc.) and a few
+  others (Sn, Pb).</div>
 
   <!-- ----- VSEPR ----- -->
   <!-- ----- IUPAC HYDROCARBON NAMING ----- -->
@@ -1261,10 +1436,35 @@ em.hl{color:var(--teal);font-style:normal;}
   </div>
 
   <!-- ----- IMFs ----- -->
-  <h3 class="topic" id="imf"><span class="num">4.5</span> Intermolecular forces — the "stickiness"</h3>
-  <p>Bonds hold atoms together <em>inside</em> a molecule. <b>IMFs</b> are the weaker attractions
-  <em>between</em> separate molecules — what decides boiling point.</p>
-  <ol>
+  <h3 class="topic" id="imf"><span class="num">4.5</span> Intermolecular forces — the "stickiness" between molecules</h3>
+  <div class="box plain"><span class="lab">in plain words</span>
+  Chemical BONDS (covalent, ionic, metallic) hold atoms together <em>inside</em> a molecule or compound.
+  <b>Intermolecular forces (IMFs)</b> are the weaker attractions <em>BETWEEN</em> separate molecules.
+  IMFs are what decides whether something is a gas, liquid, or solid at room temperature, and how high
+  it boils.</div>
+  <p class="analogy">If bonds are like the steel rivets holding a single car together, IMFs are like the
+  bumpers between cars in a traffic jam — they stick neighbors loosely but don't fuse them.</p>
+
+  <h4 style="margin:18px 0 4px;font-family:'Sora';">The three IMFs — weakest to strongest</h4>
+  <table class="t">
+  <tr><th>IMF</th><th>What causes it</th><th>Strength</th><th>Where it acts</th><th>Example</th></tr>
+  <tr><td><b>London dispersion (LDF)</b></td><td>Random temporary shifts of electrons create flickering dipoles that pull on neighbors.</td><td>Weakest (but in EVERYTHING)</td><td>Between ALL particles — the only IMF for nonpolar molecules and noble gas atoms.</td><td>He, Ar, CH₄, oil, Br₂, I₂</td></tr>
+  <tr><td><b>Dipole–dipole</b></td><td>Permanent + end of one polar molecule attracts permanent − end of another.</td><td>Medium</td><td>Between POLAR molecules (with no H–F/O/N).</td><td>HCl, acetone, CH₂Cl₂</td></tr>
+  <tr><td><b>Hydrogen bonding (H-bond)</b></td><td>A super-strong dipole-dipole where H is bonded to F, O, or N.</td><td>Strongest IMF</td><td>Only when H is bonded to <b>F, O, or N</b> (mnemonic: <b>FON</b>).</td><td>H₂O, NH₃, HF, alcohols, DNA</td></tr>
+  </table>
+
+  <div class="box key"><span class="lab">how to identify the strongest IMF in any molecule (3-step)</span>
+  <ol style="margin:6px 0">
+  <li>Does it have <b>H bonded to F, O, or N</b>? → <b>Hydrogen bonding</b> (and also LDF, but H-bond dominates).</li>
+  <li>Is the molecule POLAR but no H–FON? → <b>Dipole–dipole</b> (and also LDF).</li>
+  <li>Is the molecule NONPOLAR? → <b>London dispersion only</b>.</li>
+  </ol></div>
+  <div class="box aptip"><span class="lab">strength &amp; boiling point ranking</span>
+  In general, BP ranks like this: nonpolar (LDF only) &lt; polar (dipole–dipole) &lt; H-bonding &lt; ionic.
+  Bigger nonpolar molecules can sometimes beat smaller polar ones — more electrons = stronger LDF.
+  Example: Br₂ (very large, nonpolar, BP 59 °C) boils higher than HCl (small, polar, BP −85 °C).</div>
+
+  <ol style="margin-top:14px">
   <li><b>London dispersion</b> — present in everything; bigger molecules = stronger.</li>
   <li><b>Dipole–dipole</b> — between polar molecules, lining up like tiny magnets.</li>
   <li><b>Hydrogen bonding</b> — super-strong dipole, only when H is bonded to <b>N, O, or F</b> (FON).</li>
@@ -1354,15 +1554,27 @@ em.hl{color:var(--teal);font-style:normal;}
   <em>left</em> (with reactants) = endothermic. Heat on the <em>right</em> (with products) = exothermic.</div>
 
   <!-- ----- REACTION TYPE SORTER ----- -->
-  <h3 class="topic" id="rxntype"><span class="num">5.1</span> Reaction types — five patterns</h3>
+  <h3 class="topic" id="rxntype"><span class="num">5.1</span> Reaction types — five patterns with real examples</h3>
   <table class="t">
-  <tr><th>Type</th><th>What happens</th><th>Pattern</th></tr>
-  <tr><td>Synthesis (combine)</td><td>two things join into one</td><td>A + B → AB</td></tr>
-  <tr><td>Decomposition (break up)</td><td>one splits into pieces</td><td>AB → A + B</td></tr>
-  <tr><td>Single replacement</td><td>one element kicks out another</td><td>A + BC → AC + B</td></tr>
-  <tr><td>Double replacement</td><td>two pairs swap partners</td><td>AB + CD → AD + CB</td></tr>
-  <tr><td>Combustion</td><td>fuel + O₂ → CO₂ + H₂O</td><td>(hydrocarbon burns)</td></tr>
+  <tr><th>Type</th><th>What happens</th><th>Pattern</th><th>Real example</th></tr>
+  <tr><td><b>Synthesis</b> (combination)</td><td>Two or more reactants join into ONE product.</td><td>A + B → AB</td><td>2 H₂ + O₂ → 2 H₂O · N₂ + 3 H₂ → 2 NH₃ (Haber process)</td></tr>
+  <tr><td><b>Decomposition</b> (break up)</td><td>ONE reactant breaks apart into 2+ products.</td><td>AB → A + B</td><td>2 H₂O → 2 H₂ + O₂ (electrolysis) · CaCO₃ → CaO + CO₂ (limestone heated)</td></tr>
+  <tr><td><b>Single replacement</b></td><td>One element kicks another out of its compound.</td><td>A + BC → AC + B</td><td>Zn + 2 HCl → ZnCl₂ + H₂ · Cl₂ + 2 KI → 2 KCl + I₂</td></tr>
+  <tr><td><b>Double replacement</b></td><td>Two ionic compounds swap partners. Often forms a precipitate, gas, or water.</td><td>AB + CD → AD + CB</td><td>AgNO₃ + NaCl → AgCl↓ + NaNO₃ · HCl + NaOH → NaCl + H₂O</td></tr>
+  <tr><td><b>Combustion</b></td><td>A fuel (often hydrocarbon) burns in O₂. Always makes CO₂ + H₂O when complete.</td><td>C<sub>x</sub>H<sub>y</sub> + O₂ → CO₂ + H₂O</td><td>CH₄ + 2 O₂ → CO₂ + 2 H₂O · 2 C₈H₁₈ + 25 O₂ → 16 CO₂ + 18 H₂O (gasoline)</td></tr>
   </table>
+
+  <div class="box why"><span class="lab">how to recognize each type FAST</span>
+  <ul style="margin:6px 0">
+  <li><b>Many → 1</b> = synthesis</li>
+  <li><b>1 → many</b> = decomposition</li>
+  <li><b>One element + one compound</b> as reactants = single replacement</li>
+  <li><b>Two compounds</b> as reactants → swap → two new compounds = double replacement</li>
+  <li><b>Anything + O₂</b> → CO₂ + H₂O = combustion</li>
+  </ul></div>
+  <div class="box aptip"><span class="lab">overlap warning</span>
+  Some reactions fit MORE than one category. Combustion of methane is also technically "synthesis from
+  C + H + O" if you trace atoms. AP typically wants the MOST SPECIFIC label, which here is combustion.</div>
 
   <div class="card">
     <h4><span class="ico" style="background:var(--green)">⤬</span> Reaction-type sorter</h4>
@@ -1401,14 +1613,44 @@ em.hl{color:var(--teal);font-style:normal;}
   <!-- ----- REDOX ----- -->
   <h3 class="topic" id="redox"><span class="num">5.3</span> Redox — electrons changing hands</h3>
   <div class="box plain"><span class="lab">in plain words</span>
-  Redox = reduction–oxidation. Electrons move from one atom to another. <b>OIL RIG</b>: Oxidation Is
-  Loss, Reduction Is Gain.</div>
-  <p>Use <b>oxidation numbers</b> to track who lost/gained electrons. Rules:</p>
+  Redox = reduction–oxidation. Electrons move from one atom to another.</div>
+
+  <div class="box key" style="background:linear-gradient(135deg,rgba(255,194,75,0.10),rgba(91,224,138,0.10));border-color:rgba(255,194,75,.5)">
+    <span class="lab" style="color:var(--amber)">the memory hook 🦁</span>
+    <div style="font-family:'Sora';font-size:1.15rem;font-weight:800;text-align:center;margin:10px 0;letter-spacing:.02em">"<span style="color:var(--mag)">LEO</span> the Lion says <span style="color:var(--green)">GER</span>"</div>
+    <table class="t" style="margin-top:4px">
+    <tr><th>Mnemonic</th><th>Stands for</th><th>What it means</th></tr>
+    <tr><td><b style="color:var(--mag)">LEO</b></td><td><b>L</b>oss of <b>E</b>lectrons = <b>O</b>xidation</td><td>An atom that LOSES electrons is being OXIDIZED. Its oxidation number GOES UP.</td></tr>
+    <tr><td><b style="color:var(--green)">GER</b></td><td><b>G</b>ain of <b>E</b>lectrons = <b>R</b>eduction</td><td>An atom that GAINS electrons is being REDUCED. Its oxidation number GOES DOWN.</td></tr>
+    </table>
+    <p class="note" style="margin-top:8px"><b>Also valid:</b> "<b>OIL RIG</b>" — Oxidation Is Loss, Reduction Is Gain. Same idea, different roar.</p>
+  </div>
+
+  <div class="box why"><span class="lab">why "reduction" sounds backwards</span>
+  It feels weird that GAINING electrons is called "reduction." Why? Because the oxidation NUMBER goes
+  DOWN (gets REDUCED). Each electron gained is one more negative charge, which lowers the formal
+  oxidation state. So "reduction" refers to the number dropping, not the electron count.</div>
+
+  <p>To track redox you need <b>oxidation numbers</b>. Rules:</p>
   <ul>
-  <li>Pure element alone (O₂, Na) = 0.</li>
-  <li>Oxygen usually −2; hydrogen usually +1.</li>
-  <li>Charges in a compound must sum to 0 (or to ion's charge).</li>
+  <li>A pure element on its own (O₂, Na, Cu) = <b>0</b>.</li>
+  <li>For a monatomic ion, the oxidation number = the ion's charge (Na⁺ = +1, Cl⁻ = −1).</li>
+  <li>Oxygen is usually <b>−2</b> (exception: peroxides like H₂O₂ where O = −1, or with F where O = +2).</li>
+  <li>Hydrogen is usually <b>+1</b> (exception: metal hydrides like NaH where H = −1).</li>
+  <li>In a neutral compound, all oxidation numbers must <b>sum to 0</b>.</li>
+  <li>In a polyatomic ion, they sum to the ion's overall charge.</li>
   </ul>
+
+  <div class="ex">
+  <div class="exhead">Worked example — find what's oxidized and reduced</div>
+  <div class="exbody">
+  <div class="q">Zn + 2 HCl → ZnCl₂ + H₂. Identify what's oxidized and what's reduced.</div>
+  <div class="step" data-n="1">Oxidation numbers BEFORE: Zn = 0 (pure element). H in HCl = +1. Cl in HCl = −1.</div>
+  <div class="step" data-n="2">Oxidation numbers AFTER: Zn in ZnCl₂ = +2. Cl in ZnCl₂ = −1 (unchanged). H in H₂ = 0.</div>
+  <div class="step" data-n="3">Zn went from 0 → +2 (number UP) = LEO = OXIDIZED. Lost 2 electrons.</div>
+  <div class="step" data-n="4">H went from +1 → 0 (number DOWN) = GER = REDUCED. Gained 1 electron per H.</div>
+  <div class="ans">Zn is oxidized (LEO); H is reduced (GER). Cl is just a spectator — its oxidation number didn't change.</div>
+  </div></div>
 
   <div class="card">
     <h4><span class="ico" style="background:var(--green)">±</span> Oxidation-number solver</h4>
@@ -1734,8 +1976,115 @@ em.hl{color:var(--teal);font-style:normal;}
   Forgetting Kelvin. <b>K = °C + 273</b>. Celsius breaks every gas law (and can produce nonsense
   negative answers).</div>
 
+  <!-- ----- GAS LAWS WITH MNEMONIC ----- -->
+  <h3 class="topic" id="gaslaws"><span class="num">8.1b</span> The four gas laws — and how to remember them</h3>
+  <div class="box plain"><span class="lab">in plain words</span>
+  There are 4 "simple" gas laws, one for each pair of variables. Each law says: <em>"when you hold
+  one variable fixed, the other two trade off in a specific way."</em></div>
+
+  <div class="box key" style="background:linear-gradient(135deg,rgba(255,148,87,0.10),rgba(255,194,75,0.10));border-color:rgba(255,148,87,.5)">
+    <span class="lab" style="color:var(--orange)">the memory hook 🥡</span>
+    <div style="font-family:'Sora';font-size:1.05rem;font-weight:700;text-align:center;margin:8px 0;letter-spacing:.02em">"<span style="color:var(--mag)">Bouncy Tacos</span>, <span style="color:var(--blue)">Crying Pickles</span>, <span style="color:var(--green)">Gigantic Veggies</span>, <span style="color:var(--amber)">All Noisy</span>"</div>
+    <p class="note" style="margin-top:6px">Each phrase encodes one gas law: the <b>first letter</b> = scientist's name; the <b>second letter</b> = the variable held CONSTANT (or the variable that matters most).</p>
+  </div>
+
+  <table class="t">
+  <tr><th>Mnemonic</th><th>Law</th><th>Variable held</th><th>Relationship</th><th>Formula</th></tr>
+  <tr><td><b style="color:var(--mag)">B</b>ouncy <b style="color:var(--mag)">T</b>acos</td><td><b>Boyle's</b></td><td><b>T</b>emperature constant (and n)</td><td>P and V are INVERSE (squeeze → P up)</td><td>P₁V₁ = P₂V₂</td></tr>
+  <tr><td><b style="color:var(--blue)">C</b>rying <b style="color:var(--blue)">P</b>ickles</td><td><b>Charles's</b></td><td><b>P</b>ressure constant (and n)</td><td>V and T are DIRECT (heat → V up)</td><td>V₁/T₁ = V₂/T₂</td></tr>
+  <tr><td><b style="color:var(--green)">G</b>igantic <b style="color:var(--green)">V</b>eggies</td><td><b>Gay-Lussac's</b></td><td><b>V</b>olume constant (and n)</td><td>P and T are DIRECT (heat sealed can → P up)</td><td>P₁/T₁ = P₂/T₂</td></tr>
+  <tr><td><b style="color:var(--amber)">A</b>ll <b style="color:var(--amber)">N</b>oisy</td><td><b>Avogadro's</b></td><td>T AND P constant</td><td>V and <b>n</b> (moles) are DIRECT — equal volumes of any gas at same T,P have equal n</td><td>V₁/n₁ = V₂/n₂</td></tr>
+  </table>
+
+  <div class="box why"><span class="lab">why each law works (in one sentence)</span>
+  <ul style="margin:6px 0">
+  <li><b>Boyle:</b> squeeze a gas → particles hit walls more often → pressure climbs. Halve V → P doubles.</li>
+  <li><b>Charles:</b> heat a gas (under constant P) → particles move faster → push outward → expand. Double T → V doubles.</li>
+  <li><b>Gay-Lussac:</b> heat a gas in a SEALED rigid container → faster particles hit walls harder → P climbs. Double T → P doubles.</li>
+  <li><b>Avogadro:</b> at same T and P, equal volumes hold equal numbers of particles. Twice the moles → twice the volume.</li>
+  </ul></div>
+
+  <div class="card">
+    <h4><span class="ico" style="background:var(--orange)">🎯</span> Gas Law Identifier — pick which one applies</h4>
+    <p class="hint">A real-life scenario flashes. Tag it with the correct gas law.</p>
+    <div id="glsQ" style="font-family:'Sora';font-size:1.05rem;color:var(--amber);text-align:center;margin:12px 0;background:var(--bg2);padding:11px;border-radius:8px;border:1px solid var(--line)"></div>
+    <div class="opts" id="glsOpts">
+      <button class="opt" style="text-align:center" onclick="glsGuess('B',this)">Boyle's (PV=k)</button>
+      <button class="opt" style="text-align:center" onclick="glsGuess('C',this)">Charles's (V/T=k)</button>
+      <button class="opt" style="text-align:center" onclick="glsGuess('G',this)">Gay-Lussac's (P/T=k)</button>
+      <button class="opt" style="text-align:center" onclick="glsGuess('A',this)">Avogadro's (V/n=k)</button>
+    </div>
+    <div class="feedback" id="glsFb"></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px">
+      <span class="streak" id="glsStreak">streak: 0 🔥</span>
+      <button class="btn sm" onclick="glsNew()">Next →</button>
+    </div>
+  </div>
+
+  <h3 class="topic" id="ideal"><span class="num">8.1c</span> The Ideal Gas Law — PV = nRT</h3>
+  <div class="box plain"><span class="lab">in plain words</span>
+  Take all four gas laws and smash them into one super-law that handles every variable at once:
+  <b>PV = nRT</b>. It works for almost any gas at almost any conditions you'll see in AP.</div>
+  <div class="formula">P · V = n · R · T &nbsp; · &nbsp; R = <span class="h">0.0821 L·atm/(mol·K)</span></div>
+  <table class="t">
+  <tr><th>Symbol</th><th>Meaning</th><th>Required units (for R = 0.0821)</th></tr>
+  <tr><td><b>P</b></td><td>Pressure</td><td>atm (atmospheres)</td></tr>
+  <tr><td><b>V</b></td><td>Volume</td><td>L (liters)</td></tr>
+  <tr><td><b>n</b></td><td>Moles of gas</td><td>mol</td></tr>
+  <tr><td><b>R</b></td><td>Universal gas constant</td><td>0.0821 L·atm/(mol·K)</td></tr>
+  <tr><td><b>T</b></td><td>Temperature</td><td>K (KELVIN, never °C!)</td></tr>
+  </table>
+  <div class="box mistake"><span class="lab">two killer mistakes</span>
+  (1) Forgetting to convert °C → K with K = °C + 273. (2) Using mL instead of L, or kPa instead of atm.
+  ALWAYS match your units to the value of R you're using.</div>
+
+  <div class="card">
+    <h4><span class="ico" style="background:var(--orange)">∝</span> Interactive PV=nRT solver</h4>
+    <p class="hint">Pick which variable to solve for, plug in the other 3.</p>
+    <div class="flex" style="margin:8px 0">
+      <label class="note">Solve for:</label>
+      <select class="num" id="igVar" style="width:80px" onchange="igCalc()">
+        <option value="P">P (atm)</option>
+        <option value="V">V (L)</option>
+        <option value="n">n (mol)</option>
+        <option value="T">T (K)</option>
+      </select>
+    </div>
+    <div class="split thirds">
+      <div>
+        <div class="kv"><span>P (atm)</span><span><input class="num" id="igP" value="2.0" oninput="igCalc()"></span></div>
+        <div class="kv"><span>V (L)</span><span><input class="num" id="igV" value="5.0" oninput="igCalc()"></span></div>
+      </div>
+      <div>
+        <div class="kv"><span>n (mol)</span><span><input class="num" id="ign" value="0.5" oninput="igCalc()"></span></div>
+        <div class="kv"><span>T (°C → auto K)</span><span><input class="num" id="igT" value="25" oninput="igCalc()"></span></div>
+      </div>
+      <div>
+        <div id="igAns" class="feedback ok show" style="margin-top:0;font-size:1rem"></div>
+        <div id="igSteps" class="note" style="margin-top:8px;font-family:var(--mono);font-size:.78rem"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ex">
+  <div class="exhead">Worked example — find moles of gas in a tank</div>
+  <div class="exbody">
+  <div class="q">A 10.0-L gas cylinder contains nitrogen at 25 °C and 5.00 atm. How many MOLES of N₂?</div>
+  <div class="step" data-n="1">Convert T to Kelvin: 25 + 273 = 298 K. ✓</div>
+  <div class="step" data-n="2">n = PV/RT = (5.00 × 10.0) / (0.0821 × 298)</div>
+  <div class="step" data-n="3">= 50.0 / 24.47 = 2.04 mol.</div>
+  <div class="ans">≈ 2.04 mol of N₂</div>
+  </div></div>
+
+  <div class="box aptip"><span class="lab">when to use which law</span>
+  <ul style="margin:6px 0">
+  <li>Only TWO variables changing? Use the matching SIMPLE law (Boyle, Charles, Gay-Lussac, Avogadro).</li>
+  <li>THREE variables changing at once (e.g., P, V, AND T)? Use the COMBINED gas law: P₁V₁/T₁ = P₂V₂/T₂.</li>
+  <li>Need to find an ABSOLUTE quantity (just one snapshot, no "before/after")? Use the IDEAL gas law: PV = nRT.</li>
+  </ul></div>
+
   <!-- ----- COMBINED GAS-LAW CALC ----- -->
-  <h3 class="topic" id="gaslaw"><span class="num">8.2</span> Gas-law calculator (PV=nRT &amp; combined)</h3>
+  <h3 class="topic" id="gaslaw"><span class="num">8.2</span> Combined gas-law calculator</h3>
   <table class="t">
   <tr><th>Law</th><th>In plain words</th><th>Formula</th></tr>
   <tr><td>Boyle</td><td>squeeze → P up</td><td>P₁V₁ = P₂V₂</td></tr>
@@ -3101,6 +3450,88 @@ function cgCalc(){let p1=parseFloat(document.getElementById('cgP1').value),v1=pa
   ans.innerHTML='<b>'+label+' = '+result.toFixed(2)+'</b>';
   st.innerHTML=formula+' &nbsp;·&nbsp; remember T is in Kelvin internally (K = °C + 273)';}
 
+/* ============ U8 · GAS LAW IDENTIFIER ============ */
+const glsPool=[
+ {q:'A sealed balloon is squeezed; its volume halves and its pressure doubles. Temperature constant.',a:'B',w:'PV constant at fixed T → Boyle\'s.'},
+ {q:'A tire warms up on a hot day. The volume is fixed (rigid tire) and pressure rises.',a:'G',w:'P/T constant at fixed V → Gay-Lussac\'s.'},
+ {q:'A hot-air balloon rises when the air inside is heated, expanding the balloon at constant atmospheric pressure.',a:'C',w:'V/T constant at fixed P → Charles\'s.'},
+ {q:'Doubling the moles of gas in a container (constant T and P) doubles the volume.',a:'A',w:'V/n constant at fixed T,P → Avogadro\'s.'},
+ {q:'A scuba tank\'s gas is compressed to 1/4 its volume. The pressure quadruples (at constant temperature).',a:'B',w:'P inversely proportional to V → Boyle\'s.'},
+ {q:'A spray can left in a hot car explodes because pressure climbs inside the sealed rigid can.',a:'G',w:'Volume fixed, T up → P up. Gay-Lussac\'s (and why you don\'t leave spray cans in cars).'},
+ {q:'A balloon shrinks when placed in a freezer (atmospheric pressure constant).',a:'C',w:'V drops with T at fixed P → Charles\'s.'},
+ {q:'At standard T and P, 1 mol of any gas takes up 22.4 L — including helium, oxygen, or nitrogen.',a:'A',w:'Equal volumes of any gas at same T,P → same n. Avogadro\'s law.'}];
+let glsCur=0,glsStreak=0;
+function glsNew(){glsCur=Math.floor(Math.random()*glsPool.length);
+  document.getElementById('glsQ').textContent=glsPool[glsCur].q;
+  document.getElementById('glsFb').className='feedback';
+  document.querySelectorAll('#glsOpts .opt').forEach(o=>o.classList.remove('correct','wrong'));}
+function glsGuess(t,el){let p=glsPool[glsCur],fb=document.getElementById('glsFb');
+  if(t===p.a){el.classList.add('correct');glsStreak++;fb.className='feedback ok show';fb.textContent='✓ '+p.w;bump(true);}
+  else{el.classList.add('wrong');glsStreak=0;fb.className='feedback no show';fb.innerHTML='✗ Answer: '+({B:'Boyle\'s',C:'Charles\'s',G:'Gay-Lussac\'s',A:'Avogadro\'s'})[p.a]+'. '+p.w;bump(false);}
+  document.getElementById('glsStreak').textContent='streak: '+glsStreak+' 🔥';}
+
+/* ============ U8 · IDEAL GAS LAW SOLVER ============ */
+function igCalc(){const Rconst=0.0821;
+  let solveFor=document.getElementById('igVar').value;
+  let P=parseFloat(document.getElementById('igP').value);
+  let V=parseFloat(document.getElementById('igV').value);
+  let n=parseFloat(document.getElementById('ign').value);
+  let Tc=parseFloat(document.getElementById('igT').value);
+  let T=Tc+273.15;
+  let ans=document.getElementById('igAns'),st=document.getElementById('igSteps');
+  let result,formula,label;
+  if(solveFor==='P'){result=(n*Rconst*T)/V;formula='P = nRT/V = ('+n+' × 0.0821 × '+T.toFixed(2)+') / '+V;label='P';}
+  else if(solveFor==='V'){result=(n*Rconst*T)/P;formula='V = nRT/P = ('+n+' × 0.0821 × '+T.toFixed(2)+') / '+P;label='V';}
+  else if(solveFor==='n'){result=(P*V)/(Rconst*T);formula='n = PV/RT = ('+P+' × '+V+') / (0.0821 × '+T.toFixed(2)+')';label='n';}
+  else{let Tk=(P*V)/(n*Rconst);result=Tk-273.15;formula='T = PV/nR = ('+P+' × '+V+') / ('+n+' × 0.0821) = '+Tk.toFixed(2)+' K → '+result.toFixed(2)+' °C';label='T (°C)';}
+  if(isNaN(result)||!isFinite(result)){ans.innerHTML='<span class="note">Fill in all three known values.</span>';st.innerHTML='';return;}
+  ans.innerHTML='<b>'+label+' = '+result.toFixed(3)+'</b>';st.innerHTML=formula;}
+
+/* ============ U4 · ION CHARGE PREDICTOR (ACEFBAN) ============ */
+const ionFamilies=[
+ {key:'A',name:'Alkali metals (Group 1)',charge:'+1',examples:'Li⁺, Na⁺, K⁺, Rb⁺, Cs⁺',why:'1 valence electron — easier to lose 1 than gain 7.'},
+ {key:'C',name:'Calcium family / Alkaline-earth (Group 2)',charge:'+2',examples:'Be²⁺, Mg²⁺, Ca²⁺, Sr²⁺, Ba²⁺',why:'2 valence electrons — easier to lose 2 than gain 6.'},
+ {key:'E',name:'Earth-13 family / Boron group (Group 13)',charge:'+3',examples:'Al³⁺, Ga³⁺, In³⁺',why:'3 valence electrons — lose all 3 for a noble-gas core.'},
+ {key:'F',name:'Family 15 / Nitrogen group anions (Group 15)',charge:'−3',examples:'N³⁻, P³⁻',why:'5 valence electrons — easier to gain 3 than lose 5.'},
+ {key:'B',name:'Big-six family / Oxygen group anions (Group 16)',charge:'−2',examples:'O²⁻, S²⁻, Se²⁻',why:'6 valence electrons — gain 2 to complete the octet.'},
+ {key:'A',name:'Anion-7 family / Halogens (Group 17)',charge:'−1',examples:'F⁻, Cl⁻, Br⁻, I⁻',why:'7 valence electrons — gain just 1 to finish the octet.'},
+ {key:'N',name:'Noble gases (Group 18)',charge:'0',examples:'He, Ne, Ar, Kr (no ions formed)',why:'Already have a full octet — no urge to lose or gain.'}];
+let ionCur=0;
+function ionShow(i){ionCur=i;let f=ionFamilies[i];
+  document.querySelectorAll('#ionChips .chip').forEach((c,k)=>c.classList.toggle('active',k===i));
+  document.getElementById('ionName').textContent=f.name;
+  document.getElementById('ionCharge').textContent=f.charge;
+  document.getElementById('ionExamples').textContent=f.examples;
+  document.getElementById('ionWhy').textContent=f.why;}
+
+/* ============ U4 · IONIC COMPOUND NAMER ============ */
+const namerPool=[
+ {f:'NaCl',a:'sodium chloride'},
+ {f:'MgO',a:'magnesium oxide'},
+ {f:'CaCl₂',a:'calcium chloride'},
+ {f:'AlF₃',a:'aluminum fluoride'},
+ {f:'K₂S',a:'potassium sulfide'},
+ {f:'Li₃N',a:'lithium nitride'},
+ {f:'BaBr₂',a:'barium bromide'},
+ {f:'Al₂O₃',a:'aluminum oxide'},
+ {f:'FeCl₂',a:'iron(II) chloride'},
+ {f:'FeCl₃',a:'iron(III) chloride'},
+ {f:'CuO',a:'copper(II) oxide'},
+ {f:'Cu₂O',a:'copper(I) oxide'},
+ {f:'NaNO₃',a:'sodium nitrate'},
+ {f:'CaSO₄',a:'calcium sulfate'},
+ {f:'NH₄Cl',a:'ammonium chloride'}];
+let namerCur=0;
+function namerNew(){namerCur=Math.floor(Math.random()*namerPool.length);
+  document.getElementById('namerQ').innerHTML='Name this compound: <b style="color:var(--amber)">'+namerPool[namerCur].f+'</b>';
+  document.getElementById('namerIn').value='';
+  document.getElementById('namerFb').className='feedback';}
+function namerCheck(){let u=document.getElementById('namerIn').value.trim().toLowerCase();let a=namerPool[namerCur].a;
+  let fb=document.getElementById('namerFb');
+  let norm=s=>s.replace(/\s+/g,' ').replace(/\(\s*([ivx]+)\s*\)/gi,'($1)');
+  if(norm(u)===norm(a)){fb.className='feedback ok show';fb.textContent='✓ Correct! '+a;bump(true);}
+  else{fb.className='feedback no show';fb.innerHTML='Answer: <b>'+a+'</b>. Your input: "'+u+'"';bump(false);}}
+
 /* ============ QUIZ BANK ============ */
 const QB=[
  {u:1,q:'How many sig figs in 0.003080?',o:['2','3','4','5'],a:2,w:'Leading zeros don\'t count; the captive and trailing zeros do → 3,0,8,0 = 4.'},
@@ -3267,7 +3698,27 @@ const QB=[
  {u:2,q:'Niels Bohr proposed his quantized energy-level model in what year?',o:['1803','1897','1911','1913'],a:3,w:'1913 — Bohr combined Rutherford\'s nucleus with quantum theory and proposed that electrons orbit only in fixed "shells." This explained why hydrogen emits specific colors.'},
  {u:2,q:'Schrödinger\'s quantum/electron-cloud model was published in:',o:['1803','1911','1913','1926'],a:3,w:'1926 — Schrödinger\'s wave equation. Electrons are described as fuzzy 3-D "clouds of probability" (orbitals), not as planets in orbits. This is the current accepted model.'},
  {u:2,q:'Who proposed in 1803 that all matter is made of tiny indestructible "billiard ball" atoms, each element having its own?',o:['Democritus','John Dalton','J.J. Thomson','Niels Bohr'],a:1,w:'John Dalton (1803). His 4 postulates kicked off modern atomic theory: atoms exist, atoms of the same element are identical, different elements have different atoms, compounds form from fixed whole-number ratios.'},
- {u:2,q:'Which scientist\'s gold-foil experiment (1911) proved that the atom\'s positive charge is concentrated in a tiny nucleus?',o:['Thomson','Rutherford','Bohr','Schrödinger'],a:1,w:'Ernest Rutherford (1911). Most α-particles passed through gold foil, but a tiny fraction bounced sharply back — meaning there was a small dense positive core in the middle.'}];
+ {u:2,q:'Which scientist\'s gold-foil experiment (1911) proved that the atom\'s positive charge is concentrated in a tiny nucleus?',o:['Thomson','Rutherford','Bohr','Schrödinger'],a:1,w:'Ernest Rutherford (1911). Most α-particles passed through gold foil, but a tiny fraction bounced sharply back — meaning there was a small dense positive core in the middle.'},
+ // ----- batch 19 (gas laws mnemonic, electromagnetic force, ACEFBAN, redox LEO/GER, IMF ranking) -----
+ {u:8,q:'Boyle\'s law describes which relationship?',o:['P and V inverse at constant T','V and T direct at constant P','P and T direct at constant V','V and n direct at constant T, P'],a:0,w:'Boyle: at fixed T, P × V = constant (P and V are INVERSE). Mnemonic: "Bouncy Tacos" (B = Boyle, T = Temperature constant).'},
+ {u:8,q:'Charles\'s law: at constant pressure, doubling the temperature (in K) of a gas does what to the volume?',o:['Halves it','Doubles it','Quarters it','No change'],a:1,w:'Charles: V/T = constant at fixed P → V and T are directly proportional. Double T → double V. "Crying Pickles" mnemonic (C = Charles, P = Pressure constant).'},
+ {u:8,q:'Gay-Lussac\'s law applies when which variable is held constant?',o:['Temperature','Pressure','Volume','Number of moles only'],a:2,w:'Gay-Lussac: P/T constant at fixed VOLUME. "Gigantic Veggies" mnemonic (G = Gay-Lussac, V = Volume constant). Heating a sealed rigid can → P rises.'},
+ {u:8,q:'Avogadro\'s law states that at the same T and P:',o:['Equal masses of any gas have equal volumes','Equal volumes of any gas have equal numbers of moles','All gases have the same density','Volume is independent of moles'],a:1,w:'Avogadro: equal volumes of any gas (at the same T, P) contain equal numbers of molecules. "All Noisy" mnemonic (A = Avogadro, N = number of moles).'},
+ {u:8,q:'In PV = nRT, the value of R (when P is in atm, V in L, T in K) is:',o:['8.314','22.4','0.0821','273'],a:2,w:'R = 0.0821 L·atm/(mol·K). The 8.314 value of R is for SI units (J/mol·K, with P in Pa). 22.4 L is the molar volume at STP; 273 is the °C → K conversion.'},
+ {u:8,q:'Using PV = nRT, find the moles of gas in a 2.00 L container at 1.00 atm and 273 K (R = 0.0821).',o:['0.0500 mol','0.0892 mol','22.4 mol','0.0224 mol'],a:1,w:'n = PV/RT = (1.00)(2.00)/(0.0821 × 273) = 2.00 / 22.41 ≈ 0.0892 mol.'},
+ {u:4,q:'The fundamental physical force responsible for ALL chemical bonds is:',o:['Gravity','Strong nuclear force','Electromagnetic force','Weak nuclear force'],a:2,w:'The electromagnetic force — attraction between opposite charges and repulsion between like charges. All bonds (ionic, covalent, metallic, IMFs) are variations of this single force.'},
+ {u:4,q:'Coulomb\'s law says force between two charges varies as:',o:['1/r','1/r²','r','r²'],a:1,w:'F = k·q₁q₂/r². Inverse square. Halving the distance quadruples the force. This is why bond lengths are so short.'},
+ {u:4,q:'Using the ACEFBAN reference: what is the typical ion charge of aluminum (Group 13)?',o:['+1','+2','+3','−1'],a:2,w:'Group 13 (Earth-13 family, the "E" in ACEFBAN) has 3 valence electrons → loses all 3 to form a +3 cation. Al³⁺.'},
+ {u:4,q:'What is the typical ion charge of sulfur (Group 16)?',o:['+2','−2','+6','−6'],a:1,w:'Group 16 (Big-six family, the "B" in ACEFBAN) has 6 valence electrons → gains 2 to complete the octet → −2. S²⁻.'},
+ {u:4,q:'Predict the formula for the ionic compound formed between calcium (Ca²⁺) and chloride (Cl⁻).',o:['CaCl','Ca₂Cl','CaCl₂','Ca₂Cl₃'],a:2,w:'Criss-cross the charges: Ca²⁺ + Cl⁻ → 1 Ca needs 2 Cl to balance charges (+2 cancels 2×−1). CaCl₂.'},
+ {u:4,q:'What is the correct name for FeCl₂?',o:['Iron chloride','Iron(II) chloride','Iron(III) chloride','Iron dichloride'],a:1,w:'Fe is a transition metal with multiple charges. 2 Cl⁻ means total −2 → Fe must be +2 → iron(II) chloride. (Iron(III) would be FeCl₃.)'},
+ {u:5,q:'"LEO the Lion says GER." What does LEO stand for?',o:['Lots of Electrons Oxidize','Loss of Electrons = Oxidation','Lose Energy = Oxidation','Like Electrons Oxidize'],a:1,w:'LEO = Loss of Electrons = Oxidation. GER = Gain of Electrons = Reduction. Same idea as OIL RIG.'},
+ {u:5,q:'In the reaction Zn + 2 HCl → ZnCl₂ + H₂, which species is OXIDIZED?',o:['Zn','H','Cl','H₂'],a:0,w:'Zn goes from 0 (pure element) to +2 (in ZnCl₂). Oxidation number went UP → LEO → oxidized. (Hydrogen went +1 → 0, which is reduced.)'},
+ {u:5,q:'When an atom is REDUCED, its oxidation number:',o:['Increases','Decreases','Stays the same','Becomes zero'],a:1,w:'Reduction = gain of electrons. Each electron gained brings one more negative charge → oxidation number DROPS. (That\'s why it\'s called "reduction.")'},
+ {u:4,q:'Which is the STRONGEST type of intermolecular force?',o:['London dispersion','Dipole–dipole','Hydrogen bonding','Ionic bonding'],a:2,w:'H-bonding is the strongest IMF. (Ionic bonding is even stronger but it\'s a BOND between ions, not an intermolecular force.)'},
+ {u:4,q:'A nonpolar molecule like CH₄ is held to its neighbors mostly by:',o:['Hydrogen bonding','Dipole–dipole','London dispersion forces','Ionic bonds'],a:2,w:'Nonpolar molecules don\'t have permanent dipoles, so only London dispersion (temporary flickering dipoles) acts between them.'},
+ {u:5,q:'Identify the reaction type: CaCO₃ → CaO + CO₂',o:['Synthesis','Decomposition','Single replacement','Combustion'],a:1,w:'One compound (CaCO₃) splits into two pieces (CaO + CO₂) → decomposition. This is how limestone is converted to lime industrially.'},
+ {u:5,q:'Identify the reaction type: HCl + NaOH → NaCl + H₂O',o:['Synthesis','Decomposition','Double replacement (neutralization)','Combustion'],a:2,w:'Two compounds swap partners (H pairs with OH to make water, Na pairs with Cl). Specifically a NEUTRALIZATION (acid + base), which is a type of double replacement.'}];
 let qList=[],qi=0,qScore=0,qAns=0,qFilt='all',qLock=false;
 function quizFilter(u,el){qFilt=u;document.querySelectorAll('#quizFilter .chip').forEach(c=>c.classList.remove('active'));el.classList.add('active');
   qList=QB.filter(x=>u==='all'||x.u===u);qList.sort(()=>Math.random()-0.5);qi=0;qScore=0;qAns=0;renderQ();}
@@ -3307,6 +3758,7 @@ function boot(){
   lrCalc();dilCalc();
   phUpdate();
   gasInit();gasCtl();gasLoop();cgCalc();
+  glsNew();igCalc();ionShow(0);namerNew();
   quizFilter('all',document.querySelector('#quizFilter .chip'));
 }
 window.addEventListener('load',boot);
