@@ -164,6 +164,21 @@ details{background:var(--panel2);border:1px solid var(--line);border-radius:10px
 details summary{cursor:pointer;font-weight:600;color:var(--teal);font-family:'Sora';font-size:.92rem;}
 details[open]{padding-bottom:12px;}
 
+/* CHALLENGE CARDS */
+.challenge{background:linear-gradient(135deg,rgba(255,148,87,0.06),rgba(255,92,147,0.06));border:1px solid rgba(255,148,87,0.35);border-radius:12px;padding:13px 16px;margin:14px 0;}
+.challenge .ctop{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-family:'Sora';font-weight:700;font-size:.92rem;color:var(--orange);}
+.challenge .ctop .ctag{background:var(--orange);color:#0c1018;font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;font-weight:700;padding:2px 8px;border-radius:8px;}
+.challenge .cq{font-style:italic;background:rgba(0,0,0,.25);padding:8px 12px;border-radius:8px;margin:6px 0;font-size:.92rem;color:#cfd8eb;}
+.challenge details{background:transparent;border:1px solid var(--line2);margin-top:8px;padding:8px 12px;font-size:.88rem;}
+.challenge details summary{color:var(--orange);font-size:.86rem;font-weight:600;font-family:'Sora';}
+.challenge details[open]{padding-bottom:10px;}
+.challenge .sstep{padding-left:24px;position:relative;margin:6px 0;color:var(--text);font-size:.88rem;}
+.challenge .sstep::before{content:attr(data-n);position:absolute;left:0;top:2px;width:16px;height:16px;background:var(--orange);color:#0c1018;border-radius:50%;font-family:var(--mono);font-size:.6rem;display:grid;place-items:center;font-weight:700;}
+.challenge .sans{margin-top:8px;padding:5px 10px;background:rgba(47,230,196,.14);border-left:3px solid var(--teal);border-radius:5px;color:var(--teal);font-weight:600;font-size:.9rem;display:inline-block;}
+.hpsection h4.upunit{font-family:'Sora';font-size:1.4rem;font-weight:800;margin:28px 0 10px;color:var(--orange);letter-spacing:-.01em;}
+.hpsection h5.uptopic{font-family:'Sora';font-size:1rem;font-weight:700;margin:14px 0 4px;color:var(--text);}
+.hpsection h5.uptopic small{font-family:var(--mono);font-weight:400;color:var(--faint);font-size:.78rem;margin-left:8px;}
+
 /* misc */
 hr.div{border:none;border-top:1px solid var(--line);margin:30px 0;}
 .flex{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
@@ -233,7 +248,8 @@ em.hl{color:var(--teal);font-style:normal;}
   <div class="ut"><span style="background:var(--orange);color:#0c1018">8</span>Gases</div>
   <a href="#kmt">KMT simulator</a>
   <a href="#gaslaw">Gas-law calculator</a>
-  <div class="ut"><span style="background:var(--purple);color:#0c1018">★</span>Practice</div>
+  <div class="ut"><span style="background:var(--orange);color:#0c1018">★</span>Practice</div>
+  <a href="#hardest">Hardest problems</a>
   <a href="#quiz">Mixed quiz</a>
 </nav>
 
@@ -1547,6 +1563,513 @@ em.hl{color:var(--teal);font-style:normal;}
         <div id="cgSteps" class="note" style="margin-top:8px;font-family:var(--mono);font-size:.78rem"></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============================ HARDEST PROBLEMS ============================ -->
+<section class="unit hpsection" id="hardest">
+  <span class="utag" style="background:var(--orange);color:#0c1018">★ Challenge Bank · Hardest Problems</span>
+  <h2>The hardest problem in every section</h2>
+  <p class="lead">One brutal challenge problem for every topic you've studied. Click "Show solution"
+  only after you've genuinely tried. These are the kind of problems that separate a 4 from a 5 on AP.</p>
+
+  <!-- ===== UNIT 1 ===== -->
+  <h4 class="upunit">Unit 1 — Measurement</h4>
+
+  <h5 class="uptopic">Subfields of chemistry <small><a href="#subfields">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Identify the subfield</div>
+    <div class="cq">A pharmaceutical lab is measuring how much heat is absorbed when a new drug
+    dissolves in water, then using that to compute the bond enthalpy of the C–N bonds inside it. Which
+    SUBFIELD primarily describes this work?</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">"Measuring heat absorbed" = energy change in a physical/chemical process = thermochemistry.</div>
+      <div class="sstep" data-n="2">Thermochemistry is a sub-branch of physical chemistry.</div>
+      <div class="sans">Thermochemistry (within physical chemistry). The drug being measured comes from organic chemistry, but the work being done is thermochemical.</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">States of matter <small><a href="#states">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Dry ice puzzle</div>
+    <div class="cq">A block of dry ice (solid CO₂) is left on a lab bench at room temperature. It
+    shrinks and disappears WITHOUT a puddle forming. Name this phase change and explain why it
+    happens for CO₂ but not for water ice.</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">Solid → gas directly = SUBLIMATION (no liquid step).</div>
+      <div class="sstep" data-n="2">CO₂'s triple point is at 5.1 atm. Below 5.1 atm (i.e., normal air pressure ≈ 1 atm), liquid CO₂ simply cannot exist — it goes straight from solid to gas.</div>
+      <div class="sstep" data-n="3">Water's triple point is at 0.006 atm, far below normal air pressure, so liquid water DOES exist at 1 atm.</div>
+      <div class="sans">Sublimation. CO₂'s triple point (5.1 atm) is above atmospheric pressure, so liquid CO₂ can't form at 1 atm.</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Significant figures <small><a href="#sigfigs">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Mixed operations</div>
+    <div class="cq">Compute and report with the correct sig figs: ((4.50 × 10⁻³ + 1.2 × 10⁻²) × 250.0) ÷ 0.0072</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">Addition first. Convert to same power: 4.50 × 10⁻³ + 12.0 × 10⁻³ = 16.5 × 10⁻³ = 0.0165. Rule: fewest DECIMAL places → 1.2 × 10⁻² has 2 dec. places (0.012), so result rounded to 0.016 (2 dec. places when written as 10⁻³ form: 1.6 × 10⁻²).</div>
+      <div class="sstep" data-n="2">Multiply by 250.0: 0.0165 × 250.0 = 4.125. Sig figs: 0.0165 has 3, 250.0 has 4 → keep 3 → 4.13 (after intermediate step rounding to 0.0165).</div>
+      <div class="sstep" data-n="3">Divide by 0.0072: 4.13 ÷ 0.0072 = 573.6. Sig figs: 4.13 has 3, 0.0072 has 2 → keep 2 → 570.</div>
+      <div class="sans">≈ 5.7 × 10² (2 sig figs)</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Scientific notation <small><a href="#scinot">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Avogadro calculation</div>
+    <div class="cq">A sample contains 8.43 × 10¹⁸ atoms of silver. Express the moles of silver in scientific notation with the proper sig figs.</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">moles = atoms ÷ Avogadro = (8.43 × 10¹⁸) ÷ (6.022 × 10²³).</div>
+      <div class="sstep" data-n="2">Front: 8.43 ÷ 6.022 = 1.400. Powers: 10¹⁸ ÷ 10²³ = 10⁻⁵.</div>
+      <div class="sstep" data-n="3">Sig figs: 8.43 has 3, 6.022 has 4 → keep 3.</div>
+      <div class="sans">1.40 × 10⁻⁵ mol Ag</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Accuracy vs precision <small><a href="#accprec">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Lab data diagnosis</div>
+    <div class="cq">A student measures the density of pure water (true value = 1.00 g/mL) five times: 1.31, 1.32, 1.30, 1.32, 1.31. Calculate the percent error and describe their results.</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">Average = (1.31 + 1.32 + 1.30 + 1.32 + 1.31) ÷ 5 = 6.56 ÷ 5 = 1.312 g/mL.</div>
+      <div class="sstep" data-n="2">% error = |1.312 − 1.00| ÷ 1.00 × 100 = 31.2%.</div>
+      <div class="sstep" data-n="3">The values are tightly clustered (range only 0.02) → PRECISE. But average is 31% off → NOT ACCURATE.</div>
+      <div class="sans">31% error. Precise but inaccurate — classic miscalibration (probably wrong balance reading).</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Dimensional analysis <small><a href="#dimanal">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Multi-step conversion</div>
+    <div class="cq">A snail moves at 0.03 m/h. Convert that to nanometers per second.</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">0.03 m/h × (10⁹ nm / 1 m) × (1 h / 3600 s)</div>
+      <div class="sstep" data-n="2">= 0.03 × 10⁹ ÷ 3600 nm/s</div>
+      <div class="sstep" data-n="3">= 3 × 10⁷ ÷ 3600 = 8333 nm/s ≈ 8.3 × 10³ nm/s</div>
+      <div class="sans">≈ 8.3 × 10³ nm/s (about 8 micrometers per second — quite slow!)</div>
+    </details>
+  </div>
+
+  <!-- ===== UNIT 2 ===== -->
+  <h4 class="upunit">Unit 2 — Matter &amp; the Atom</h4>
+
+  <h5 class="uptopic">Kinds of matter <small><a href="#matter">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Classify the tricky cases</div>
+    <div class="cq">Classify each as element / compound / homogeneous mixture / heterogeneous mixture:
+    (a) brass (b) Italian salad dressing (c) liquid mercury (d) tap water (e) carbon monoxide</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">(a) Brass = Cu + Zn → HOMOGENEOUS MIXTURE (alloy, looks uniform).</div>
+      <div class="sstep" data-n="2">(b) Italian dressing = oil + vinegar + spices → HETEROGENEOUS (separates).</div>
+      <div class="sstep" data-n="3">(c) Liquid Hg = one element → ELEMENT.</div>
+      <div class="sstep" data-n="4">(d) Tap water = H₂O + dissolved minerals → HOMOGENEOUS MIXTURE (not pure water).</div>
+      <div class="sstep" data-n="5">(e) CO = two elements bonded → COMPOUND.</div>
+      <div class="sans">brass=homogeneous, dressing=heterogeneous, Hg=element, tap water=homogeneous, CO=compound</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Physical vs chemical changes <small><a href="#changes">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> The dissolving trap</div>
+    <div class="cq">Sugar dissolving in water vs. sodium metal dissolving in water. Both look like
+    "stuff disappearing into liquid." Which is physical, which is chemical, and why?</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">Sugar in water: sugar molecules just spread out among water molecules. The sugar is still sugar — you can boil off the water and recover crystals. PHYSICAL.</div>
+      <div class="sstep" data-n="2">Sodium in water: 2 Na + 2 H₂O → 2 NaOH + H₂. Hydrogen gas evolves, a base forms, often catches fire. The sodium is GONE as Na metal — it's now sodium hydroxide. CHEMICAL.</div>
+      <div class="sans">Sugar = physical (still sugar). Sodium = chemical (Na→NaOH + H₂ gas).</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Atomic model history <small><a href="#atomhist">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Why Bohr failed</div>
+    <div class="cq">Bohr's model works beautifully for hydrogen but fails for helium and every heavier
+    atom. Explain WHY (give the deep reason).</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">Bohr assumed electrons orbit independently at fixed circular paths.</div>
+      <div class="sstep" data-n="2">With one electron (H), there's only one charge to balance against the nucleus — math works.</div>
+      <div class="sstep" data-n="3">With multiple electrons, electron-electron repulsion matters. Each electron experiences not just nuclear pull, but also shielding from the others. Bohr's model has no way to account for these interactions.</div>
+      <div class="sstep" data-n="4">Schrödinger's quantum model treats electrons as probability waves in 3-D orbitals — it handles multi-electron atoms correctly.</div>
+      <div class="sans">Bohr ignores electron–electron interactions. It only works when there's just one electron, like H. Multi-electron atoms need full quantum mechanics.</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Isotopes <small><a href="#isotope">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Solve for unknown abundance</div>
+    <div class="cq">Copper has two stable isotopes: Cu-63 (mass 62.93 amu) and Cu-65 (mass 64.93 amu).
+    The average atomic mass of copper is 63.55 amu. Find the % abundance of each isotope.</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">Let x = fraction of Cu-63. Then (1−x) = fraction of Cu-65.</div>
+      <div class="sstep" data-n="2">62.93x + 64.93(1−x) = 63.55</div>
+      <div class="sstep" data-n="3">62.93x + 64.93 − 64.93x = 63.55 → −2.00x = −1.38 → x = 0.69.</div>
+      <div class="sans">Cu-63: 69%, Cu-65: 31%</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Bohr model <small><a href="#bohr">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Hydrogen emission line</div>
+    <div class="cq">An electron in a hydrogen atom drops from n=3 to n=2 and emits a photon. Using
+    E = −13.6 eV/n², find the wavelength of the emitted photon (in nm). (1 eV = 1.602 × 10⁻¹⁹ J)</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">E₃ = −13.6/9 = −1.51 eV. E₂ = −13.6/4 = −3.40 eV.</div>
+      <div class="sstep" data-n="2">ΔE = E₂ − E₃ = −3.40 − (−1.51) = −1.89 eV (negative = released). Photon energy = 1.89 eV = 3.03 × 10⁻¹⁹ J.</div>
+      <div class="sstep" data-n="3">λ = hc/E = (6.626×10⁻³⁴ × 3.00×10⁸) ÷ 3.03×10⁻¹⁹ = 6.56 × 10⁻⁷ m = 656 nm.</div>
+      <div class="sans">656 nm — the famous H-α red line in hydrogen's spectrum.</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Orbitals <small><a href="#orbitals">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Identify the orbital</div>
+    <div class="cq">An electron has quantum numbers n=4, ℓ=2, m<sub>ℓ</sub>=−1. Name the orbital (e.g., "3p"), describe its shape, and state how many other electrons share the same orbital.</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">ℓ=2 means d-subshell. n=4 means 4th shell → 4d.</div>
+      <div class="sstep" data-n="2">d orbitals have a cloverleaf (four-lobed) shape. m<sub>ℓ</sub>=−1 picks one of the 5 d-orbitals.</div>
+      <div class="sstep" data-n="3">Each orbital holds max 2 electrons → 1 OTHER electron shares this orbital (with opposite spin).</div>
+      <div class="sans">4d orbital, cloverleaf-shaped, shares with 1 other electron (opposite spin).</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Electron configuration <small><a href="#econfig">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Anomalous configurations</div>
+    <div class="cq">Write the ground-state electron configuration for chromium (Z=24) and explain
+    precisely why it deviates from the simple Aufbau prediction.</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">Aufbau predicts [Ar] 4s² 3d⁴.</div>
+      <div class="sstep" data-n="2">Actual: [Ar] 4s¹ 3d⁵.</div>
+      <div class="sstep" data-n="3">Why: a HALF-FULL d subshell (5 electrons, one in each of the 5 d orbitals) has special stability — the symmetric distribution minimizes electron-electron repulsion. Borrowing one electron from 4s to give 3d⁵ is energetically favorable.</div>
+      <div class="sans">[Ar] 4s¹ 3d⁵. Half-full d subshell is extra stable due to symmetric, low-repulsion arrangement.</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Quantum numbers <small><a href="#quantum">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Maximum electrons</div>
+    <div class="cq">What is the MAXIMUM number of electrons in the n=4 shell? Show how you count them by subshell.</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">For n=4, allowed ℓ values: 0 (s), 1 (p), 2 (d), 3 (f).</div>
+      <div class="sstep" data-n="2">Subshell capacities: 4s = 2, 4p = 6, 4d = 10, 4f = 14.</div>
+      <div class="sstep" data-n="3">Total = 2 + 6 + 10 + 14 = 32. (Formula shortcut: 2n² = 2(16) = 32.)</div>
+      <div class="sans">32 electrons (= 2n²)</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Average atomic mass <small><a href="#avgmass">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Three-isotope average</div>
+    <div class="cq">Silicon has three isotopes: Si-28 (mass 27.977, abundance 92.23%), Si-29 (28.977,
+    4.68%), Si-30 (29.974, 3.09%). Calculate the average atomic mass.</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">avg = Σ (mass × fraction)</div>
+      <div class="sstep" data-n="2">= 27.977(0.9223) + 28.977(0.0468) + 29.974(0.0309)</div>
+      <div class="sstep" data-n="3">= 25.81 + 1.356 + 0.926 = 28.09</div>
+      <div class="sans">≈ 28.09 amu (matches the periodic table value)</div>
+    </details>
+  </div>
+
+  <!-- ===== UNIT 3 ===== -->
+  <h4 class="upunit">Unit 3 — Periodic Table</h4>
+
+  <h5 class="uptopic">Periodic table layout <small><a href="#ptable">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Identify from configuration</div>
+    <div class="cq">An element's ground-state configuration ends in 4s²3d¹⁰4p³. Without using the
+    periodic table, what is its atomic number, what element is it, and what block does it belong to?</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">Total electrons = 2+2+6+2+6+2+10+3 = (write Ar core = 18) + 2 + 10 + 3 = 33.</div>
+      <div class="sstep" data-n="2">Z=33 = Arsenic (As).</div>
+      <div class="sstep" data-n="3">Last electron in 4p → p-block.</div>
+      <div class="sans">Z=33, Arsenic (As), p-block element.</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Periodic trends <small><a href="#trends">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Isoelectronic ranking</div>
+    <div class="cq">Rank these isoelectronic species (all have 10 electrons) from SMALLEST to LARGEST: N³⁻, O²⁻, F⁻, Na⁺, Mg²⁺, Al³⁺. Explain.</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">All have 10 electrons. The size depends on PROTON COUNT — more protons pull the same 10 electrons in tighter.</div>
+      <div class="sstep" data-n="2">Protons: N=7, O=8, F=9, Na=11, Mg=12, Al=13.</div>
+      <div class="sstep" data-n="3">More protons → smaller ion. So Al³⁺ smallest, N³⁻ largest.</div>
+      <div class="sans">Al³⁺ &lt; Mg²⁺ &lt; Na⁺ &lt; F⁻ &lt; O²⁻ &lt; N³⁻ (smallest to largest)</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Light &amp; photons <small><a href="#photon">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Ionization from a photon</div>
+    <div class="cq">A photon of wavelength 91.2 nm just barely ionizes a hydrogen atom (removes its
+    electron). Find the ionization energy of hydrogen in kJ/mol.</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">Energy per photon: E = hc/λ = (6.626×10⁻³⁴ × 3.00×10⁸) / (91.2×10⁻⁹) = 2.18 × 10⁻¹⁸ J.</div>
+      <div class="sstep" data-n="2">Per mole: 2.18 × 10⁻¹⁸ × 6.022×10²³ = 1.31 × 10⁶ J/mol.</div>
+      <div class="sstep" data-n="3">Convert to kJ: ÷ 1000 = 1.31 × 10³ kJ/mol = 1310 kJ/mol.</div>
+      <div class="sans">≈ 1310 kJ/mol (matches the textbook IE of hydrogen, 1312 kJ/mol).</div>
+    </details>
+  </div>
+
+  <!-- ===== UNIT 4 ===== -->
+  <h4 class="upunit">Unit 4 — Bonding</h4>
+
+  <h5 class="uptopic">Bond classifier <small><a href="#bondtype">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Borderline call</div>
+    <div class="cq">Classify the bond in HF (H: EN=2.20, F: EN=3.98). Then classify the bond in AlCl₃
+    (Al: 1.61, Cl: 3.16). Explain why one is conventionally called "polar covalent" even though its
+    ΔEN is greater than the other.</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">HF: ΔEN = 3.98 − 2.20 = 1.78. AlCl₃: ΔEN = 3.16 − 1.61 = 1.55.</div>
+      <div class="sstep" data-n="2">By ΔEN alone HF (1.78) is more "ionic" looking than AlCl₃ (1.55). But HF behaves as a polar covalent molecular acid, while AlCl₃ has significant ionic character.</div>
+      <div class="sstep" data-n="3">Reason: the ΔEN cutoff (1.7) is a rough guide. Other factors — atom sizes, polarizability, charge density — also matter. Small H atom + small F atom holds electrons tightly between them (covalent character wins).</div>
+      <div class="sans">HF = polar covalent (despite high ΔEN); AlCl₃ = mostly ionic with covalent character. ΔEN alone doesn't always classify correctly.</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Naming compounds <small><a href="#naming">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Polyatomic formula</div>
+    <div class="cq">Write the chemical formula for iron(III) sulfate.</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">Fe³⁺ (iron(III)), SO₄²⁻ (sulfate).</div>
+      <div class="sstep" data-n="2">Criss-cross: Fe gets subscript 2 (from sulfate's −2 charge); sulfate gets subscript 3 (from iron's +3).</div>
+      <div class="sstep" data-n="3">Wrap the polyatomic in parentheses: Fe₂(SO₄)₃.</div>
+      <div class="sans">Fe₂(SO₄)₃. Check: 2(+3) + 3(−2) = +6 − 6 = 0 ✓</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">IUPAC hydrocarbon naming <small><a href="#iupac">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Complex branched chain</div>
+    <div class="cq">Give the IUPAC name for a molecule with a 7-carbon main chain, a methyl at C2, a methyl at C5, and an ethyl at C3.</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">7 carbons → heptane. Substituents at 2,3,5.</div>
+      <div class="sstep" data-n="2">Check numbering from other end: 7−2+1=6, 7−3+1=5, 7−5+1=3 → from the other end the positions are 3,5,6. Original {2,3,5} vs {3,5,6}: compare first point of difference, 2 &lt; 3, so original numbering is correct.</div>
+      <div class="sstep" data-n="3">Alphabetize: ethyl before methyl. Two methyls → "dimethyl".</div>
+      <div class="sans">3-ethyl-2,5-dimethylheptane</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Alloys <small><a href="#alloys">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Why stainless steel?</div>
+    <div class="cq">Pure iron rusts very easily in moist air. Stainless steel (iron + chromium + nickel)
+    doesn't rust. Explain at the chemistry level WHY adding chromium stops the rust.</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">When chromium is exposed to oxygen, it forms a very thin (a few atoms thick) layer of Cr₂O₃ on the surface.</div>
+      <div class="sstep" data-n="2">This Cr₂O₃ layer is dense, transparent, and chemically stable — it acts as a PASSIVATING barrier.</div>
+      <div class="sstep" data-n="3">The barrier blocks oxygen and water from reaching the iron underneath, so the Fe never gets oxidized to Fe₂O₃ (rust).</div>
+      <div class="sans">Cr forms a thin, dense Cr₂O₃ passivating layer that seals the surface, blocking O₂ and H₂O from reaching the iron.</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">VSEPR shapes <small><a href="#vsepr">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Lone-pair geometry</div>
+    <div class="cq">Predict the molecular shape and approximate bond angles of SF₄ (sulfur + 4 fluorines).</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">S has 6 valence electrons. 4 bonds use 8 electrons → 6 + 4(from F lone pairs given) — actually count: S contributes 6 valence e⁻; 4 F's contribute 4×7=28; total 34 valence e⁻. After 4 S-F bonds (8 e⁻) and 4 F's getting 3 lone pairs each (24 e⁻), 2 e⁻ left → lone pair on S.</div>
+      <div class="sstep" data-n="2">5 electron domains around S (4 bonds + 1 lone pair) = trigonal bipyramidal arrangement.</div>
+      <div class="sstep" data-n="3">Lone pair occupies the EQUATORIAL position (lower repulsion) → resulting molecular shape is "seesaw" (or "sawhorse").</div>
+      <div class="sans">Seesaw shape. Bond angles: ~187° (axial F–S–F, squeezed below 180°) and ~102° (equatorial F–S–F, squeezed below 120°).</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Molecular polarity <small><a href="#polarity">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> CH₂Cl₂ vs CCl₄</div>
+    <div class="cq">Both CH₂Cl₂ and CCl₄ have polar C–Cl bonds, and both are tetrahedral. Yet CH₂Cl₂ is polar and CCl₄ is nonpolar. Explain.</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">CCl₄: 4 IDENTICAL C–Cl bonds pointing to the corners of a tetrahedron. By symmetry, the 4 bond dipoles cancel perfectly → NET dipole = 0 → nonpolar.</div>
+      <div class="sstep" data-n="2">CH₂Cl₂: 2 polar C–Cl bonds + 2 less-polar C–H bonds. The dipoles are NOT symmetric — the Cl side has a strong negative pull, the H side does not.</div>
+      <div class="sstep" data-n="3">Net dipole points toward the Cl-rich side → POLAR.</div>
+      <div class="sans">CCl₄: symmetric tetrahedron, dipoles cancel → nonpolar. CH₂Cl₂: 2 strong + 2 weak dipoles, asymmetric → polar.</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Intermolecular forces <small><a href="#imf">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Rank by boiling point</div>
+    <div class="cq">Rank from LOWEST to HIGHEST boiling point: CH₄, HCl, H₂O, He, Br₂. Explain.</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">Identify dominant IMF: He (tiny, only dispersion), CH₄ (small, dispersion), HCl (polar, dipole-dipole), Br₂ (large, strong dispersion), H₂O (H-bonding).</div>
+      <div class="sstep" data-n="2">H-bonding (H₂O) is the strongest IMF. Among the others: Br₂'s very large electron cloud → strong dispersion can beat HCl's dipole-dipole.</div>
+      <div class="sstep" data-n="3">Order: He (smallest dispersion) &lt; CH₄ (slightly bigger dispersion) &lt; HCl (dipole-dipole) &lt; Br₂ (very strong dispersion) &lt; H₂O (H-bond).</div>
+      <div class="sans">He &lt; CH₄ &lt; HCl &lt; Br₂ &lt; H₂O. (Actual BPs: −269, −161, −85, 59, 100 °C ✓)</div>
+    </details>
+  </div>
+
+  <!-- ===== UNIT 5 ===== -->
+  <h4 class="upunit">Unit 5 — Reactions</h4>
+
+  <h5 class="uptopic">Endo vs exo <small><a href="#endoexo">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Reading an energy diagram</div>
+    <div class="cq">An energy diagram shows the reactants at 50 kJ, the activation-energy peak at 200 kJ, and the products at 80 kJ. Is the reaction endo or exothermic? What is ΔH and what is the activation energy?</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">ΔH = products − reactants = 80 − 50 = +30 kJ (positive → ENDOTHERMIC).</div>
+      <div class="sstep" data-n="2">Activation energy Ea = peak − reactants = 200 − 50 = 150 kJ.</div>
+      <div class="sans">Endothermic, ΔH = +30 kJ, Ea = 150 kJ.</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Reaction types <small><a href="#rxntype">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Identify the edge case</div>
+    <div class="cq">Classify: 2 H₂O₂ → 2 H₂O + O₂. Then classify: AgNO₃(aq) + KCl(aq) → AgCl(s) + KNO₃(aq).</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">First: ONE compound (H₂O₂) breaks into two products → DECOMPOSITION.</div>
+      <div class="sstep" data-n="2">Second: two ionic compounds in solution swap partners; a solid (AgCl) forms → DOUBLE REPLACEMENT (precipitation reaction).</div>
+      <div class="sans">First = decomposition. Second = double replacement (precipitation).</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Balancing equations <small><a href="#balance">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Butane combustion</div>
+    <div class="cq">Balance: C₄H₁₀ + O₂ → CO₂ + H₂O</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">Balance C: 1 C₄H₁₀ → 4 CO₂. Balance H: 10 H → 5 H₂O.</div>
+      <div class="sstep" data-n="2">Count O on right: 4(2) + 5(1) = 13 O. Need 13/2 O₂.</div>
+      <div class="sstep" data-n="3">Multiply through by 2 to clear the fraction: 2 C₄H₁₀ + 13 O₂ → 8 CO₂ + 10 H₂O.</div>
+      <div class="sans">2 C₄H₁₀ + 13 O₂ → 8 CO₂ + 10 H₂O ✓</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Redox &amp; oxidation numbers <small><a href="#redox">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Tricky oxidation number</div>
+    <div class="cq">Find the oxidation state of iron in [Fe(CN)₆]³⁻ (the ferricyanide ion). CN⁻ is the cyanide ion (charge −1).</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">Treat CN⁻ as a single unit with charge −1. There are 6 of them → contribute 6(−1) = −6.</div>
+      <div class="sstep" data-n="2">Whole ion has charge −3. Let Fe = x. Then x + (−6) = −3.</div>
+      <div class="sstep" data-n="3">x = +3.</div>
+      <div class="sans">Iron has oxidation state +3 (hence the name "ferri-cyanide", from Fe³⁺).</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Voltaic vs electrolytic cells <small><a href="#cells">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Anode/cathode identification</div>
+    <div class="cq">In a Zn/Cu voltaic cell (Zn²⁺ + 2e⁻ → Zn at −0.76 V; Cu²⁺ + 2e⁻ → Cu at +0.34 V),
+    which electrode is the anode and which is the cathode? Which way do electrons flow in the
+    external wire?</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">In a voltaic cell, the species with the LOWER (more negative) reduction potential gets oxidized → that's the ANODE.</div>
+      <div class="sstep" data-n="2">Zn (−0.76 V) is more negative → Zn is the ANODE (oxidation: Zn → Zn²⁺ + 2e⁻).</div>
+      <div class="sstep" data-n="3">Cu (+0.34 V) is the CATHODE (reduction: Cu²⁺ + 2e⁻ → Cu).</div>
+      <div class="sstep" data-n="4">Electrons in the wire flow FROM anode TO cathode → from Zn to Cu.</div>
+      <div class="sans">Anode = Zn, Cathode = Cu. Electrons flow Zn → Cu through the external wire.</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Equilibrium &amp; Le Chatelier <small><a href="#equilibrium">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Multi-stress</div>
+    <div class="cq">For the equilibrium N₂(g) + 3 H₂(g) ⇌ 2 NH₃(g) + heat (exothermic): predict the
+    direction of shift for each: (a) Raise temperature, (b) Increase pressure, (c) Add a catalyst,
+    (d) Remove NH₃, (e) Add Argon at constant volume.</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">(a) Raise T: exo → "heat" is a product → shift LEFT to absorb heat.</div>
+      <div class="sstep" data-n="2">(b) Increase P: 4 mol gas on left, 2 mol on right → shift toward FEWER moles → RIGHT.</div>
+      <div class="sstep" data-n="3">(c) Catalyst: NO SHIFT — speeds both sides equally.</div>
+      <div class="sstep" data-n="4">(d) Remove NH₃: shift to replace product → RIGHT.</div>
+      <div class="sstep" data-n="5">(e) Argon at constant V: doesn't change partial pressures of reactants/products → NO SHIFT.</div>
+      <div class="sans">(a) LEFT, (b) RIGHT, (c) no shift, (d) RIGHT, (e) no shift.</div>
+    </details>
+  </div>
+
+  <!-- ===== UNIT 6 ===== -->
+  <h4 class="upunit">Unit 6 — Stoichiometry</h4>
+
+  <h5 class="uptopic">The mole <small><a href="#mole">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Multi-step molecules count</div>
+    <div class="cq">How many oxygen ATOMS (not molecules) are in 4.50 g of CO₂?</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">Mol CO₂ = 4.50 g ÷ 44.01 g/mol = 0.1023 mol.</div>
+      <div class="sstep" data-n="2">Each CO₂ has 2 O atoms → mol O = 0.1023 × 2 = 0.2046 mol.</div>
+      <div class="sstep" data-n="3">Atoms = 0.2046 × 6.022×10²³ = 1.23 × 10²³ atoms of O.</div>
+      <div class="sans">≈ 1.23 × 10²³ oxygen atoms</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Mole map / stoichiometry <small><a href="#molemap">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Theoretical + percent yield</div>
+    <div class="cq">For 2 H₂ + O₂ → 2 H₂O: starting from 10.0 g of H₂ with excess O₂, the actual yield is 75.0 g of water. Find theoretical yield and % yield.</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">mol H₂ = 10.0 ÷ 2.02 = 4.95 mol.</div>
+      <div class="sstep" data-n="2">Ratio H₂:H₂O = 2:2 = 1:1 → 4.95 mol H₂O. Mass = 4.95 × 18.02 = 89.2 g (theoretical).</div>
+      <div class="sstep" data-n="3">% yield = (75.0 / 89.2) × 100 = 84.1%.</div>
+      <div class="sans">Theoretical = 89.2 g, % yield = 84.1%</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Limiting reactant <small><a href="#limit">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Limiting + leftover</div>
+    <div class="cq">For 2 Al + 3 Cl₂ → 2 AlCl₃: you mix 5.40 g Al (27.0 g/mol) with 12.0 g Cl₂ (70.9 g/mol).
+    Find the limiting reactant, mass of AlCl₃ produced (M=133.3), and grams of excess reactant left over.</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">mol Al = 5.40 ÷ 27.0 = 0.200. mol Cl₂ = 12.0 ÷ 70.9 = 0.169.</div>
+      <div class="sstep" data-n="2">AlCl₃ from Al: 0.200 × (2/2) = 0.200 mol. From Cl₂: 0.169 × (2/3) = 0.113 mol. Smaller wins → Cl₂ is LIMITING. Produce 0.113 mol AlCl₃.</div>
+      <div class="sstep" data-n="3">Mass AlCl₃ = 0.113 × 133.3 = 15.0 g.</div>
+      <div class="sstep" data-n="4">Al consumed = 0.113 × (2/3 inverted: actually 0.113 mol AlCl₃ × 2 Al/2 AlCl₃ = 0.113 mol Al). Leftover Al = 0.200 − 0.113 = 0.087 mol × 27.0 = 2.35 g.</div>
+      <div class="sans">Cl₂ limiting. AlCl₃ produced ≈ 15.0 g. Excess Al leftover ≈ 2.35 g.</div>
+    </details>
+  </div>
+
+  <!-- ===== UNIT 7 ===== -->
+  <h4 class="upunit">Unit 7 — Acids &amp; Bases</h4>
+
+  <h5 class="uptopic">Acids &amp; bases <small><a href="#acidbase">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Conjugate pair</div>
+    <div class="cq">In the reaction NH₃ + H₂O ⇌ NH₄⁺ + OH⁻, identify all four species as acid, base, conjugate acid, or conjugate base.</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">NH₃ accepts an H from H₂O → NH₃ is the BASE.</div>
+      <div class="sstep" data-n="2">H₂O donates an H → H₂O is the ACID.</div>
+      <div class="sstep" data-n="3">NH₄⁺ (NH₃ after gaining H⁺) is the CONJUGATE ACID of NH₃.</div>
+      <div class="sstep" data-n="4">OH⁻ (H₂O after losing H⁺) is the CONJUGATE BASE of H₂O.</div>
+      <div class="sans">NH₃ = base · H₂O = acid · NH₄⁺ = conjugate acid · OH⁻ = conjugate base</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Dilution &amp; concentration <small><a href="#dilute">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Mixing two solutions</div>
+    <div class="cq">You mix 100.0 mL of 2.00 M HCl with 300.0 mL of 0.500 M HCl. What is the final molarity?</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">Total moles = (0.100 × 2.00) + (0.300 × 0.500) = 0.200 + 0.150 = 0.350 mol.</div>
+      <div class="sstep" data-n="2">Total volume = 100.0 + 300.0 = 400.0 mL = 0.400 L.</div>
+      <div class="sstep" data-n="3">M = 0.350 / 0.400 = 0.875 M.</div>
+      <div class="sans">0.875 M HCl</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Electrolytes vs nonelectrolytes <small><a href="#electrolytes">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Predict from formula</div>
+    <div class="cq">Classify each as STRONG electrolyte, WEAK electrolyte, or NONELECTROLYTE in water: (a) Ca(NO₃)₂ (b) CH₃COOH (c) C₆H₁₂O₆ glucose (d) HCl (e) NH₃</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">(a) Ca(NO₃)₂ — ionic compound (Ca²⁺ + NO₃⁻) → fully dissociates → STRONG.</div>
+      <div class="sstep" data-n="2">(b) CH₃COOH — weak acid (acetic acid, vinegar) → partial ionization → WEAK.</div>
+      <div class="sstep" data-n="3">(c) Glucose — molecular sugar, no ionization at all → NONELECTROLYTE.</div>
+      <div class="sstep" data-n="4">(d) HCl — strong acid → fully ionizes → STRONG.</div>
+      <div class="sstep" data-n="5">(e) NH₃ — weak base (only partly forms NH₄⁺ + OH⁻) → WEAK.</div>
+      <div class="sans">(a) strong, (b) weak, (c) non-, (d) strong, (e) weak</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">pH <small><a href="#ph">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> Strong acid pH</div>
+    <div class="cq">A solution is prepared by dissolving 0.365 g of HCl (M=36.46 g/mol) in enough water to make 250.0 mL of solution. Find the pH.</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">mol HCl = 0.365 / 36.46 = 0.01001 mol.</div>
+      <div class="sstep" data-n="2">M = 0.01001 / 0.2500 = 0.04004 M. Since HCl is a strong acid, [H⁺] = 0.04004 M.</div>
+      <div class="sstep" data-n="3">pH = −log(0.04004) = 1.40.</div>
+      <div class="sans">pH ≈ 1.40 (strongly acidic)</div>
+    </details>
+  </div>
+
+  <!-- ===== UNIT 8 ===== -->
+  <h4 class="upunit">Unit 8 — Gases</h4>
+
+  <h5 class="uptopic">Kinetic molecular theory <small><a href="#kmt">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> KE comparison</div>
+    <div class="cq">A container holds equal moles of helium (M=4.00 g/mol) and oxygen (M=32.0 g/mol) at the same temperature. Compare (a) their average kinetic energies and (b) their average speeds. Justify with KMT.</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">(a) KE = (3/2)kT — depends only on temperature. Equal T → equal average KE.</div>
+      <div class="sstep" data-n="2">(b) KE = ½mv² → v = √(2KE/m). Smaller mass means higher speed for the same KE.</div>
+      <div class="sstep" data-n="3">He (m=4) vs O₂ (m=32): ratio of speeds = √(32/4) = √8 ≈ 2.83. So He atoms move ~2.83× faster than O₂ molecules.</div>
+      <div class="sans">(a) Equal KE (depends only on T). (b) He moves about 2.83× faster than O₂ (lighter = faster).</div>
+    </details>
+  </div>
+
+  <h5 class="uptopic">Gas laws <small><a href="#gaslaw">↗ revisit topic</a></small></h5>
+  <div class="challenge"><div class="ctop"><span class="ctag">CHALLENGE</span> PV=nRT mass calculation</div>
+    <div class="cq">A 5.00-L tank contains nitrogen gas (N₂, M=28.0 g/mol) at 25 °C and 8.00 atm. How many grams of N₂ are in the tank?</div>
+    <details><summary>Show solution</summary>
+      <div class="sstep" data-n="1">Convert T to K: 25 + 273 = 298 K.</div>
+      <div class="sstep" data-n="2">n = PV/RT = (8.00 × 5.00) / (0.0821 × 298) = 40.0 / 24.47 = 1.634 mol.</div>
+      <div class="sstep" data-n="3">Mass = 1.634 × 28.0 = 45.8 g.</div>
+      <div class="sans">≈ 45.8 g of N₂</div>
+    </details>
+  </div>
+
+  <div class="box plain" style="margin-top:36px;background:rgba(255,148,87,0.06);border-color:rgba(255,148,87,0.35)">
+    <span class="lab" style="color:var(--orange)">how to use this section</span>
+    Cover the "Show solution" toggle. Spend 5–10 minutes per problem. If you're stuck after that,
+    peek at step 1 only, then try again. The point isn't to be right the first time — it's to learn
+    to think the way these problems want you to think. These problems are calibrated to AP exam
+    difficulty.
   </div>
 </section>
 
