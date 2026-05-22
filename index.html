@@ -2391,7 +2391,9 @@ const QB=[
  {u:2,q:'Which subatomic particle has NO charge?',o:['Neutron','Neutrino','Proton','Electron'],a:0,w:'Neutron — neutral, hence the name. (Proton = +, electron = −. Neutrinos exist but aren\'t part of normal atoms.)'},
  {u:5,q:'Reduction is the _____ of electrons.',o:['Lose','Gain'],a:1,w:'OIL RIG → Reduction Is Gain (of electrons). Oxidation Is Loss.'},
  {u:3,q:'Which property generally DECREASES across a period (left to right)?',o:['Ionization energy','Atomic number','Electronegativity','Atomic radius'],a:3,w:'Atomic radius DROPS across a period — more protons pull the same shell tighter. The other three all INCREASE going right.'},
- {u:2,q:'A Bohr diagram shows boron (5 protons) with 5 neutrons in its nucleus. This isotope is called:',o:['Boron-10','Boron-9','Boron-11','Boron-8'],a:0,w:'Mass number = protons + neutrons = 5 + 5 = 10 → boron-10. (Boron-11 has 6 neutrons; boron-9 has 4; boron-8 has 3.)'}];
+ {u:2,q:'A Bohr diagram shows boron (5 protons) with 5 neutrons in its nucleus. This isotope is called:',o:['Boron-10','Boron-9','Boron-11','Boron-8'],a:0,w:'Mass number = protons + neutrons = 5 + 5 = 10 → boron-10. (Boron-11 has 6 neutrons; boron-9 has 4; boron-8 has 3.)'},
+ // ----- batch 17 (water composition H2O) -----
+ {u:4,q:'Which represents the correct number of atoms in a water molecule (H₂O)?',o:['2 atoms of hydrogen (H) and 1 atom of oxygen (O)','1 atom of hydrogen (H) and 1 atom of oxygen (O)','2 atoms of hydrogen (H) and 2 atoms of oxygen (O)','1 atom of hydrogen (H) and 2 atoms of oxygen (O)'],a:0,w:'Read the subscripts: H₂O means H₂ (subscript 2 → 2 hydrogens) and O (no subscript → 1 oxygen). So one water molecule = 2 H + 1 O. Total of 3 atoms.'}];
 let qList=[],qi=0,qScore=0,qAns=0,qFilt='all',qLock=false;
 function quizFilter(u,el){qFilt=u;document.querySelectorAll('#quizFilter .chip').forEach(c=>c.classList.remove('active'));el.classList.add('active');
   qList=QB.filter(x=>u==='all'||x.u===u);qList.sort(()=>Math.random()-0.5);qi=0;qScore=0;qAns=0;renderQ();}
