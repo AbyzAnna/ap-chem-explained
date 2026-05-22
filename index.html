@@ -217,6 +217,7 @@ em.hl{color:var(--teal);font-style:normal;}
   <a href="#rxntype">Reaction sorter</a>
   <a href="#balance">Equation balancer</a>
   <a href="#redox">Redox solver</a>
+  <a href="#cells">Voltaic vs electrolytic</a>
   <div class="ut"><span style="background:var(--blue);color:#0c1018">6</span>Stoichiometry</div>
   <a href="#mole">The mole</a>
   <a href="#molemap">Mole map</a>
@@ -1122,6 +1123,58 @@ em.hl{color:var(--teal);font-style:normal;}
   <div class="step" data-n="3">x − 6 = 0 → x = +6.</div>
   <div class="ans">S = +6</div>
   </div></div>
+
+  <!-- ----- ELECTROCHEMICAL CELLS ----- -->
+  <h3 class="topic" id="cells"><span class="num">5.4</span> Voltaic vs electrolytic cells — turning redox into electricity (and back)</h3>
+  <div class="box plain"><span class="lab">in plain words</span>
+  An <b>electrochemical cell</b> is a setup where a redox reaction either <em>makes</em> electricity or
+  <em>uses</em> electricity. There are exactly two kinds, and they're opposites of each other.</div>
+  <table class="t">
+  <tr><th></th><th>Voltaic (Galvanic) cell</th><th>Electrolytic cell</th></tr>
+  <tr><td><b>Direction</b></td><td>Redox reaction is SPONTANEOUS</td><td>Redox reaction is NON-spontaneous</td></tr>
+  <tr><td><b>Energy</b></td><td>PRODUCES electricity from chemicals</td><td>USES electricity to force chemistry</td></tr>
+  <tr><td><b>Power source?</b></td><td>No — IT IS the power source</td><td><b>Yes — needs an external battery</b></td></tr>
+  <tr><td><b>Example</b></td><td>AA battery, car battery, Daniell cell (Zn / Cu)</td><td>Electroplating, electrolysis of water into H₂ + O₂</td></tr>
+  </table>
+  <p class="analogy">Voltaic cell = a downhill skier — the reaction wants to happen, and you collect the
+  energy as it goes. Electrolytic cell = pushing the skier back UP the hill — you have to spend energy
+  (plug in a battery) to make the reaction run "backwards."</p>
+  <div class="box why"><span class="lab">why the single biggest difference is "needs a battery"</span>
+  Voltaic cells generate their own electricity because their redox reaction releases energy. Electrolytic
+  cells run a reaction that wouldn't happen on its own — so you have to <em>supply</em> the energy. That
+  supplied energy comes from… plugging in a battery (or any DC power source).</div>
+  <div class="box aptip"><span class="lab">both share these things</span>
+  Both have two electrodes — an <b>anode</b> (oxidation, "an-ox") and a <b>cathode</b> (reduction,
+  "red-cat"). Both have electrons flowing through an external wire from anode to cathode. The
+  direction of flow is the same; what differs is whether the flow is driven BY the reaction or driven
+  AGAINST it.</div>
+  <figure>
+  <svg viewBox="0 0 580 200" xmlns="http://www.w3.org/2000/svg">
+    <g font-family="Hanken Grotesk,sans-serif" font-size="11" fill="#e6ecf7">
+      <text x="140" y="18" text-anchor="middle" font-weight="700" fill="#5be08a" font-size="13">VOLTAIC ⮕ makes electricity</text>
+      <rect x="40" y="40" width="60" height="120" rx="6" fill="#1c2438" stroke="#5be08a" stroke-width="1.5"/>
+      <rect x="180" y="40" width="60" height="120" rx="6" fill="#1c2438" stroke="#5be08a" stroke-width="1.5"/>
+      <text x="70" y="180" text-anchor="middle" font-size="10">Zn anode</text>
+      <text x="210" y="180" text-anchor="middle" font-size="10">Cu cathode</text>
+      <circle cx="140" cy="60" r="14" fill="#ffc24b"/><text x="140" y="64" text-anchor="middle" font-weight="700" font-size="11" fill="#0c1018">A</text>
+      <line x1="100" y1="60" x2="126" y2="60" stroke="#5be08a" stroke-width="2"/><line x1="154" y1="60" x2="180" y2="60" stroke="#5be08a" stroke-width="2"/>
+      <text x="140" y="95" text-anchor="middle" font-size="10" fill="#94a3c4">salt bridge</text>
+      <path d="M 105 125 L 175 125" stroke="#94a3c4" stroke-width="2"/>
+      <text x="140" y="148" text-anchor="middle" font-size="10" fill="#5be08a" font-weight="700">no battery needed</text>
+
+      <text x="440" y="18" text-anchor="middle" font-weight="700" fill="#ff9457" font-size="13">ELECTROLYTIC ⮕ uses electricity</text>
+      <rect x="340" y="40" width="60" height="120" rx="6" fill="#1c2438" stroke="#ff9457" stroke-width="1.5"/>
+      <rect x="480" y="40" width="60" height="120" rx="6" fill="#1c2438" stroke="#ff9457" stroke-width="1.5"/>
+      <text x="370" y="180" text-anchor="middle" font-size="10">cathode</text>
+      <text x="510" y="180" text-anchor="middle" font-size="10">anode</text>
+      <rect x="420" y="50" width="40" height="22" rx="4" fill="#1c2438" stroke="#ff5c93" stroke-width="1.5"/>
+      <text x="440" y="65" text-anchor="middle" font-size="11" fill="#ff5c93" font-weight="700">⎓</text>
+      <line x1="400" y1="60" x2="420" y2="60" stroke="#ff9457" stroke-width="2"/><line x1="460" y1="60" x2="480" y2="60" stroke="#ff9457" stroke-width="2"/>
+      <text x="440" y="148" text-anchor="middle" font-size="10" fill="#ff5c93" font-weight="700">external battery REQUIRED</text>
+    </g>
+  </svg>
+  <figcaption>Same setup, opposite energy flow. Left: redox runs spontaneously and pushes electrons through the wire — that current IS your electricity. Right: a battery forces electrons through a reaction that wouldn't go on its own.</figcaption>
+  </figure>
 </section>
 
 <!-- ============================ UNIT 6 ============================ -->
@@ -2295,7 +2348,13 @@ const QB=[
  {u:4,q:'TRUE or FALSE: Ionic compounds have high boiling points because they consist of strong ionic bonds.',o:['FALSE','TRUE'],a:1,w:'TRUE. The strong electrostatic attractions between oppositely charged ions take a lot of energy to break — so ionic compounds have very high melting AND boiling points (NaCl boils at 1465 °C!).'},
  {u:4,q:'What does "like dissolves like" mean?',o:['Polar solvents dissolve in polar solutes','Non-polar solvents dissolve in polar solutes','Non-polar solutes dissolve in polar solvents','Polar solutes dissolve in polar solvents'],a:3,w:'Polar dissolves polar, nonpolar dissolves nonpolar. Salt (polar/ionic) dissolves in water (polar). Oil (nonpolar) dissolves in hexane (nonpolar) — not in water.'},
  {u:7,q:'Molarity (concentration) is abbreviated as:',o:['m','MM','M','Mol'],a:2,w:'Capital M = molarity (mol solute / L solution). Lowercase m = molality (mol solute / kg solvent — different!). "mol" is just the amount unit.'},
- {u:7,q:'The substance being DISSOLVED in a solution is called the:',o:['solid','solvate','solvent','solute'],a:3,w:'Solute = what gets dissolved (smaller amount, like salt). Solvent = what does the dissolving (larger amount, like water). Together they make a solution.'}];
+ {u:7,q:'The substance being DISSOLVED in a solution is called the:',o:['solid','solvate','solvent','solute'],a:3,w:'Solute = what gets dissolved (smaller amount, like salt). Solvent = what does the dissolving (larger amount, like water). Together they make a solution.'},
+ // ----- batch 14 (Cl2+KI reaction, nuclear risk, chemistry def, voltaic vs electrolytic, Mendeleev) -----
+ {u:5,q:'What type of reaction is Cl₂ + 2 KI → I₂ + 2 KCl?',o:['Single replacement','Synthesis','Double replacement','Combustion','Decomposition'],a:0,w:'A single element (Cl₂) kicks another element (I) out of its compound (KI) → single replacement. Result: Cl ends up bonded to K, and I is freed as I₂.'},
+ {u:2,q:'Which risk is related to the radioactive isotopes used to generate electricity in nuclear power plants?',o:['Depletion of fossil fuels','Depletion of atmospheric ozone','Exposure to acid rain','Exposure to nuclear emissions (radiation)'],a:3,w:'Nuclear power produces radioactive waste, and accidents can release radiation. (Fossil fuel depletion and acid rain are issues with COAL/oil power, not nuclear. Ozone depletion is from CFCs.)'},
+ {u:1,q:'"The study of the composition, structure, and properties of matter and the changes it undergoes" — what is this the definition of?',o:['Chemistry','Physics','Social Science','Biology'],a:0,w:'That\'s the textbook definition of chemistry itself — the science of matter and its transformations.'},
+ {u:5,q:'What is the key difference between a voltaic cell and an electrolytic cell?',o:['An electrolytic cell needs a battery','A voltaic cell needs a battery','Neither needs a power source','Both produce electricity'],a:0,w:'Voltaic = spontaneous redox, PRODUCES electricity (it IS a battery). Electrolytic = non-spontaneous, must be FORCED by an external battery to run. The battery requirement is the giveaway.'},
+ {u:3,q:'What was special about Mendeleev\'s periodic table?',o:['Undiscovered elements could be predicted from gaps in the table','Elements were arranged in alphabetical order','Radioactive elements were placed at the bottom','Elements were grouped by color'],a:0,w:'Mendeleev left GAPS for elements not yet discovered and predicted their properties. Gallium and germanium were found years later, exactly matching his predictions — proof his organizing principle was right.'}];
 let qList=[],qi=0,qScore=0,qAns=0,qFilt='all',qLock=false;
 function quizFilter(u,el){qFilt=u;document.querySelectorAll('#quizFilter .chip').forEach(c=>c.classList.remove('active'));el.classList.add('active');
   qList=QB.filter(x=>u==='all'||x.u===u);qList.sort(()=>Math.random()-0.5);qi=0;qScore=0;qAns=0;renderQ();}
