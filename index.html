@@ -208,7 +208,9 @@ em.hl{color:var(--teal);font-style:normal;}
   <a href="#photon">Light &amp; photons</a>
   <div class="ut"><span style="background:var(--mag);color:#0c1018">4</span>Bonding</div>
   <a href="#bondtype">Bond classifier</a>
-  <a href="#naming">Naming game</a>
+  <a href="#naming">Naming compounds</a>
+  <a href="#iupac">IUPAC hydrocarbon naming</a>
+  <a href="#alloys">Alloys</a>
   <a href="#vsepr">VSEPR shapes</a>
   <a href="#polarity">Molecular polarity</a>
   <a href="#imf">Intermolecular forces</a>
@@ -218,6 +220,7 @@ em.hl{color:var(--teal);font-style:normal;}
   <a href="#balance">Equation balancer</a>
   <a href="#redox">Redox solver</a>
   <a href="#cells">Voltaic vs electrolytic</a>
+  <a href="#equilibrium">Equilibrium &amp; Le Chatelier</a>
   <div class="ut"><span style="background:var(--blue);color:#0c1018">6</span>Stoichiometry</div>
   <a href="#mole">The mole</a>
   <a href="#molemap">Mole map</a>
@@ -225,6 +228,7 @@ em.hl{color:var(--teal);font-style:normal;}
   <div class="ut"><span style="background:var(--rose);color:#0c1018">7</span>Acids &amp; Bases</div>
   <a href="#acidbase">What they are</a>
   <a href="#dilute">Dilution calculator</a>
+  <a href="#electrolytes">Electrolytes vs non-</a>
   <a href="#ph">pH playground</a>
   <div class="ut"><span style="background:var(--orange);color:#0c1018">8</span>Gases</div>
   <a href="#kmt">KMT simulator</a>
@@ -923,6 +927,65 @@ em.hl{color:var(--teal);font-style:normal;}
   </div>
 
   <!-- ----- VSEPR ----- -->
+  <!-- ----- IUPAC HYDROCARBON NAMING ----- -->
+  <h3 class="topic" id="iupac"><span class="num">4.2b</span> IUPAC naming for hydrocarbons (organic chains)</h3>
+  <div class="box plain"><span class="lab">in plain words</span>
+  Organic molecules (carbon chains) get a name in three pieces: <b>prefix</b> (branches),
+  <b>parent</b> (longest chain), <b>suffix</b> (ending = bond type / functional group).</div>
+  <table class="t">
+  <tr><th># carbons in chain</th><th>Parent name</th><th>Example formula</th></tr>
+  <tr><td>1</td><td>meth-</td><td>methane CH₄</td></tr>
+  <tr><td>2</td><td>eth-</td><td>ethane C₂H₆</td></tr>
+  <tr><td>3</td><td>prop-</td><td>propane C₃H₈</td></tr>
+  <tr><td>4</td><td>but-</td><td>butane C₄H₁₀</td></tr>
+  <tr><td>5</td><td>pent-</td><td>pentane C₅H₁₂</td></tr>
+  <tr><td>6</td><td>hex-</td><td>hexane C₆H₁₄</td></tr>
+  <tr><td>7</td><td>hept-</td><td>heptane C₇H₁₆</td></tr>
+  <tr><td>8</td><td>oct-</td><td>octane C₈H₁₈</td></tr>
+  </table>
+  <p>Common <b>branch (substituent) names</b>: methyl (CH₃−), ethyl (CH₃CH₂−), propyl (C₃H₇−). The suffix
+  <b>-ane</b> = all single bonds (alkane), <b>-ene</b> = at least one double bond (alkene),
+  <b>-yne</b> = at least one triple bond (alkyne).</p>
+
+  <h4 style="margin:14px 0 4px;font-family:'Sora';">The naming recipe (5 steps)</h4>
+  <ol>
+  <li><b>Find the longest carbon chain.</b> That's your parent name.</li>
+  <li><b>Number the chain</b> so substituents get the <em>lowest possible</em> position numbers.</li>
+  <li><b>Name each substituent</b> with its position (e.g., 3-methyl).</li>
+  <li><b>List substituents alphabetically</b> (ethyl before methyl).</li>
+  <li><b>Combine</b>: position-substituent-parent. Use prefixes "di-", "tri-", "tetra-" if a substituent appears multiple times.</li>
+  </ol>
+  <div class="ex">
+  <div class="exhead">Worked example — naming a branched chain</div>
+  <div class="exbody">
+  <div class="q">A 6-carbon main chain has a CH₃ on C3 and a CH₂CH₃ on C4. Name it.</div>
+  <div class="step" data-n="1">Longest chain = 6 carbons → "hexane" (parent).</div>
+  <div class="step" data-n="2">Substituents at positions 3 and 4. From the other end they'd also be at 3 and 4 — tie. Tiebreaker = alphabetical: <b>ethyl</b> comes before methyl, so ethyl gets the lower number (3).</div>
+  <div class="step" data-n="3">Combine: 3-ethyl-4-methylhexane.</div>
+  <div class="ans">3-ethyl-4-methylhexane</div>
+  </div></div>
+  <div class="box aptip"><span class="lab">condensed structural formulas</span>
+  Same molecule, written shorter. Each carbon shown with its attached H's, in order along the chain.
+  Hexane (drawn out: H-C-C-C-C-C-C-H with all the H's around it) condenses to
+  <b>CH₃CH₂CH₂CH₂CH₂CH₃</b> or even shorter <b>CH₃(CH₂)₄CH₃</b>. Same atoms, faster to write.</div>
+
+  <!-- ----- ALLOYS callout (extension of metallic bond topic) ----- -->
+  <h3 class="topic" id="alloys"><span class="num">4.2c</span> Alloys — when metals mix</h3>
+  <div class="box plain"><span class="lab">in plain words</span>
+  An <b>alloy</b> is a mixture of two or more metals (or a metal + a small amount of nonmetal). Alloys
+  are NOT compounds — they're solid solutions of metals dissolved in each other.</div>
+  <table class="t">
+  <tr><th>Alloy</th><th>What's mixed</th><th>Why it's useful</th></tr>
+  <tr><td><b>Brass</b></td><td>copper + zinc</td><td>Harder than copper alone; doesn't corrode easily</td></tr>
+  <tr><td><b>Bronze</b></td><td>copper + tin</td><td>Strong, corrosion-resistant; the original metal of weapons/statues</td></tr>
+  <tr><td><b>Steel</b></td><td>iron + a little carbon</td><td>Much harder &amp; stronger than pure iron</td></tr>
+  <tr><td><b>Stainless steel</b></td><td>iron + chromium (+ nickel)</td><td>Doesn't rust — chromium forms a protective oxide film</td></tr>
+  </table>
+  <div class="box why"><span class="lab">why alloys are usually harder than the pure metals</span>
+  Pure metals have neat, repeating layers of identical atoms that can slide past each other (which is
+  why pure copper is soft). Mixing in atoms of a different size disrupts those neat layers — the
+  layers can't slide as easily anymore, so the alloy is harder.</div>
+
   <h3 class="topic" id="vsepr"><span class="num">4.3</span> VSEPR — why molecules aren't flat blobs</h3>
   <div class="box plain"><span class="lab">in plain words</span>
   Electron groups push each other away, so a molecule spreads its bonds and lone pairs as far apart as
@@ -1200,6 +1263,47 @@ em.hl{color:var(--teal);font-style:normal;}
   </svg>
   <figcaption>Same setup, opposite energy flow. Left: redox runs spontaneously and pushes electrons through the wire — that current IS your electricity. Right: a battery forces electrons through a reaction that wouldn't go on its own.</figcaption>
   </figure>
+
+  <!-- ----- EQUILIBRIUM & LE CHATELIER ----- -->
+  <h3 class="topic" id="equilibrium"><span class="num">5.5</span> Chemical equilibrium &amp; Le Chatelier's principle</h3>
+  <div class="box plain"><span class="lab">in plain words</span>
+  Many reactions don't go "all the way" — they reach a balance point where the forward and reverse
+  reactions happen at the <em>same rate</em>. The amounts stop changing. That's <b>equilibrium</b>.</div>
+  <p class="analogy">Picture a busy mall with one up-escalator and one down-escalator. Once enough
+  people are riding both, the count of people upstairs stops changing — even though everyone is still
+  moving. Equilibrium isn't "nothing happens." It's "stuff happens both ways at the same speed."</p>
+  <div class="box why"><span class="lab">the easy trap: "equal" vs "constant"</span>
+  Concentrations at equilibrium are <b>constant</b> — they STAY THE SAME. They are usually NOT equal
+  to each other. Don't confuse "balanced" (forward rate = reverse rate) with "equal amounts." A
+  reaction can settle at 95% products, 5% reactants — and that's still equilibrium if those numbers
+  stop changing.</div>
+
+  <h4 style="margin:18px 0 4px;font-family:'Sora';">Le Chatelier's principle — how equilibrium fights back</h4>
+  <p>If you stress a system at equilibrium, it shifts to <em>relieve</em> that stress. Three ways to
+  stress it: change concentration, change temperature, change pressure.</p>
+  <table class="t">
+  <tr><th>Stress you apply</th><th>System's response (shift)</th><th>Why</th></tr>
+  <tr><td>Add more reactant</td><td>Shifts RIGHT (toward products)</td><td>"Uses up" the extra reactant</td></tr>
+  <tr><td>Add more product</td><td>Shifts LEFT (toward reactants)</td><td>"Uses up" the extra product</td></tr>
+  <tr><td>Remove product</td><td>Shifts RIGHT</td><td>Refills what's gone</td></tr>
+  <tr><td>Raise temperature (exothermic rxn)</td><td>Shifts LEFT</td><td>System absorbs the added heat</td></tr>
+  <tr><td>Raise temperature (endothermic rxn)</td><td>Shifts RIGHT</td><td>Heat acts as a reactant; more of it pushes forward</td></tr>
+  <tr><td>Increase pressure (gases)</td><td>Shifts toward FEWER gas moles</td><td>Squeezing favors the side with less volume</td></tr>
+  <tr><td>Add a CATALYST</td><td>NO shift</td><td>Speeds up BOTH directions equally — gets there faster, same position</td></tr>
+  </table>
+
+  <div class="ex">
+  <div class="exhead">Worked example — common ion effect</div>
+  <div class="exbody">
+  <div class="q">NaCl(s) ⇌ Na⁺(aq) + Cl⁻(aq) is at equilibrium. You pour in more Na⁺ (say, from NaNO₃). What happens?</div>
+  <div class="step" data-n="1">Adding Na⁺ raises the product side. The system needs to "use up" the extra Na⁺.</div>
+  <div class="step" data-n="2">Le Chatelier → shift to the LEFT (toward NaCl).</div>
+  <div class="step" data-n="3">Na⁺ combines with Cl⁻ to form more solid NaCl(s).</div>
+  <div class="ans">More NaCl(s) precipitates out. (This is the "common ion effect" — why adding salt to salty water can make some of it come back out as crystals.)</div>
+  </div></div>
+  <div class="box aptip"><span class="lab">catalysts are the exception</span>
+  Catalysts speed up forward and reverse reactions by the SAME factor. They get the system to
+  equilibrium faster, but they do NOT shift where equilibrium lands. The position is unchanged.</div>
 </section>
 
 <!-- ============================ UNIT 6 ============================ -->
@@ -1329,6 +1433,24 @@ em.hl{color:var(--teal);font-style:normal;}
   </div>
 
   <!-- ----- pH ----- -->
+  <!-- ----- ELECTROLYTES ----- -->
+  <h3 class="topic" id="electrolytes"><span class="num">7.2b</span> Electrolytes vs nonelectrolytes</h3>
+  <div class="box plain"><span class="lab">in plain words</span>
+  Dissolve a substance in water. If it splits into <b>ions</b>, the solution conducts electricity →
+  <b>electrolyte</b>. If it stays as whole <b>molecules</b>, no ions to carry charge → <b>nonelectrolyte</b>.</div>
+  <p class="analogy">Electricity through water is like cars on a highway — it needs lanes (charge
+  carriers). Ions ARE the lanes. No ions = no traffic = no current.</p>
+  <table class="t">
+  <tr><th>Type</th><th>What it does in water</th><th>Conducts?</th><th>Examples</th></tr>
+  <tr><td><b>Strong electrolyte</b></td><td>Splits 100% into ions</td><td>Yes — strongly</td><td>NaCl, HCl, NaOH, most ionic salts and strong acids/bases</td></tr>
+  <tr><td><b>Weak electrolyte</b></td><td>Splits only partly into ions</td><td>Yes — weakly</td><td>Acetic acid (vinegar), ammonia</td></tr>
+  <tr><td><b>Nonelectrolyte</b></td><td>Stays as molecules — doesn't split at all</td><td>No</td><td>Sugar (glucose), ethanol, most molecular compounds</td></tr>
+  </table>
+  <div class="box aptip"><span class="lab">how to predict</span>
+  Ionic compounds (metal + nonmetal) → almost always electrolytes. Strong acids (HCl, HBr, HI, HNO₃,
+  H₂SO₄, HClO₄) → strong electrolytes. Strong bases (NaOH, KOH, group-1/2 hydroxides) → strong
+  electrolytes. Molecular compounds without acid/base behavior (sugar, alcohol, most organics) → nonelectrolytes.</div>
+
   <h3 class="topic" id="ph"><span class="num">7.3</span> pH — the acid-strength scale</h3>
   <div class="box plain"><span class="lab">in plain words</span>
   pH 0–14. Below 7 = acidic. 7 = neutral (water). Above 7 = basic. Each step = 10× change in [H⁺].</div>
