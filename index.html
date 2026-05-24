@@ -133,14 +133,16 @@ figure svg{max-width:100%;height:auto;background:var(--bg2);border:1px solid var
 figcaption{color:var(--faint);font-size:.8rem;font-style:italic;margin-top:5px;}
 
 /* PERIODIC TABLE */
-.ptable{display:grid;grid-template-columns:repeat(18,minmax(0,1fr));grid-template-rows:repeat(4,1fr);gap:4px;margin:14px 0;width:100%;}
-.pcell{aspect-ratio:1;background:var(--panel2);border:1px solid var(--line);border-radius:5px;display:flex;flex-direction:column;justify-content:center;align-items:center;font-family:var(--mono);cursor:pointer;transition:transform .12s,border-color .12s,background .15s;color:var(--text);position:relative;padding:1px;min-width:0;min-height:0;}
-.pcell:hover{transform:scale(1.18);z-index:5;border-color:var(--teal);box-shadow:0 4px 12px rgba(47,230,196,0.3);}
-.pcell .sym{font-weight:700;font-size:clamp(.7rem,1.1vw,1rem);line-height:1;}
-.pcell .z{position:absolute;top:2px;left:3px;font-size:clamp(.5rem,.7vw,.65rem);color:var(--faint);line-height:1;}
+/* PERIODIC TABLE — fixed cell heights, explicit grid positioning per element (no blank placeholders) */
+.ptable{display:grid;grid-template-columns:repeat(18,minmax(0,1fr));grid-auto-rows:46px;gap:4px;margin:14px 0;width:100%;}
+.pcell{background:var(--panel2);border:1px solid var(--line);border-radius:5px;display:flex;flex-direction:column;justify-content:center;align-items:center;font-family:var(--mono);cursor:pointer;transition:transform .12s,border-color .12s,background .15s,box-shadow .12s;color:var(--text);position:relative;padding:1px;min-width:0;overflow:hidden;}
+.pcell:hover{transform:scale(1.18);z-index:5;border-color:var(--teal);box-shadow:0 4px 12px rgba(47,230,196,0.4);}
+.pcell .sym{font-weight:700;font-size:.95rem;line-height:1;}
+.pcell .z{position:absolute;top:2px;left:3px;font-size:.55rem;color:var(--faint);line-height:1;font-weight:400;}
 .pcell.sel{background:var(--teal);color:#0c1018;border-color:var(--teal);transform:scale(1.2);z-index:6;}
 .pcell.sel .z{color:rgba(12,16,24,.7);}
-@media(max-width:880px){.ptable{gap:2px;}}
+@media(max-width:760px){.ptable{grid-auto-rows:32px;gap:2px;}.pcell .sym{font-size:.7rem;}.pcell .z{font-size:.4rem;}}
+@media(max-width:480px){.ptable{grid-auto-rows:24px;}.pcell .sym{font-size:.55rem;}.pcell .z{display:none;}}
 
 /* DRAG SLOTS */
 .dropzone{display:flex;flex-wrap:wrap;gap:8px;padding:10px;background:var(--bg2);border:2px dashed var(--line);border-radius:10px;min-height:54px;align-items:center;}
@@ -202,6 +204,7 @@ em.hl{color:var(--teal);font-style:normal;}
   <div class="ut"><span style="background:var(--teal)">1</span>Measurement</div>
   <a href="#subfields">Subfields of chemistry</a>
   <a href="#states">States of matter</a>
+  <a href="#density">Density calculator</a>
   <a href="#sigfigs">Sig figs</a>
   <a href="#scinot">Scientific notation</a>
   <a href="#accprec">Accuracy vs precision</a>
@@ -242,12 +245,14 @@ em.hl{color:var(--teal);font-style:normal;}
   <a href="#equilibrium">Equilibrium &amp; Le Chatelier</a>
   <div class="ut"><span style="background:var(--blue);color:#0c1018">6</span>Stoichiometry</div>
   <a href="#mole">The mole</a>
+  <a href="#empirical">Empirical formula calc</a>
   <a href="#molemap">Mole map</a>
   <a href="#limit">Limiting reactant</a>
   <div class="ut"><span style="background:var(--rose);color:#0c1018">7</span>Acids &amp; Bases</div>
   <a href="#acidbase">What they are</a>
   <a href="#dilute">Dilution calculator</a>
   <a href="#electrolytes">Electrolytes vs non-</a>
+  <a href="#solubility">Solubility predictor</a>
   <a href="#ph">pH playground</a>
   <div class="ut"><span style="background:var(--orange);color:#0c1018">8</span>Gases</div>
   <a href="#kmt">KMT simulator</a>
@@ -337,6 +342,66 @@ em.hl{color:var(--teal);font-style:normal;}
   solid → liquid = <b>melting</b> · liquid → gas = <b>vaporization (boiling)</b> · gas → liquid =
   <b>condensation</b> · liquid → solid = <b>freezing</b> · solid → gas (skipping liquid) =
   <b>sublimation</b> (dry ice does this) · gas → solid = <b>deposition</b>.</div>
+
+  <h3 class="topic" id="density"><span class="num">1.0c</span> Density — how much stuff packs into how much space</h3>
+  <div class="box plain"><span class="lab">in plain words</span>
+  Density (ρ, Greek letter "rho") = how heavy a sample is for its size. ρ = mass ÷ volume. Lead is dense;
+  Styrofoam isn't. Two materials with the same volume but different mass have different densities.</div>
+  <div class="formula">ρ = m / V</div>
+  <p class="analogy">Imagine two boxes the same size: one full of feathers, one full of bricks. Same
+  volume, very different mass → very different density. The bricks box is "denser."</p>
+  <table class="t">
+  <tr><th>Substance</th><th>Density (g/mL or g/cm³)</th></tr>
+  <tr><td>Hydrogen gas (STP)</td><td>0.00009</td></tr>
+  <tr><td>Air (STP)</td><td>0.0012</td></tr>
+  <tr><td>Wood (pine)</td><td>~0.5</td></tr>
+  <tr><td>Water</td><td>1.00</td></tr>
+  <tr><td>Aluminum</td><td>2.70</td></tr>
+  <tr><td>Iron</td><td>7.87</td></tr>
+  <tr><td>Lead</td><td>11.34</td></tr>
+  <tr><td>Mercury</td><td>13.55</td></tr>
+  <tr><td>Gold</td><td>19.30</td></tr>
+  </table>
+
+  <div class="card">
+    <h4><span class="ico" style="background:var(--blue)">⚖</span> Density calculator (ρ = m/V)</h4>
+    <p class="hint">Pick which variable to solve for, plug in the other two.</p>
+    <div class="flex" style="margin:8px 0">
+      <label class="note">Solve for:</label>
+      <select class="num" id="dsVar" style="width:90px" onchange="dsCalc()">
+        <option value="rho">ρ (density)</option>
+        <option value="m">m (mass)</option>
+        <option value="V">V (volume)</option>
+      </select>
+      <span class="tag">Preset substance:</span>
+      <select class="num" id="dsPreset" style="width:140px" onchange="dsSetPreset()">
+        <option value="">— custom —</option>
+        <option value="1.00">water (1.00)</option>
+        <option value="2.70">aluminum (2.70)</option>
+        <option value="7.87">iron (7.87)</option>
+        <option value="11.34">lead (11.34)</option>
+        <option value="13.55">mercury (13.55)</option>
+        <option value="19.30">gold (19.30)</option>
+      </select>
+    </div>
+    <div class="split thirds">
+      <div>
+        <div class="kv"><span>ρ (g/mL)</span><span><input class="num" id="dsRho" value="1.00" oninput="dsCalc()"></span></div>
+        <div class="kv"><span>m (g)</span><span><input class="num" id="dsM" value="50" oninput="dsCalc()"></span></div>
+      </div>
+      <div>
+        <div class="kv"><span>V (mL)</span><span><input class="num" id="dsV" placeholder="?" oninput="dsCalc()"></span></div>
+      </div>
+      <div>
+        <div id="dsAns" class="feedback ok show" style="font-size:1rem"></div>
+        <p id="dsHelp" class="note" style="margin-top:6px;font-size:.82rem"></p>
+      </div>
+    </div>
+  </div>
+  <div class="box aptip"><span class="lab">density and floating</span>
+  Anything LESS dense than water (ρ &lt; 1.00) floats on water. Wood floats, ice floats (ρ ≈ 0.92).
+  Iron sinks (7.87). Mercury sinks. This is why ice cubes float in your drink — solid water is LESS
+  dense than liquid water, which is unusual for any substance.</div>
 
   <!-- ----- SIG FIGS ----- -->
   <h3 class="topic" id="sigfigs"><span class="num">1.1</span> Significant figures — how honest your number is</h3>
@@ -1869,6 +1934,45 @@ em.hl{color:var(--teal);font-style:normal;}
     </div>
   </div>
 
+  <div class="card">
+    <h4><span class="ico" style="background:var(--purple)">⇄</span> Mole conversion swiss-army knife</h4>
+    <p class="hint">Type a formula, then type ANY of the 4 amounts below — the other three auto-update. Convert between grams, moles, particles (atoms/molecules), and liters at STP.</p>
+    <div class="flex" style="margin:10px 0">
+      <label class="note">Formula:</label>
+      <input class="num" id="mcF" value="H2O" style="width:140px;text-align:center;font-family:var(--mono)" oninput="mcRecalc('formula')">
+      <span class="note">Molar mass:</span>
+      <span id="mcMM" style="color:var(--teal);font-family:var(--mono);font-weight:700">18.015 g/mol</span>
+    </div>
+    <div class="split">
+      <div>
+        <div class="kv"><span>Mass (g)</span><span><input class="num" id="mcGrams" value="18.015" oninput="mcRecalc('grams')"></span></div>
+        <div class="kv"><span>Moles (mol)</span><span><input class="num" id="mcMoles" value="1.000" oninput="mcRecalc('moles')"></span></div>
+      </div>
+      <div>
+        <div class="kv"><span>Particles</span><span><input class="num" id="mcParts" value="6.022e+23" oninput="mcRecalc('particles')"></span></div>
+        <div class="kv"><span>Volume at STP (L) <small style="color:var(--faint)">— gas only</small></span><span><input class="num" id="mcLiters" value="22.40" oninput="mcRecalc('liters')"></span></div>
+      </div>
+    </div>
+    <p class="note" id="mcMsg" style="text-align:center;margin-top:8px"></p>
+  </div>
+
+  <h3 class="topic" id="empirical"><span class="num">6.1b</span> Empirical formula calculator</h3>
+  <div class="box plain"><span class="lab">in plain words</span>
+  An <b>empirical formula</b> is the simplest whole-number ratio of atoms in a compound. From % composition,
+  you can find it in 3 steps: <em>assume 100 g → convert each % to moles → divide by smallest → round.</em></div>
+  <div class="card">
+    <h4><span class="ico" style="background:var(--purple)">⊆</span> Empirical formula from % composition</h4>
+    <p class="hint">Type up to 4 elements and their percent compositions. Tool finds the simplest ratio.</p>
+    <div id="efRows"></div>
+    <div class="flex" style="justify-content:center;margin-top:8px;gap:8px">
+      <button class="btn sm" onclick="efCalc()">Calculate</button>
+      <button class="btn sm ghost" onclick="efTry('C',40.0,'H',6.7,'O',53.3)">Try glucose (C 40%, H 6.7%, O 53.3%)</button>
+      <button class="btn sm ghost" onclick="efTry('Fe',69.9,'O',30.1)">Try iron oxide (Fe 69.9%, O 30.1%)</button>
+    </div>
+    <div id="efResult" class="feedback ok show" style="margin-top:10px;font-size:1rem"></div>
+    <div id="efSteps" class="note" style="margin-top:8px;font-family:var(--mono);font-size:.82rem"></div>
+  </div>
+
   <!-- ----- MOLE MAP ----- -->
   <h3 class="topic" id="molemap"><span class="num">6.2</span> The mole map — every stoichiometry problem</h3>
   <div class="box key"><span class="lab">the one rule</span>
@@ -1995,6 +2099,46 @@ em.hl{color:var(--teal);font-style:normal;}
   Ionic compounds (metal + nonmetal) → almost always electrolytes. Strong acids (HCl, HBr, HI, HNO₃,
   H₂SO₄, HClO₄) → strong electrolytes. Strong bases (NaOH, KOH, group-1/2 hydroxides) → strong
   electrolytes. Molecular compounds without acid/base behavior (sugar, alcohol, most organics) → nonelectrolytes.</div>
+
+  <h3 class="topic" id="solubility"><span class="num">7.2c</span> Solubility rules + interactive predictor</h3>
+  <div class="box plain"><span class="lab">in plain words</span>
+  When two ionic solutions are mixed, sometimes a solid (precipitate) forms — sometimes not. Whether
+  it forms depends on whether the new combination is "soluble" or "insoluble" in water. Memorize a few
+  rules and you can predict any precipitation.</div>
+  <table class="t">
+  <tr><th>Rule</th><th>Soluble (dissolves)</th><th>Exceptions (don't dissolve)</th></tr>
+  <tr><td>1</td><td>All Group-1 (Li⁺, Na⁺, K⁺, etc.) and NH₄⁺ compounds</td><td>none — they all dissolve</td></tr>
+  <tr><td>2</td><td>All nitrate (NO₃⁻), acetate (C₂H₃O₂⁻), perchlorate (ClO₄⁻) compounds</td><td>none — they all dissolve</td></tr>
+  <tr><td>3</td><td>Halides (Cl⁻, Br⁻, I⁻)</td><td>NOT with Ag⁺, Pb²⁺, Hg₂²⁺</td></tr>
+  <tr><td>4</td><td>Sulfates (SO₄²⁻)</td><td>NOT with Ba²⁺, Sr²⁺, Pb²⁺, Ca²⁺ (slight), Ag⁺</td></tr>
+  <tr><td>5</td><td>Hydroxides (OH⁻) and sulfides (S²⁻) are mostly INSOLUBLE</td><td>EXCEPT Group 1 + NH₄⁺ + Ba²⁺/Sr²⁺/Ca²⁺ hydroxides</td></tr>
+  <tr><td>6</td><td>Carbonates (CO₃²⁻), phosphates (PO₄³⁻), chromates (CrO₄²⁻) are mostly INSOLUBLE</td><td>EXCEPT Group 1 + NH₄⁺</td></tr>
+  </table>
+  <div class="card">
+    <h4><span class="ico" style="background:var(--rose)">💧</span> Interactive solubility predictor</h4>
+    <p class="hint">Pick a cation and anion. Tool applies the rules and tells you if the combination dissolves.</p>
+    <div class="flex" style="margin:10px 0;justify-content:center">
+      <select class="num" id="solCat" style="width:120px" onchange="solCalc()">
+        <option value="Na">Na⁺</option><option value="K">K⁺</option><option value="NH4">NH₄⁺</option>
+        <option value="Ag">Ag⁺</option><option value="Mg">Mg²⁺</option><option value="Ca">Ca²⁺</option>
+        <option value="Ba">Ba²⁺</option><option value="Sr">Sr²⁺</option><option value="Pb">Pb²⁺</option>
+        <option value="Fe2">Fe²⁺</option><option value="Fe3">Fe³⁺</option><option value="Cu">Cu²⁺</option>
+        <option value="Zn">Zn²⁺</option><option value="Al">Al³⁺</option>
+      </select>
+      <span style="color:var(--dim);font-size:1.4rem">+</span>
+      <select class="num" id="solAn" style="width:120px" onchange="solCalc()">
+        <option value="Cl">Cl⁻</option><option value="Br">Br⁻</option><option value="I">I⁻</option>
+        <option value="NO3">NO₃⁻</option><option value="C2H3O2">C₂H₃O₂⁻ (acetate)</option>
+        <option value="ClO4">ClO₄⁻</option><option value="OH">OH⁻</option>
+        <option value="S">S²⁻</option><option value="SO4">SO₄²⁻</option>
+        <option value="CO3">CO₃²⁻</option><option value="PO4">PO₄³⁻</option>
+        <option value="CrO4">CrO₄²⁻</option>
+      </select>
+    </div>
+    <div id="solFormula" style="font-family:var(--mono);font-size:1.4rem;text-align:center;margin:14px 0;color:var(--amber)"></div>
+    <div id="solVerdict" class="feedback ok show" style="text-align:center;font-size:1.05rem"></div>
+    <p id="solRule" class="note" style="text-align:center;margin-top:8px"></p>
+  </div>
 
   <h3 class="topic" id="ph"><span class="num">7.3</span> pH — the acid-strength scale</h3>
   <div class="box plain"><span class="lab">in plain words</span>
@@ -3902,7 +4046,148 @@ function boot(){
   gasInit();gasCtl();gasLoop();cgCalc();
   glsNew();igCalc();ionShow(0);namerNew();
   mmCalc();qcCalc();flashSetTopic('all',document.querySelector('#flashFilter .chip'));smRender();
+  dsCalc();mcRecalc('formula');efBuildRows();solCalc();
   quizFilter('all',document.querySelector('#quizFilter .chip'));
+}
+
+/* ============ DENSITY CALCULATOR ============ */
+function dsSetPreset(){let v=document.getElementById('dsPreset').value;if(v){document.getElementById('dsRho').value=v;dsCalc();}}
+function dsCalc(){
+  let v=document.getElementById('dsVar').value;
+  let rho=parseFloat(document.getElementById('dsRho').value);
+  let m=parseFloat(document.getElementById('dsM').value);
+  let V=parseFloat(document.getElementById('dsV').value);
+  let ans=document.getElementById('dsAns');let help=document.getElementById('dsHelp');
+  let r,lab,formula,unit;
+  if(v==='rho'){if(isNaN(m)||isNaN(V)){ans.innerHTML='<span class="note">Fill m and V.</span>';help.textContent='';return;}r=m/V;lab='ρ';formula='ρ = m/V = '+m+' / '+V;unit=' g/mL';}
+  else if(v==='m'){if(isNaN(rho)||isNaN(V)){ans.innerHTML='<span class="note">Fill ρ and V.</span>';help.textContent='';return;}r=rho*V;lab='m';formula='m = ρ·V = '+rho+' × '+V;unit=' g';}
+  else{if(isNaN(rho)||isNaN(m)){ans.innerHTML='<span class="note">Fill ρ and m.</span>';help.textContent='';return;}r=m/rho;lab='V';formula='V = m/ρ = '+m+' / '+rho;unit=' mL';}
+  ans.innerHTML='<b>'+lab+' = '+r.toFixed(3)+unit+'</b>';
+  let floats=v==='rho'&&r<1.0?' Floats on water (ρ &lt; 1.00).':v==='rho'&&r>1.0?' Sinks in water (ρ &gt; 1.00).':'';
+  help.innerHTML='<span style="font-family:var(--mono);font-size:.78rem">'+formula+'</span>'+floats;
+}
+
+/* ============ MOLE CONVERSION CALCULATOR ============ */
+let mcMMass=18.015;
+function mcRecalc(src){
+  let f=document.getElementById('mcF').value.trim();let msg=document.getElementById('mcMsg');
+  if(src==='formula'){
+    try{
+      let parsed=parseFormula(f);if(!Object.keys(parsed).length)throw 'empty';
+      let total=0;for(let el in parsed){if(ATOMIC_MASS[el]===undefined){throw 'unknown:'+el;}total+=ATOMIC_MASS[el]*parsed[el];}
+      mcMMass=total;
+      document.getElementById('mcMM').textContent=total.toFixed(3)+' g/mol';
+      msg.textContent='';
+      let mol=parseFloat(document.getElementById('mcMoles').value);
+      if(!isNaN(mol)){
+        document.getElementById('mcGrams').value=(mol*total).toFixed(3);
+        document.getElementById('mcParts').value=(mol*6.022e23).toExponential(3);
+        document.getElementById('mcLiters').value=(mol*22.4).toFixed(2);
+      }
+    }catch(e){msg.innerHTML='<span style="color:var(--mag)">Can\'t parse formula "'+f+'"</span>';return;}
+    return;
+  }
+  let mol;
+  if(src==='grams'){let g=parseFloat(document.getElementById('mcGrams').value);if(isNaN(g))return;mol=g/mcMMass;msg.innerHTML='<span style="font-family:var(--mono);font-size:.78rem">'+g+' g ÷ '+mcMMass.toFixed(3)+' g/mol = '+mol.toExponential(3)+' mol</span>';}
+  else if(src==='moles'){mol=parseFloat(document.getElementById('mcMoles').value);if(isNaN(mol))return;msg.innerHTML='<span style="font-family:var(--mono);font-size:.78rem">'+mol+' mol fans out into all three other amounts</span>';}
+  else if(src==='particles'){let p=parseFloat(document.getElementById('mcParts').value);if(isNaN(p))return;mol=p/6.022e23;msg.innerHTML='<span style="font-family:var(--mono);font-size:.78rem">'+p.toExponential(3)+' particles ÷ 6.022e23 = '+mol.toExponential(3)+' mol</span>';}
+  else{let L=parseFloat(document.getElementById('mcLiters').value);if(isNaN(L))return;mol=L/22.4;msg.innerHTML='<span style="font-family:var(--mono);font-size:.78rem">'+L+' L ÷ 22.4 L/mol (at STP) = '+mol.toExponential(3)+' mol</span>';}
+  if(src!=='moles')document.getElementById('mcMoles').value=mol.toExponential(3);
+  if(src!=='grams')document.getElementById('mcGrams').value=(mol*mcMMass).toFixed(3);
+  if(src!=='particles')document.getElementById('mcParts').value=(mol*6.022e23).toExponential(3);
+  if(src!=='liters')document.getElementById('mcLiters').value=(mol*22.4).toFixed(2);
+}
+
+/* ============ EMPIRICAL FORMULA CALCULATOR ============ */
+function efBuildRows(){
+  let html='';
+  for(let i=0;i<4;i++){
+    html+='<div class="kv"><span>Element '+(i+1)+' (symbol)</span><span><input class="num" id="efEl'+i+'" placeholder="e.g. C" style="width:80px;text-align:center" oninput="efCalc()"> &nbsp; % composition: <input class="num" id="efPct'+i+'" placeholder="0" style="width:80px;text-align:center" oninput="efCalc()"></span></div>';
+  }
+  document.getElementById('efRows').innerHTML=html;
+}
+function efTry(...args){for(let i=0;i<args.length;i+=2){document.getElementById('efEl'+(i/2)).value=args[i];document.getElementById('efPct'+(i/2)).value=args[i+1];}efCalc();}
+function efCalc(){
+  let elements=[];
+  for(let i=0;i<4;i++){
+    let sym=document.getElementById('efEl'+i).value.trim();
+    let pct=parseFloat(document.getElementById('efPct'+i).value);
+    if(sym&&!isNaN(pct)){
+      let cap=sym[0].toUpperCase()+(sym[1]?sym[1].toLowerCase():'');
+      if(ATOMIC_MASS[cap]===undefined){document.getElementById('efResult').innerHTML='<span style="color:var(--mag)">Unknown element symbol: '+sym+'</span>';document.getElementById('efSteps').innerHTML='';return;}
+      elements.push({sym:cap,pct:pct,mass:ATOMIC_MASS[cap]});
+    }
+  }
+  if(elements.length<2){document.getElementById('efResult').innerHTML='<span class="note">Enter at least 2 elements with their percentages.</span>';document.getElementById('efSteps').innerHTML='';return;}
+  // Step 1: assume 100g, so percent = grams. Step 2: moles = grams / mass. Step 3: divide by smallest.
+  elements.forEach(e=>{e.mol=e.pct/e.mass;});
+  let minMol=Math.min(...elements.map(e=>e.mol));
+  elements.forEach(e=>{e.ratio=e.mol/minMol;});
+  // Try multiplying to get nice integers (handle ratios like 1.5 → 3, 1.33 → 4, etc.)
+  let mult=1;
+  for(let m=1;m<=6;m++){
+    let allClose=elements.every(e=>{let v=e.ratio*m;return Math.abs(v-Math.round(v))<0.1;});
+    if(allClose){mult=m;break;}
+  }
+  elements.forEach(e=>{e.intRatio=Math.round(e.ratio*mult);});
+  let formula=elements.map(e=>e.sym+(e.intRatio===1?'':e.intRatio)).join('');
+  document.getElementById('efResult').innerHTML='<b>Empirical formula: '+formula+'</b>';
+  let steps='Step 1 (assume 100 g, so % = grams):<br>';
+  elements.forEach(e=>{steps+='&nbsp;&nbsp;'+e.sym+': '+e.pct+' g<br>';});
+  steps+='Step 2 (moles = g ÷ molar mass):<br>';
+  elements.forEach(e=>{steps+='&nbsp;&nbsp;'+e.sym+': '+e.pct+' / '+e.mass+' = '+e.mol.toFixed(4)+' mol<br>';});
+  steps+='Step 3 (divide by smallest = '+minMol.toFixed(4)+'):<br>';
+  elements.forEach(e=>{steps+='&nbsp;&nbsp;'+e.sym+': '+e.mol.toFixed(4)+' / '+minMol.toFixed(4)+' = '+e.ratio.toFixed(3)+(mult>1?' × '+mult+' = '+e.intRatio:' ≈ '+e.intRatio)+'<br>';});
+  document.getElementById('efSteps').innerHTML=steps;
+}
+
+/* ============ SOLUBILITY PREDICTOR ============ */
+const SOL_DATA={
+  cat:{Na:{sym:'Na⁺',ch:'+1',g1:true},K:{sym:'K⁺',ch:'+1',g1:true},NH4:{sym:'NH₄⁺',ch:'+1',g1:true},
+       Ag:{sym:'Ag⁺',ch:'+1'},Mg:{sym:'Mg²⁺',ch:'+2'},Ca:{sym:'Ca²⁺',ch:'+2'},
+       Ba:{sym:'Ba²⁺',ch:'+2'},Sr:{sym:'Sr²⁺',ch:'+2'},Pb:{sym:'Pb²⁺',ch:'+2'},
+       Fe2:{sym:'Fe²⁺',ch:'+2'},Fe3:{sym:'Fe³⁺',ch:'+3'},Cu:{sym:'Cu²⁺',ch:'+2'},
+       Zn:{sym:'Zn²⁺',ch:'+2'},Al:{sym:'Al³⁺',ch:'+3'}},
+  an:{Cl:{sym:'Cl⁻',ch:'-1'},Br:{sym:'Br⁻',ch:'-1'},I:{sym:'I⁻',ch:'-1'},
+      NO3:{sym:'NO₃⁻',ch:'-1'},C2H3O2:{sym:'C₂H₃O₂⁻',ch:'-1'},ClO4:{sym:'ClO₄⁻',ch:'-1'},
+      OH:{sym:'OH⁻',ch:'-1'},S:{sym:'S²⁻',ch:'-2'},SO4:{sym:'SO₄²⁻',ch:'-2'},
+      CO3:{sym:'CO₃²⁻',ch:'-2'},PO4:{sym:'PO₄³⁻',ch:'-3'},CrO4:{sym:'CrO₄²⁻',ch:'-2'}}
+};
+function solCalc(){
+  let catK=document.getElementById('solCat').value;let anK=document.getElementById('solAn').value;
+  let cat=SOL_DATA.cat[catK];let an=SOL_DATA.an[anK];
+  // Build formula by charge balance
+  let cc=parseInt(cat.ch);let ac=Math.abs(parseInt(an.ch));
+  let g=function(a,b){return b?g(b,a%b):a;};let d=g(Math.abs(cc),Math.abs(ac));
+  let nC=Math.abs(ac)/d;let nA=Math.abs(cc)/d;
+  let catSym=cat.sym.replace(/[⁺⁻¹²³⁴⁵⁶⁷⁸⁹⁰]/g,'').replace(/[+\-]/g,'');
+  let anSym=an.sym.replace(/[⁺⁻¹²³⁴⁵⁶⁷⁸⁹⁰]/g,'').replace(/[+\-]/g,'');
+  let needsP=anSym.length>1&&['NO3','OH','SO4','CO3','PO4','CrO4','C2H3O2','ClO4'].indexOf(anK)>=0&&nA>1;
+  let formula=catSym+(nC>1?nC:'')+(needsP?'('+anSym+')'+nA:anSym+(nA>1?nA:''));
+  document.getElementById('solFormula').textContent=formula;
+  // Apply solubility rules
+  let soluble=null,rule='';
+  if(cat.g1){soluble=true;rule='Rule 1: Group-1 cations (Li/Na/K/etc.) and NH₄⁺ make EVERYTHING soluble.';}
+  else if(['NO3','C2H3O2','ClO4'].includes(anK)){soluble=true;rule='Rule 2: Nitrates, acetates, and perchlorates are ALWAYS soluble.';}
+  else if(['Cl','Br','I'].includes(anK)){
+    if(['Ag','Pb'].includes(catK)){soluble=false;rule='Rule 3 exception: Halides are soluble EXCEPT with Ag⁺, Pb²⁺, Hg₂²⁺.';}
+    else{soluble=true;rule='Rule 3: Halides (Cl⁻, Br⁻, I⁻) are soluble (except with Ag, Pb, Hg₂).';}
+  }
+  else if(anK==='SO4'){
+    if(['Ba','Sr','Pb','Ag'].includes(catK)){soluble=false;rule='Rule 4 exception: Sulfates are soluble EXCEPT with Ba²⁺, Sr²⁺, Pb²⁺, Ag⁺, Ca²⁺ (slight).';}
+    else if(catK==='Ca'){soluble='slight';rule='Rule 4: Calcium sulfate is SLIGHTLY soluble.';}
+    else{soluble=true;rule='Rule 4: Sulfates are soluble (except with Ba, Sr, Pb, Ag, Ca-slight).';}
+  }
+  else if(anK==='OH'){
+    if(['Ba','Sr','Ca'].includes(catK)){soluble=true;rule='Rule 5 exception: Hydroxides of Ba, Sr, Ca ARE soluble. (All others are not.)';}
+    else{soluble=false;rule='Rule 5: Hydroxides are INSOLUBLE (except Group 1, NH₄⁺, Ba, Sr, Ca).';}
+  }
+  else if(['S','CO3','PO4','CrO4'].includes(anK)){soluble=false;rule='Rule 6: Sulfides, carbonates, phosphates, chromates are INSOLUBLE (except Group 1 and NH₄⁺).';}
+  let v=document.getElementById('solVerdict');
+  if(soluble===true){v.className='feedback ok show';v.innerHTML='✓ <b>SOLUBLE</b> — '+formula+' dissolves in water (no precipitate forms).';}
+  else if(soluble===false){v.className='feedback no show';v.innerHTML='✗ <b>INSOLUBLE</b> — '+formula+' will form a PRECIPITATE (solid drops out of solution).';}
+  else{v.className='feedback';v.style.display='block';v.style.background='rgba(255,194,75,.12)';v.style.border='1px solid var(--amber)';v.style.color='#ffe6b8';v.innerHTML='~ <b>SLIGHTLY SOLUBLE</b> — '+formula+' dissolves a little but mostly precipitates.';}
+  document.getElementById('solRule').innerHTML='<b>Rule applied:</b> '+rule;
 }
 
 /* ============ MOLAR MASS CALCULATOR ============ */
