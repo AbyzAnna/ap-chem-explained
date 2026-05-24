@@ -235,6 +235,7 @@ em.hl{color:var(--teal);font-style:normal;}
   <a href="#imf">Intermolecular forces</a>
   <div class="ut"><span style="background:var(--green);color:#0c1018">5</span>Reactions</div>
   <a href="#endoexo">Endo vs exo</a>
+  <a href="#qcalc">Heat calc (q=mcΔT)</a>
   <a href="#rxntype">Reaction sorter</a>
   <a href="#balance">Equation balancer</a>
   <a href="#redox">Redox solver</a>
@@ -257,6 +258,8 @@ em.hl{color:var(--teal);font-style:normal;}
   <div class="ut"><span style="background:var(--orange);color:#0c1018">★</span>Practice</div>
   <a href="#hardest">Hardest problems</a>
   <a href="#quiz">Mixed quiz</a>
+  <a href="#flashcards">🎴 Flashcards</a>
+  <a href="#studymode">📚 All questions</a>
 </nav>
 
 <main>
@@ -1553,6 +1556,69 @@ em.hl{color:var(--teal);font-style:normal;}
   When you see an equation with "+ heat" written into it, look which side it's on. Heat on the
   <em>left</em> (with reactants) = endothermic. Heat on the <em>right</em> (with products) = exothermic.</div>
 
+  <h3 class="topic" id="qcalc"><span class="num">5.0b</span> Heat calculator (q = mcΔT)</h3>
+  <div class="box plain"><span class="lab">in plain words</span>
+  The amount of heat (q, in joules) absorbed or released by a sample depends on three things:
+  how much you have (mass), what it's made of (specific heat capacity), and how much its
+  temperature changed.</div>
+  <div class="formula">q = m · c · ΔT</div>
+  <table class="t">
+  <tr><th>Symbol</th><th>What it is</th><th>Units</th></tr>
+  <tr><td><b>q</b></td><td>Heat absorbed (+) or released (−)</td><td>J (joules)</td></tr>
+  <tr><td><b>m</b></td><td>Mass of the substance</td><td>g (grams)</td></tr>
+  <tr><td><b>c</b></td><td>Specific heat capacity — how much heat 1 g of it needs to warm 1 °C</td><td>J/(g·°C)</td></tr>
+  <tr><td><b>ΔT</b></td><td>Change in temperature = T<sub>final</sub> − T<sub>initial</sub></td><td>°C (or K — same size)</td></tr>
+  </table>
+  <p>Useful specific heats: water = 4.18 J/(g·°C), aluminum = 0.897, copper = 0.385, iron = 0.449,
+  gold = 0.129. Water is unusually HIGH — that's why oceans moderate climate.</p>
+
+  <div class="card">
+    <h4><span class="ico" style="background:var(--mag)">🔥</span> Heat (q = mcΔT) calculator</h4>
+    <p class="hint">Pick what to solve for. Fill in the other 3. Tool computes the missing value.</p>
+    <div class="flex" style="margin:8px 0">
+      <label class="note">Solve for:</label>
+      <select class="num" id="qcVar" style="width:80px" onchange="qcCalc()">
+        <option value="q">q (J)</option>
+        <option value="m">m (g)</option>
+        <option value="c">c (J/g·°C)</option>
+        <option value="dT">ΔT (°C)</option>
+      </select>
+      <span class="tag">Substance preset:</span>
+      <select class="num" id="qcSub" style="width:140px" onchange="qcSetSub()">
+        <option value="">— custom —</option>
+        <option value="4.18">water (4.18)</option>
+        <option value="0.897">aluminum (0.897)</option>
+        <option value="0.385">copper (0.385)</option>
+        <option value="0.449">iron (0.449)</option>
+        <option value="0.129">gold (0.129)</option>
+      </select>
+    </div>
+    <div class="split thirds">
+      <div>
+        <div class="kv"><span>q (J)</span><span><input class="num" id="qcq" placeholder="?" oninput="qcCalc()"></span></div>
+        <div class="kv"><span>m (g)</span><span><input class="num" id="qcm" value="100" oninput="qcCalc()"></span></div>
+      </div>
+      <div>
+        <div class="kv"><span>c (J/g·°C)</span><span><input class="num" id="qcc" value="4.18" oninput="qcCalc()"></span></div>
+        <div class="kv"><span>ΔT (°C)</span><span><input class="num" id="qcdT" value="10" oninput="qcCalc()"></span></div>
+      </div>
+      <div>
+        <div id="qcAns" class="feedback ok show" style="font-size:1rem"></div>
+        <p id="qcInterp" class="note" style="margin-top:6px;font-size:.82rem"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ex">
+  <div class="exhead">Worked example — heat 250 g of water</div>
+  <div class="exbody">
+  <div class="q">How much heat (J) does it take to warm 250 g of water from 20 °C to 80 °C?</div>
+  <div class="step" data-n="1">m = 250 g, c = 4.18 J/(g·°C), ΔT = 80 − 20 = 60 °C.</div>
+  <div class="step" data-n="2">q = m·c·ΔT = 250 × 4.18 × 60 = 62,700 J.</div>
+  <div class="step" data-n="3">In kJ: 62.7 kJ. Positive = heat is ABSORBED (endothermic from water's point of view).</div>
+  <div class="ans">q ≈ 62,700 J = 62.7 kJ (endothermic)</div>
+  </div></div>
+
   <!-- ----- REACTION TYPE SORTER ----- -->
   <h3 class="topic" id="rxntype"><span class="num">5.1</span> Reaction types — five patterns with real examples</h3>
   <table class="t">
@@ -1783,6 +1849,26 @@ em.hl{color:var(--teal);font-style:normal;}
   <li>1 mol of a substance weighs its molar mass in grams.</li>
   <li>1 mol of any <em>gas</em> at STP takes up 22.4 L.</li>
   </ul>
+
+  <div class="card">
+    <h4><span class="ico" style="background:var(--blue)">Σ</span> Molar mass calculator — type any formula</h4>
+    <p class="hint">Type a chemical formula (use capital letters and subscripts as numbers: H2SO4, Ca(OH)2, C6H12O6). The tool calculates molar mass and atom counts.</p>
+    <div class="flex" style="margin:10px 0;justify-content:center">
+      <input class="num" id="mmIn" placeholder="H2O" style="width:240px;text-align:center;font-family:var(--mono);font-size:1.05rem" value="H2O">
+      <button class="btn primary sm" onclick="mmCalc()">Calculate</button>
+    </div>
+    <div id="mmResult" class="feedback ok show" style="font-size:1rem"></div>
+    <div id="mmBreakdown" class="note" style="margin-top:10px;font-family:var(--mono);font-size:.85rem"></div>
+    <div class="flex" style="margin-top:10px;flex-wrap:wrap;gap:6px">
+      <span class="tag">try these:</span>
+      <button class="btn sm ghost" onclick="mmTry('H2O')">H2O</button>
+      <button class="btn sm ghost" onclick="mmTry('NaCl')">NaCl</button>
+      <button class="btn sm ghost" onclick="mmTry('C6H12O6')">C6H12O6</button>
+      <button class="btn sm ghost" onclick="mmTry('Ca(OH)2')">Ca(OH)2</button>
+      <button class="btn sm ghost" onclick="mmTry('Al2(SO4)3')">Al2(SO4)3</button>
+      <button class="btn sm ghost" onclick="mmTry('CuSO4')">CuSO4</button>
+    </div>
+  </div>
 
   <!-- ----- MOLE MAP ----- -->
   <h3 class="topic" id="molemap"><span class="num">6.2</span> The mole map — every stoichiometry problem</h3>
@@ -2668,6 +2754,62 @@ em.hl{color:var(--teal);font-style:normal;}
   <div class="box plain" style="margin-top:30px"><span class="lab">how to use this guide</span>
   Read a topic, work the widget, try the worked example with the answer covered first. The orange
   "AP tip" and pink "mistake" boxes are where most exam points are won or lost. You've got this. 🧪</div>
+</section>
+
+<!-- ============================ FLASHCARDS ============================ -->
+<section class="unit" id="flashcards">
+  <span class="utag" style="background:var(--purple);color:#0c1018">★ Quick Review · Flashcards</span>
+  <h2>Flashcard mode — rapid review</h2>
+  <p class="lead">Quick definition flashcards for every key term in the course. Click the card to flip.</p>
+  <div class="card" style="max-width:600px;margin:18px auto">
+    <div id="flashCard" onclick="flashFlip()" style="background:linear-gradient(135deg,var(--panel3),var(--panel2));border:2px solid var(--line2);border-radius:14px;padding:30px 24px;cursor:pointer;min-height:160px;display:flex;align-items:center;justify-content:center;text-align:center;font-family:'Sora';transition:transform .3s;">
+      <span id="flashText" style="font-size:1.3rem;font-weight:700;color:var(--teal)">Click for first term...</span>
+    </div>
+    <div class="flex" style="justify-content:space-between;margin-top:12px;">
+      <button class="btn sm" onclick="flashPrev()">← Prev</button>
+      <span class="tag" id="flashCount">card 1 / —</span>
+      <span class="tag" id="flashSide" style="color:var(--amber)">Front</span>
+      <button class="btn sm" onclick="flashFlip()">🔄 Flip</button>
+      <button class="btn primary sm" onclick="flashNext()">Next →</button>
+    </div>
+    <div class="chips" id="flashFilter" style="margin-top:14px;justify-content:center">
+      <span class="chip active" onclick="flashSetTopic('all',this)">All</span>
+      <span class="chip" onclick="flashSetTopic('matter',this)">Matter</span>
+      <span class="chip" onclick="flashSetTopic('atom',this)">Atoms</span>
+      <span class="chip" onclick="flashSetTopic('bonds',this)">Bonds</span>
+      <span class="chip" onclick="flashSetTopic('rxn',this)">Reactions</span>
+      <span class="chip" onclick="flashSetTopic('ab',this)">Acids/Bases</span>
+      <span class="chip" onclick="flashSetTopic('gas',this)">Gases</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ STUDY MODE — ALL QUESTIONS ============================ -->
+<section class="unit" id="studymode">
+  <span class="utag" style="background:var(--blue);color:#0c1018">★ Study Mode · All Questions</span>
+  <h2>Every quiz question, all in one place</h2>
+  <p class="lead">All <b id="smCount">—</b> self-grading questions from the site, with their correct
+  answers and full explanations. Use the filter chips to focus on one unit, or the search box to
+  jump to a topic. Great for last-minute review.</p>
+  <div class="card">
+    <div class="flex" style="margin-bottom:10px;align-items:center;flex-wrap:wrap">
+      <input type="text" id="smSearch" placeholder="🔍 search questions, answers, or topics..." oninput="smRender()" style="font-family:'Hanken Grotesk';background:var(--bg2);border:1px solid var(--line);color:var(--text);border-radius:9px;padding:8px 12px;flex:1;min-width:200px;font-size:.92rem">
+      <button class="btn sm" onclick="smToggleAns()" id="smToggleBtn">Hide answers</button>
+    </div>
+    <div class="chips" id="smFilter">
+      <span class="chip active" onclick="smSetUnit('all',this)">All units</span>
+      <span class="chip" onclick="smSetUnit(1,this)">U1 Measurement</span>
+      <span class="chip" onclick="smSetUnit(2,this)">U2 Atoms</span>
+      <span class="chip" onclick="smSetUnit(3,this)">U3 Periodic</span>
+      <span class="chip" onclick="smSetUnit(4,this)">U4 Bonding</span>
+      <span class="chip" onclick="smSetUnit(5,this)">U5 Reactions</span>
+      <span class="chip" onclick="smSetUnit(6,this)">U6 Stoichiometry</span>
+      <span class="chip" onclick="smSetUnit(7,this)">U7 Acids/Bases</span>
+      <span class="chip" onclick="smSetUnit(8,this)">U8 Gases</span>
+    </div>
+    <p class="note" id="smMatchCount" style="margin:8px 0">—</p>
+    <div id="smList" style="margin-top:14px"></div>
+  </div>
 </section>
 
 </main>
@@ -3759,7 +3901,179 @@ function boot(){
   phUpdate();
   gasInit();gasCtl();gasLoop();cgCalc();
   glsNew();igCalc();ionShow(0);namerNew();
+  mmCalc();qcCalc();flashSetTopic('all',document.querySelector('#flashFilter .chip'));smRender();
   quizFilter('all',document.querySelector('#quizFilter .chip'));
+}
+
+/* ============ MOLAR MASS CALCULATOR ============ */
+const ATOMIC_MASS = {H:1.008,He:4.003,Li:6.941,Be:9.012,B:10.811,C:12.011,N:14.007,O:15.999,F:18.998,Ne:20.180,Na:22.990,Mg:24.305,Al:26.982,Si:28.086,P:30.974,S:32.065,Cl:35.453,Ar:39.948,K:39.098,Ca:40.078,Sc:44.956,Ti:47.867,V:50.942,Cr:51.996,Mn:54.938,Fe:55.845,Co:58.933,Ni:58.693,Cu:63.546,Zn:65.380,Ga:69.723,Ge:72.640,As:74.922,Se:78.960,Br:79.904,Kr:83.798,Rb:85.468,Sr:87.620,Y:88.906,Zr:91.224,Ag:107.868,Cd:112.411,Sn:118.710,Sb:121.760,I:126.904,Cs:132.905,Ba:137.327,Au:196.967,Hg:200.590,Pb:207.200};
+function parseFormula(str){
+  let stack=[{}];let i=0;
+  while(i<str.length){
+    let c=str[i];
+    if(c==='('){stack.push({});i++;}
+    else if(c===')'){
+      let inner=stack.pop();i++;
+      let numStr='';while(i<str.length&&/\d/.test(str[i])){numStr+=str[i];i++;}
+      let n=numStr?parseInt(numStr):1;
+      for(let el in inner)stack[stack.length-1][el]=(stack[stack.length-1][el]||0)+inner[el]*n;
+    }
+    else if(/[A-Z]/.test(c)){
+      let sym=c;i++;
+      if(i<str.length&&/[a-z]/.test(str[i])){sym+=str[i];i++;}
+      let numStr='';while(i<str.length&&/\d/.test(str[i])){numStr+=str[i];i++;}
+      let n=numStr?parseInt(numStr):1;
+      stack[stack.length-1][sym]=(stack[stack.length-1][sym]||0)+n;
+    }
+    else{i++;}
+  }
+  return stack[0];
+}
+function mmCalc(){
+  let raw=document.getElementById('mmIn').value.trim();
+  let result=document.getElementById('mmResult');
+  let breakdown=document.getElementById('mmBreakdown');
+  if(!raw){result.innerHTML='<span class="note">Type a formula above.</span>';breakdown.innerHTML='';return;}
+  try{
+    let parsed=parseFormula(raw);
+    if(!Object.keys(parsed).length){throw 'empty';}
+    let total=0;let rows='';let unknown=[];
+    for(let el in parsed){
+      let m=ATOMIC_MASS[el];
+      if(m===undefined){unknown.push(el);continue;}
+      let contrib=m*parsed[el];
+      total+=contrib;
+      rows+='<div class="kv"><span>'+el+' × '+parsed[el]+' (M='+m+')</span><span>'+contrib.toFixed(3)+' g/mol</span></div>';
+    }
+    if(unknown.length){
+      result.innerHTML='<span style="color:var(--mag)">Unknown element(s): '+unknown.join(', ')+'</span>';
+      breakdown.innerHTML='';return;
+    }
+    let totalAtoms=Object.values(parsed).reduce((a,b)=>a+b,0);
+    result.innerHTML='<b>'+raw+' = '+total.toFixed(3)+' g/mol</b> · '+totalAtoms+' atoms per formula unit';
+    breakdown.innerHTML=rows+'<div class="kv" style="border-top:2px solid var(--teal);padding-top:6px;font-weight:700"><span>TOTAL</span><span>'+total.toFixed(3)+' g/mol</span></div>';
+  }catch(e){
+    result.innerHTML='<span style="color:var(--mag)">Could not parse "'+raw+'". Use capital letters for elements, numbers for subscripts, parentheses for groups. Example: Ca(OH)2</span>';
+    breakdown.innerHTML='';
+  }
+}
+function mmTry(f){document.getElementById('mmIn').value=f;mmCalc();}
+
+/* ============ q = mcΔT CALCULATOR ============ */
+function qcSetSub(){let v=document.getElementById('qcSub').value;if(v){document.getElementById('qcc').value=v;qcCalc();}}
+function qcCalc(){
+  let v=document.getElementById('qcVar').value;
+  let q=parseFloat(document.getElementById('qcq').value);
+  let m=parseFloat(document.getElementById('qcm').value);
+  let c=parseFloat(document.getElementById('qcc').value);
+  let dT=parseFloat(document.getElementById('qcdT').value);
+  let ans=document.getElementById('qcAns');let interp=document.getElementById('qcInterp');
+  let r,lab,formula;
+  if(v==='q'){if(isNaN(m)||isNaN(c)||isNaN(dT)){ans.innerHTML='<span class="note">Fill m, c, ΔT.</span>';interp.textContent='';return;}r=m*c*dT;lab='q';formula='q = m·c·ΔT = '+m+' × '+c+' × '+dT;}
+  else if(v==='m'){if(isNaN(q)||isNaN(c)||isNaN(dT)){ans.innerHTML='<span class="note">Fill q, c, ΔT.</span>';interp.textContent='';return;}r=q/(c*dT);lab='m';formula='m = q/(c·ΔT) = '+q+' / ('+c+' × '+dT+')';}
+  else if(v==='c'){if(isNaN(q)||isNaN(m)||isNaN(dT)){ans.innerHTML='<span class="note">Fill q, m, ΔT.</span>';interp.textContent='';return;}r=q/(m*dT);lab='c';formula='c = q/(m·ΔT) = '+q+' / ('+m+' × '+dT+')';}
+  else{if(isNaN(q)||isNaN(m)||isNaN(c)){ans.innerHTML='<span class="note">Fill q, m, c.</span>';interp.textContent='';return;}r=q/(m*c);lab='ΔT';formula='ΔT = q/(m·c) = '+q+' / ('+m+' × '+c+')';}
+  ans.innerHTML='<b>'+lab+' = '+r.toFixed(2)+'</b>'+(v==='q'?(' J ('+(r/1000).toFixed(3)+' kJ)'):(v==='m'?' g':v==='c'?' J/(g·°C)':' °C'));
+  if(v==='q'){interp.innerHTML=(r>0?'<span style="color:var(--mag)">+q → heat ABSORBED (endothermic)</span>':'<span style="color:var(--blue)">−q → heat RELEASED (exothermic)</span>');}
+  else interp.innerHTML='<span class="note" style="font-family:var(--mono);font-size:.78rem">'+formula+'</span>';
+}
+
+/* ============ FLASHCARDS ============ */
+const FLASH=[
+ {t:'matter',f:'Element',b:'A pure substance made of only one kind of atom. Listed on the periodic table. Examples: Au, O₂, Fe.'},
+ {t:'matter',f:'Compound',b:'A pure substance made of two or more elements chemically bonded in a fixed ratio. Examples: H₂O, NaCl, CO₂.'},
+ {t:'matter',f:'Mixture',b:'Two or more substances physically together but NOT chemically bonded. Can be separated by physical means.'},
+ {t:'matter',f:'Homogeneous mixture',b:'Uniform composition throughout — you cannot see separate parts. Also called a solution. Examples: salt water, air, brass.'},
+ {t:'matter',f:'Heterogeneous mixture',b:'Non-uniform mixture — you CAN see separate parts or layers. Examples: salad, oil+water, granite.'},
+ {t:'matter',f:'Solute',b:'The substance being dissolved (usually the smaller amount). In salt water, salt is the solute.'},
+ {t:'matter',f:'Solvent',b:'The substance that does the dissolving (usually the larger amount). In salt water, water is the solvent.'},
+ {t:'matter',f:'Physical change',b:'A change where the substance\'s identity stays the same (melting, dissolving sugar, tearing paper).'},
+ {t:'matter',f:'Chemical change',b:'A change where a NEW substance forms (burning, rusting, baking bread). Signs: color change, gas, precipitate, heat, light, new smell.'},
+ {t:'matter',f:'Filtration',b:'Separation method: pour through filter paper. Liquid passes; insoluble solid stays caught.'},
+ {t:'matter',f:'Distillation',b:'Separation method: heat → vapor → condense in tube → pure liquid drips out. Separates by boiling point.'},
+ {t:'matter',f:'Evaporation',b:'Separation method: heat away the liquid; the dissolved solid is left behind. Example: sea salt from seawater.'},
+ {t:'atom',f:'Atom',b:'The smallest unit of an element that retains the element\'s identity. Contains a nucleus (protons + neutrons) surrounded by electrons.'},
+ {t:'atom',f:'Proton',b:'Positively-charged subatomic particle in the nucleus. Its count = the atomic number = the element\'s identity.'},
+ {t:'atom',f:'Neutron',b:'Neutral (no charge) subatomic particle in the nucleus. Adds mass without changing element identity.'},
+ {t:'atom',f:'Electron',b:'Negatively-charged subatomic particle that orbits the nucleus in shells/orbitals. Almost no mass.'},
+ {t:'atom',f:'Atomic number (Z)',b:'Number of protons in the nucleus. This identifies the element. Hydrogen = 1, Carbon = 6, Gold = 79.'},
+ {t:'atom',f:'Mass number (A)',b:'Number of protons + neutrons in the nucleus. So neutrons = A − Z.'},
+ {t:'atom',f:'Isotope',b:'Atoms of the same element (same Z) with different numbers of neutrons (different A). Same chemistry, different mass.'},
+ {t:'atom',f:'Orbital',b:'A 3-D region of space where an electron is likely to be found. Max 2 electrons per orbital (opposite spins). Shapes: s, p, d, f.'},
+ {t:'atom',f:'Valence electrons',b:'Electrons in the outermost shell. These are the ones that participate in bonding.'},
+ {t:'bonds',f:'Ionic bond',b:'A bond formed by complete TRANSFER of electrons from a metal to a nonmetal. Resulting +/− ions attract. ΔEN > 1.7.'},
+ {t:'bonds',f:'Covalent bond',b:'A bond formed by SHARING of electron pairs between two nonmetals. Nonpolar if ΔEN < 0.4; polar if 0.4 ≤ ΔEN ≤ 1.7.'},
+ {t:'bonds',f:'Metallic bond',b:'A bond between metal atoms — a "sea of free electrons" surrounds positive metal ion cores. Explains conductivity and malleability.'},
+ {t:'bonds',f:'Electronegativity (EN)',b:'How strongly an atom pulls on shared electrons in a bond. Highest: F (3.98). Lowest: Cs/Fr. Difference (ΔEN) decides bond type.'},
+ {t:'bonds',f:'IMF (intermolecular force)',b:'A weak attraction BETWEEN separate molecules (not within them). Three types: London dispersion, dipole-dipole, hydrogen bonding.'},
+ {t:'bonds',f:'Hydrogen bond',b:'The strongest intermolecular force. Only happens when H is bonded to F, O, or N. Explains water\'s high boiling point.'},
+ {t:'bonds',f:'VSEPR theory',b:'"Valence-shell electron-pair repulsion." Electron groups around a central atom push apart as far as possible, setting the 3-D shape.'},
+ {t:'rxn',f:'Synthesis reaction',b:'A + B → AB. Two reactants combine into one product. Example: 2H₂ + O₂ → 2H₂O.'},
+ {t:'rxn',f:'Decomposition reaction',b:'AB → A + B. One reactant breaks into pieces. Example: 2H₂O → 2H₂ + O₂.'},
+ {t:'rxn',f:'Single replacement',b:'A + BC → AC + B. One element kicks another out of its compound. Example: Zn + 2HCl → ZnCl₂ + H₂.'},
+ {t:'rxn',f:'Double replacement',b:'AB + CD → AD + CB. Two ionic compounds swap partners. Example: AgNO₃ + NaCl → AgCl↓ + NaNO₃.'},
+ {t:'rxn',f:'Combustion',b:'A fuel (often hydrocarbon) burns in O₂ → CO₂ + H₂O. Example: CH₄ + 2O₂ → CO₂ + 2H₂O.'},
+ {t:'rxn',f:'Oxidation (LEO)',b:'Loss of Electrons. The atom\'s oxidation number INCREASES (goes up). Example: Zn → Zn²⁺ + 2e⁻.'},
+ {t:'rxn',f:'Reduction (GER)',b:'Gain of Electrons. The atom\'s oxidation number DECREASES (goes down). Example: Cu²⁺ + 2e⁻ → Cu.'},
+ {t:'rxn',f:'Catalyst',b:'A substance that speeds up a reaction without being consumed. Lowers activation energy for forward AND reverse equally. Does NOT shift equilibrium.'},
+ {t:'rxn',f:'Endothermic',b:'Absorbs energy from surroundings (gets cold). Heat is on the REACTANT side. ΔH > 0.'},
+ {t:'rxn',f:'Exothermic',b:'Releases energy to surroundings (gets warm). Heat is on the PRODUCT side. ΔH < 0.'},
+ {t:'ab',f:'Acid',b:'A substance that donates H⁺ (proton donor). Tastes sour. Examples: HCl, H₂SO₄, vinegar (CH₃COOH).'},
+ {t:'ab',f:'Base',b:'A substance that accepts H⁺ (proton acceptor) or produces OH⁻. Tastes bitter, feels slippery. Examples: NaOH, NH₃.'},
+ {t:'ab',f:'pH',b:'A 0-to-14 scale measuring acidity. pH = -log[H⁺]. Below 7 = acidic, 7 = neutral, above 7 = basic.'},
+ {t:'ab',f:'Molarity (M)',b:'Concentration unit: moles of solute / liters of solution. A 1.0 M solution has 1 mol of solute per 1 L of solution.'},
+ {t:'ab',f:'Electrolyte',b:'A substance that conducts electricity when dissolved in water. Splits into ions. Strong (HCl, NaCl) or weak (vinegar).'},
+ {t:'ab',f:'Nonelectrolyte',b:'A substance that does NOT conduct electricity in solution. Stays as molecules. Example: sugar.'},
+ {t:'gas',f:'Boyle\'s law',b:'At constant T: P₁V₁ = P₂V₂. Pressure and volume are INVERSELY proportional. Squeeze → P up. "Bouncy Tacos."'},
+ {t:'gas',f:'Charles\'s law',b:'At constant P: V₁/T₁ = V₂/T₂. Volume and temperature are DIRECTLY proportional. Heat → V up. "Crying Pickles."'},
+ {t:'gas',f:'Gay-Lussac\'s law',b:'At constant V: P₁/T₁ = P₂/T₂. Pressure and temperature are DIRECTLY proportional. Heat sealed can → P up. "Gigantic Veggies."'},
+ {t:'gas',f:'Avogadro\'s law',b:'At constant T and P: V₁/n₁ = V₂/n₂. Equal volumes of any gas contain equal numbers of moles. "All Noisy."'},
+ {t:'gas',f:'Ideal gas law',b:'PV = nRT, with R = 0.0821 L·atm/(mol·K). The master gas equation — works when you need an absolute quantity.'},
+ {t:'gas',f:'KMT',b:'Kinetic Molecular Theory: gas particles are tiny, fast, far apart, with negligible attractions. Higher T = faster particles.'}];
+let flashTopic='all',flashIdx=0,flashSide='front';
+function flashCardsByTopic(){return flashTopic==='all'?FLASH:FLASH.filter(c=>c.t===flashTopic);}
+function flashSetTopic(t,el){flashTopic=t;flashIdx=0;flashSide='front';
+  if(el){document.querySelectorAll('#flashFilter .chip').forEach(c=>c.classList.remove('active'));el.classList.add('active');}
+  flashRender();}
+function flashRender(){
+  let cards=flashCardsByTopic();
+  if(!cards.length){document.getElementById('flashText').textContent='(no cards in this topic)';return;}
+  let card=cards[flashIdx];
+  document.getElementById('flashText').textContent=flashSide==='front'?card.f:card.b;
+  document.getElementById('flashText').style.color=flashSide==='front'?'var(--teal)':'var(--text)';
+  document.getElementById('flashText').style.fontSize=flashSide==='front'?'1.4rem':'1rem';
+  document.getElementById('flashText').style.fontWeight=flashSide==='front'?'800':'500';
+  document.getElementById('flashCount').textContent='card '+(flashIdx+1)+' / '+cards.length;
+  document.getElementById('flashSide').textContent=flashSide==='front'?'Front (term)':'Back (definition)';}
+function flashFlip(){flashSide=flashSide==='front'?'back':'front';flashRender();}
+function flashNext(){let cards=flashCardsByTopic();flashIdx=(flashIdx+1)%cards.length;flashSide='front';flashRender();}
+function flashPrev(){let cards=flashCardsByTopic();flashIdx=(flashIdx-1+cards.length)%cards.length;flashSide='front';flashRender();}
+
+/* ============ STUDY MODE — ALL QUESTIONS ============ */
+let smUnit='all',smShowAns=true;
+function smSetUnit(u,el){smUnit=u;document.querySelectorAll('#smFilter .chip').forEach(c=>c.classList.remove('active'));el.classList.add('active');smRender();}
+function smToggleAns(){smShowAns=!smShowAns;document.getElementById('smToggleBtn').textContent=smShowAns?'Hide answers':'Show answers';smRender();}
+function smRender(){
+  document.getElementById('smCount').textContent=QB.length;
+  let search=document.getElementById('smSearch').value.toLowerCase();
+  let filtered=QB.filter(q=>(smUnit==='all'||q.u===smUnit)&&(!search||q.q.toLowerCase().includes(search)||q.w.toLowerCase().includes(search)||q.o.some(o=>o.toLowerCase().includes(search))));
+  document.getElementById('smMatchCount').textContent='Showing '+filtered.length+' question'+(filtered.length!==1?'s':'')+(smUnit!=='all'?' (Unit '+smUnit+')':'');
+  let html='';
+  filtered.forEach((q,i)=>{
+    let optsHtml='';
+    q.o.forEach((o,k)=>{
+      let isAns=(k===q.a);
+      optsHtml+='<li style="padding:3px 0;color:'+(isAns&&smShowAns?'var(--green)':'var(--dim)')+';font-weight:'+(isAns&&smShowAns?'700':'400')+'">'+(isAns&&smShowAns?'✓ ':'')+o+'</li>';
+    });
+    let ansBox=smShowAns?'<div style="margin-top:8px;padding:6px 11px;background:rgba(47,230,196,.1);border-left:3px solid var(--teal);border-radius:6px;font-size:.85rem;color:#cfd8eb">'+q.w+'</div>':'';
+    html+='<div style="background:var(--bg2);border:1px solid var(--line);border-radius:9px;padding:11px 14px;margin:8px 0">'+
+      '<div style="display:flex;justify-content:space-between;margin-bottom:6px"><span class="tag">Q '+(i+1)+' · Unit '+q.u+'</span>'+(smShowAns?'<span class="tag" style="color:var(--green)">answer revealed</span>':'<span class="tag" style="color:var(--amber)">click "Show answers" to reveal</span>')+'</div>'+
+      '<div style="font-size:.94rem;color:var(--text);margin-bottom:8px">'+q.q+'</div>'+
+      '<ul style="list-style:none;padding-left:0;margin:0;font-size:.88rem">'+optsHtml+'</ul>'+
+      ansBox+
+    '</div>';
+  });
+  document.getElementById('smList').innerHTML=html||'<p class="note">No questions match your search.</p>';
 }
 window.addEventListener('load',boot);
 window.addEventListener('resize',()=>{atomInit();gasInit();drawDart();});
